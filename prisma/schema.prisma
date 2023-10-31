@@ -18,7 +18,7 @@ model Metadata {
   @@map("metadata")
 }
 
-model Post {
+model Writing {
   id        String   @id @default(cuid())
   title     String
   postId    String  @unique
