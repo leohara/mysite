@@ -24,12 +24,12 @@ export default function BookmarkList() {
       ? "http://localhost:3000/api/bookmarks/"
       : "https://beatleos.com/api/bookmarks/";
   useEffect(() => {
-    fetch(endpoint)
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        setIsLoading(false);
-      });
+    (async() => {
+      const response = await fetch(endpoint);
+      const data = await response.json();
+      setData(data);
+      setIsLoading(false);
+    })();
   }, [endpoint]);
 
   return (
