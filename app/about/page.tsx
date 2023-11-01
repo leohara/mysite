@@ -1,3 +1,7 @@
 export default function Page() {
-  return <div>about</div>;
+  return (
+    <div className="flex-1 pl-[200px]">
+      <p>About page</p>
+    </div>
+  );
 }
