@@ -24,7 +24,7 @@ export default function LinkButton({ name, url, children }: Props) {
       <div
         className={`
           ${"mb-[12px] flex items-center rounded-lg p-[6px] px-[10px] hover:bg-[#C7FBEC]"}
-          ${processUrl(name.toLowerCase()) == pathName ? "bg-[aquamarine]" : ""}
+          ${processUrl(name.toLowerCase()) == pathName ? "!bg-[aquamarine]" : ""}
           `}
       >
         {children}
