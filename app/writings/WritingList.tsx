@@ -23,6 +23,7 @@ export default function WritingList() {
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000/api/writings"
       : "https://beatleos.com/api/writings";
+
   useEffect(() => {
     fetch(endpoint)
       .then((res) => res.json())
