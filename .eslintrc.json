@@ -10,6 +10,7 @@
         "plugin:react/recommended",
         "next",
         "next/core-web-vitals",
+        "prettier",
         "plugin:tailwindcss/recommended"
     ],
     "parser": "@typescript-eslint/parser",
@@ -20,11 +21,13 @@
     "plugins": [
         "@typescript-eslint",
         "react",
-        "tailwindcss"
+        "tailwindcss",
+        "prettier"
     ],
     "rules": {
       "react/react-in-jsx-scope": "off",
-      "react/jsx-uses-react": "off"
+      "react/jsx-uses-react": "off",
+      "prettier/prettier": "error"
     },
     "settings": {
       "react": {

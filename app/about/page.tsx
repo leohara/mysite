@@ -1,5 +1,3 @@
-export default function () {
-  return (
-    <>page</>
-  )
+export default function Page() {
+  return <div>about</div>;
 }
