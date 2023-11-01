@@ -1,17 +1,14 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
 model Metadata {
-  id    Int    @id @default(autoincrement())
+  id    String @id @map("_id") @default(auto()) @db.ObjectId
   key   String @unique
   value String
 
@@ -19,11 +16,11 @@ model Metadata {
 }
 
 model Writing {
-  id        String   @id @default(cuid())
+  id        String @id @map("_id") @default(auto()) @db.ObjectId
   title     String
   postId    String  @unique
   content   String?
-  published Boolean  @default(false)
+  published Boolean @default(false)
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @default(now()) @updatedAt @map("updated_at")
 
@@ -31,8 +28,8 @@ model Writing {
 }
 
 model Bookmark {
-  id         String   @id @default(cuid())
-  title      String?
+  id         String @id @map("_id") @default(auto()) @db.ObjectId
+  title      String
   url        String   @unique
   bookmarkId String   @unique
   content    String?
