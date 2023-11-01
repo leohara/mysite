@@ -1,7 +1,13 @@
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <div className="flex-1 pl-[200px]">
       <p>My site</p>
-    </main>
-  )
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+        nobis fugiat officiis rem corrupti reprehenderit quos doloremque laborum
+        est eum, corporis consequatur soluta facere amet eligendi vel culpa
+        laudantium ipsam.
+      </p>
+    </div>
+  );
 }
