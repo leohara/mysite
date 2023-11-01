@@ -25,7 +25,7 @@ export default function WritingList() {
       : "https://beatleos.com/api/writings/";
 
   useEffect(() => {
-    (async() => {
+    (async () => {
       const response = await fetch(endpoint);
       const data = await response.json();
       setData(data);

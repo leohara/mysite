@@ -24,7 +24,7 @@ export default function BookmarkList() {
       ? "http://localhost:3000/api/bookmarks/"
       : "https://beatleos.com/api/bookmarks/";
   useEffect(() => {
-    (async() => {
+    (async () => {
       const response = await fetch(endpoint);
       const data = await response.json();
       setData(data);
