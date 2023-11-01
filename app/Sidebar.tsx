@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import Header from "./Header";
-import LinkButton from "./LinkButton";
-import { FaHome } from "react-icons/fa";
-import { MdArticle } from "react-icons/md";
-import { BsStack, BsFillBookmarksFill } from "react-icons/bs";
-import { IoIosBeer } from "react-icons/io";
 import { AiFillGithub } from "react-icons/ai";
+import { BsFillBookmarksFill, BsStack } from "react-icons/bs";
+import { FaHome } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { IoIosBeer } from "react-icons/io";
+import { MdArticle } from "react-icons/md";
+import LinkButton from "./LinkButton";
+import Header from "./components/Header";
 
 export default function Sidebar() {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -19,11 +19,11 @@ export default function Sidebar() {
 
   return (
     <div
-      className="fixed h-screen w-[200px] overflow-y-auto border-r-[0.5px] border-[#eeeff2] bg-[#F6F6F6] text-[#404040]"
+      className="fixed h-screen w-[200px] overflow-y-auto border-r-[0.5px] border-[#eeeff2] bg-[#F6F6F6] pb-[24px] text-[#404040]"
       onScroll={onScroll}
     >
       <div className="flex-col">
-        <Header hasScrolled={hasScrolled} />
+        <Header title={"Leo Harada"} hasScrolled={hasScrolled} isSide={true} />
         <div className="pt-[64px]">
           <div className="flex-col px-[24px]">
             <LinkButton name={"Home"} url={"/"}>
