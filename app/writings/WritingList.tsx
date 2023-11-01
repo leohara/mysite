@@ -19,8 +19,11 @@ export default function WritingList() {
   const [data, setData] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const endpoint = process.env.NODE_ENV === 'development' 
+  ? 'http://localhost:3000/api/writing' 
+  : 'https://beatleos.com/api/writing';
   useEffect(() => {
-    fetch("http://localhost:3000/api/writing")
+    fetch(endpoint)
       .then((res) => res.json())
       .then((data) => {
         setData(data);

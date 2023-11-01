@@ -19,8 +19,11 @@ export default function BookmarkList() {
   const [data, setData] = useState<Bookmark[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const endpoint = process.env.NODE_ENV === 'development' 
+  ? 'http://localhost:3000/api/bookmark' 
+  : 'https://beatleos.com/api/bookmark';
   useEffect(() => {
-    fetch("http://localhost:3000/api/bookmark")
+    fetch(endpoint)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
