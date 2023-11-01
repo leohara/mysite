@@ -22,7 +22,7 @@ export default function WritingList() {
   const endpoint =
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000/api/writings/"
-      : "https://beatleos.com/api/writings/";
+      : "https://www.beatleos.com/api/writings/";
 
   useEffect(() => {
     (async () => {

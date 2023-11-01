@@ -22,7 +22,7 @@ export default function BookmarkList() {
   const endpoint =
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000/api/bookmarks/"
-      : "https://beatleos.com/api/bookmarks/";
+      : "https://www.beatleos.com/api/bookmarks/";
   useEffect(() => {
     (async () => {
       const response = await fetch(endpoint);
