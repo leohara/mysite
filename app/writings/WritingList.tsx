@@ -21,15 +21,16 @@ export default function WritingList() {
 
   const endpoint =
     process.env.NODE_ENV === "development"
-      ? "http://localhost:3000/api/writing"
-      : "https://beatleos.com/api/writing";
+      ? "http://localhost:3000/api/writings/"
+      : "https://beatleos.com/api/writings/";
+
   useEffect(() => {
-    fetch(endpoint)
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        setIsLoading(false);
-      });
+    (async () => {
+      const response = await fetch(endpoint);
+      const data = await response.json();
+      setData(data);
+      setIsLoading(false);
+    })();
   }, [endpoint]);
 
   return (
