@@ -8,8 +8,8 @@ export default function Header({ title, hasScrolled, isSide }: Props) {
   return (
     <div
       className={`
-        ${"fixed z-10 h-[56px] border-r-[0.5px] border-[#eeeff2] bg-[#f6f6f6]"}
-        ${isSide ? "w-[199.5px]" : "w-[319.5px] bg-[#fff]"}
+        ${"fixed z-10 h-[56px] border-r-[0.5px] border-[#eeeff2]"}
+        ${isSide ? "w-[200px] bg-[#f6f6f6]" : "w-[320px] bg-[#fff]"}
         ${hasScrolled ? "border-[#f6f6f6] shadow" : "shadow-none"}
         transition-shadow duration-300
         `}
