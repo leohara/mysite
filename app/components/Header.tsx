@@ -20,7 +20,7 @@ export default function Header({ title, hasScrolled, isSide }: Props) {
             ? "w-[200.5px] border-r-[0.5px] border-r-[#eeeff2] bg-[#f6f6f6]"
             : "w-screen bg-[#fff] lg:w-[319px]"
         }
-        ${isOpen && !isSide ? "bg-[#ccc]" : ""}
+        ${isOpen && !isSide ? "bg-[#ccc] opacity-5" : ""}
         ${hasScrolled ? "border-b shadow-bottom" : "shadow-none"}
         transition-shadow duration-300
         `}

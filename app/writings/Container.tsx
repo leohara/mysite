@@ -33,7 +33,7 @@ export default function Container({ writings }: { writings: Writing[] }) {
       className={`
       ${"h-screen w-screen pl-[1px] lg:w-[320px]"}
       ${isDetail ? "hidden lg:block lg:w-[320px]" : ""}
-      ${isOpen ? "pointer-events-none z-20 bg-[#ccc]" : "bg-[#fff]"}
+      ${isOpen ? "pointer-events-none z-20 bg-[#ccc] opacity-5" : "bg-[#fff]"}
     `}
     >
       <div
