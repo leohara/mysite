@@ -6,7 +6,7 @@ export default function WritingLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex pl-[200px]">
+    <div className="flex">
       <BookmarkList />
       <div className="flex-1">{children}</div>
     </div>

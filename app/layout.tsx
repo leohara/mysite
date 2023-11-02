@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Sidebar from "./Sidebar";
 import "./globals.css";
+// import { useState } from "react";
+// import ButtonContext from "./context/buttonContext";
 
 const inter = Inter({ subsets: ["latin"] });
 

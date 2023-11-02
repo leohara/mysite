@@ -26,7 +26,13 @@ export default function Container({ bookmarks }: { bookmarks: Bookmark[] }) {
       className="fixed h-screen w-[320px] overflow-y-auto border-r-[0.5px] border-[#eeeff2] bg-[#fff] pb-[24px] text-[#404040]"
       onScroll={onScroll}
     >
-      <Header title={"Bookmarks"} hasScrolled={hasScrolled} isSide={false} />
+      <Header
+        title={"Bookmarks"}
+        hasScrolled={hasScrolled}
+        isOpen={true}
+        setIsOpen={() => {}}
+        isSide={false}
+      />
       <div className="pt-[80px]">
         <div className="flex-col px-[24px]">
           {bookmarks.map((bookmark: Bookmark) => (
