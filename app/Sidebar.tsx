@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { AiFillGithub, AiOutlineArrowLeft } from "react-icons/ai";
 import { BsFillBookmarksFill, BsStack } from "react-icons/bs";
 import { FaHome } from "react-icons/fa";
@@ -9,8 +11,6 @@ import { IoIosBeer } from "react-icons/io";
 import { MdArticle } from "react-icons/md";
 import LinkButton from "./LinkButton";
 import Header from "./components/Header";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
 
 export default function Sidebar() {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -19,8 +19,6 @@ export default function Sidebar() {
   const pathName = usePathname().split("/");
   const isDetail = typeof pathName[2] !== "undefined";
   const returnURL = pathName[1];
-
-  AiOutlineArrowLeft;
 
   const onScroll = (e: React.UIEvent<HTMLDivElement>) => {
     setHasScrolled(e.currentTarget.scrollTop > 0);
@@ -52,6 +50,7 @@ export default function Sidebar() {
         className={`
           ${"z-10 h-screen w-[200px] lg:block"}
           ${isOpen ? "block" : "hidden"}
+          ${isDetail ? "hidden" : ""}
         `}
       >
         <div
