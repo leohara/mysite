@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AiFillGithub } from "react-icons/ai";
+import { AiFillGithub, AiOutlineArrowLeft } from "react-icons/ai";
 import { BsFillBookmarksFill, BsStack } from "react-icons/bs";
 import { FaHome } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -9,10 +9,18 @@ import { IoIosBeer } from "react-icons/io";
 import { MdArticle } from "react-icons/md";
 import LinkButton from "./LinkButton";
 import Header from "./components/Header";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function Sidebar() {
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+
+  const pathName = usePathname().split("/");
+  const isDetail = typeof pathName[2] !== "undefined";
+  const returnURL = pathName[1];
+
+  AiOutlineArrowLeft;
 
   const onScroll = (e: React.UIEvent<HTMLDivElement>) => {
     setHasScrolled(e.currentTarget.scrollTop > 0);
@@ -21,8 +29,9 @@ export default function Sidebar() {
     <>
       <div
         className={`
-          ${"z-20 fixed ml-6 mt-5 lg:hidden"}
+          ${"fixed z-20 ml-[24px] mt-[20px] lg:hidden"}
           ${isOpen ? "hidden" : "block pr-[5px]"}
+          ${isDetail ? "hidden" : ""}
         `}
       >
         <button className="space-y-[4px]" onClick={() => setIsOpen(!isOpen)}>
@@ -31,6 +40,14 @@ export default function Sidebar() {
           <div className="h-[2px] w-4 bg-gray-600"></div>
         </button>
       </div>
+      <Link
+        className={`${"fixed z-20 ml-[22px] mt-[19px]"} ${
+          isDetail ? "lg:hidden" : "hidden"
+        }`}
+        href={`/${returnURL}`}
+      >
+        <AiOutlineArrowLeft size={24} />
+      </Link>
       <div
         className={`
           ${"z-10 h-screen w-[200px] lg:block"}

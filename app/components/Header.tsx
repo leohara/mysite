@@ -22,7 +22,7 @@ export default function Header({
         ${
           isSide
             ? "w-[200.5px] border-r-[0.5px] border-r-[#eeeff2] bg-[#f6f6f6]"
-            : "w-screen lg:w-[319px] bg-[#fff]"
+            : "w-screen bg-[#fff] lg:w-[319px]"
         }
         ${hasScrolled ? "border-b shadow-bottom" : "shadow-none"}
         transition-shadow duration-300
