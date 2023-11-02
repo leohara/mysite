@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="pl-[80px]">
+    <div className="">
       <p>My site</p>
     </div>
   );

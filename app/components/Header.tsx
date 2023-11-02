@@ -15,12 +15,13 @@ export default function Header({
   isOpen,
   setIsOpen,
 }: Props) {
+
   return (
     <div
       className={`
-        ${"fixed z-10 h-[56px]"}
-        ${isSide ? "w-[200px] bg-[#f6f6f6]" : "w-[320px] bg-[#fff]"}
-        ${hasScrolled ? "border-b shadow-bottom" : "shadow-none"}
+        ${"fixed z-10 h-[56px] lg:border-r-[0.5px] lg:border-[#eeeff2]"}
+        ${isSide ? "w-[200.5px] bg-[#f6f6f6]" : "w-[319px] bg-[#fff]"}
+        ${hasScrolled ? "border-b shadow" : "shadow-none"}
         transition-shadow duration-300
         `}
     >
@@ -29,7 +30,6 @@ export default function Header({
           className={`
             ${"mr-[16px] lg:hidden"}
             ${isSide ? "" : "hidden"}
-            ${isOpen ? "block" : "hidden"}
           `}
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -38,7 +38,7 @@ export default function Header({
         <p
           className={`
           ${"font-[#363636] font-bold"}
-          ${isSide ? "" : "pl-[32px]"}
+          ${!isSide ? "text-[red]" : ""}
         `}
         >
           {title}

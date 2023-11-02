@@ -23,31 +23,43 @@ export default function Container({ bookmarks }: { bookmarks: Bookmark[] }) {
 
   return (
     <div
-      className="fixed h-screen w-[320px] overflow-y-auto border-r-[0.5px] border-[#eeeff2] bg-[#fff] pb-[24px] text-[#404040]"
+      className="h-screen w-[320px] border-r-[0.5px] border-r-[#eeeff2] bg-[#fff] pl-[1px]"
       onScroll={onScroll}
     >
-      <Header
-        title={"Bookmarks"}
-        hasScrolled={hasScrolled}
-        isOpen={true}
-        setIsOpen={() => {}}
-        isSide={false}
-      />
-      <div className="pt-[80px]">
-        <div className="flex-col px-[24px]">
-          {bookmarks.map((bookmark: Bookmark) => (
-            <Link href={`/bookmarks/${bookmark.bookmarkId}`} key={bookmark.id}>
-              <div
-                key={bookmark.id}
-                className="mb-[8px] flex-col rounded-lg p-[6px] px-[10px] hover:bg-[#C7FBEC]"
-              >
-                <p className="text-[14px] font-bold">{bookmark.title}</p>
-                <p className="text-[12px] text-[#9f9f9f]">
-                  {new Date(bookmark.updatedAt).toISOString()}
-                </p>
+      <div
+        className="fixed overflow-y-auto pb-[24px] text-[#404040]"
+        onScroll={onScroll}
+      >
+        <div className="flex-col">
+          <Header
+            title={"Bookmarks"}
+            hasScrolled={hasScrolled}
+            isOpen={true}
+            setIsOpen={() => {}}
+            isSide={false}
+          />
+          <div className="pt-[80px]">
+            <div className="h-screen w-[320px]">
+              <div className="flex-col px-[24px]">
+                {bookmarks.map((bookmark: Bookmark) => (
+                  <Link
+                    href={`/bookmarks/${bookmark.bookmarkId}`}
+                    key={bookmark.id}
+                  >
+                    <div
+                      key={bookmark.id}
+                      className="mb-[8px] flex-col rounded-lg p-[6px] px-[10px] hover:bg-[#C7FBEC]"
+                    >
+                      <p className="text-[14px] font-bold">{bookmark.title}</p>
+                      <p className="text-[12px] text-[#9f9f9f]">
+                        {new Date(bookmark.updatedAt).toISOString()}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
               </div>
-            </Link>
-          ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
