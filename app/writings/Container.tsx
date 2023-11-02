@@ -18,18 +18,23 @@ type Writing = {
 export default function Container({ writings }: { writings: Writing[] }) {
   const [hasScrolled, setHasScrolled] = useState(false);
 
-  const pathName = usePathname()
-    .split("/")
-    .filter((segment) => segment != "")[1];
+  const pathName = usePathname().split("/");
+  const isDetail = typeof pathName[2] !== "undefined";
+  const detailName = pathName[2];
 
   const onScroll = (e: React.UIEvent<HTMLDivElement>) => {
     setHasScrolled(e.currentTarget.scrollTop > 0);
   };
 
   return (
-    <div className="h-screen w-full lg:w-[320px] border-r-[0.5px] border-r-[#eeeff2] bg-[#fff] pl-[1px]">
+    <div
+      className={`
+      ${"h-screen w-screen lg:w-[320px] bg-[#fff] pl-[1px] "}
+      ${isDetail ? "hidden lg:block lg:w-[320px]" : ""}
+    `}
+    >
       <div
-        className="fixed overflow-y-auto pb-[24px] text-[#404040]"
+        className="fixed overflow-y-auto h-screen text-[#404040] lg:border-r-[0.5px] lg:border-r-[#eeeff2]"
         onScroll={onScroll}
       >
         <div className="flex-col">
@@ -40,16 +45,15 @@ export default function Container({ writings }: { writings: Writing[] }) {
             setIsOpen={() => {}}
             isSide={false}
           />
-          <div className="pt-[80px]">
-            <div className="h-screen w-full lg:w-[320px]">
+          <div className="w-screen lg:w-[320px] pt-[60px]">
               <div className="flex-col px-[24px]">
                 {writings.map((writing: Writing) => (
                   <Link href={`/writings/${writing.postId}`} key={writing.id}>
-                    <div className="h-[60px] w-full border-b-[1px]">
+                    <div className="h-[60px] w-[calc(70vw)] border-b-[1px] lg:w-full">
                       <div
                         className={`
                       ${"my-[4px] flex-col rounded-lg p-[6px] px-[10px] hover:bg-[#C7FBEC]"}
-                      ${pathName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
                       `}
                       >
                         <p className="text-[14px] font-bold">{writing.title}</p>
@@ -58,10 +62,165 @@ export default function Container({ writings }: { writings: Writing[] }) {
                         </p>
                       </div>
                     </div>
+                    <div className="h-[60px] w-[calc(70vw)] border-b-[1px] lg:w-full">
+                      <div
+                        className={`
+                      ${"my-[4px] flex-col rounded-lg p-[6px] px-[10px] hover:bg-[#C7FBEC]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                      >
+                        <p className="text-[14px] font-bold">{writing.title}</p>
+                        <p className="text-[12px] text-[#9f9f9f]">
+                          {new Date(writing.updatedAt).toISOString()}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="h-[60px] w-[calc(70vw)] border-b-[1px] lg:w-full">
+                      <div
+                        className={`
+                      ${"my-[4px] flex-col rounded-lg p-[6px] px-[10px] hover:bg-[#C7FBEC]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                      >
+                        <p className="text-[14px] font-bold">{writing.title}</p>
+                        <p className="text-[12px] text-[#9f9f9f]">
+                          {new Date(writing.updatedAt).toISOString()}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="h-[60px] w-[calc(70vw)] border-b-[1px] lg:w-full">
+                      <div
+                        className={`
+                      ${"my-[4px] flex-col rounded-lg p-[6px] px-[10px] hover:bg-[#C7FBEC]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                      >
+                        <p className="text-[14px] font-bold">{writing.title}</p>
+                        <p className="text-[12px] text-[#9f9f9f]">
+                          {new Date(writing.updatedAt).toISOString()}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="h-[60px] w-[calc(70vw)] border-b-[1px] lg:w-full">
+                      <div
+                        className={`
+                      ${"my-[4px] flex-col rounded-lg p-[6px] px-[10px] hover:bg-[#C7FBEC]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                      >
+                        <p className="text-[14px] font-bold">{writing.title}</p>
+                        <p className="text-[12px] text-[#9f9f9f]">
+                          {new Date(writing.updatedAt).toISOString()}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="h-[60px] w-[calc(70vw)] border-b-[1px] lg:w-full">
+                      <div
+                        className={`
+                      ${"my-[4px] flex-col rounded-lg p-[6px] px-[10px] hover:bg-[#C7FBEC]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                      >
+                        <p className="text-[14px] font-bold">{writing.title}</p>
+                        <p className="text-[12px] text-[#9f9f9f]">
+                          {new Date(writing.updatedAt).toISOString()}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="h-[60px] w-[calc(70vw)] border-b-[1px] lg:w-full">
+                      <div
+                        className={`
+                      ${"my-[4px] flex-col rounded-lg p-[6px] px-[10px] hover:bg-[#C7FBEC]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                      >
+                        <p className="text-[14px] font-bold">{writing.title}</p>
+                        <p className="text-[12px] text-[#9f9f9f]">
+                          {new Date(writing.updatedAt).toISOString()}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="h-[60px] w-[calc(70vw)] border-b-[1px] lg:w-full">
+                      <div
+                        className={`
+                      ${"my-[4px] flex-col rounded-lg p-[6px] px-[10px] hover:bg-[#C7FBEC]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                      >
+                        <p className="text-[14px] font-bold">{writing.title}</p>
+                        <p className="text-[12px] text-[#9f9f9f]">
+                          {new Date(writing.updatedAt).toISOString()}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="h-[60px] w-[calc(70vw)] border-b-[1px] lg:w-full">
+                      <div
+                        className={`
+                      ${"my-[4px] flex-col rounded-lg p-[6px] px-[10px] hover:bg-[#C7FBEC]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                      >
+                        <p className="text-[14px] font-bold">{writing.title}</p>
+                        <p className="text-[12px] text-[#9f9f9f]">
+                          {new Date(writing.updatedAt).toISOString()}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="h-[60px] w-[calc(70vw)] border-b-[1px] lg:w-full">
+                      <div
+                        className={`
+                      ${"my-[4px] flex-col rounded-lg p-[6px] px-[10px] hover:bg-[#C7FBEC]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                      >
+                        <p className="text-[14px] font-bold">{writing.title}</p>
+                        <p className="text-[12px] text-[#9f9f9f]">
+                          {new Date(writing.updatedAt).toISOString()}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="h-[60px] w-[calc(70vw)] border-b-[1px] lg:w-full">
+                      <div
+                        className={`
+                      ${"my-[4px] flex-col rounded-lg p-[6px] px-[10px] hover:bg-[#C7FBEC]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                      >
+                        <p className="text-[14px] font-bold">{writing.title}</p>
+                        <p className="text-[12px] text-[#9f9f9f]">
+                          {new Date(writing.updatedAt).toISOString()}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="h-[60px] w-[calc(70vw)] border-b-[1px] lg:w-full">
+                      <div
+                        className={`
+                      ${"my-[4px] flex-col rounded-lg p-[6px] px-[10px] hover:bg-[#C7FBEC]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                      >
+                        <p className="text-[14px] font-bold">{writing.title}</p>
+                        <p className="text-[12px] text-[#9f9f9f]">
+                          {new Date(writing.updatedAt).toISOString()}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="h-[60px] w-[calc(70vw)] border-b-[1px] lg:w-full">
+                      <div
+                        className={`
+                      ${"my-[4px] flex-col rounded-lg p-[6px] px-[10px] hover:bg-[#C7FBEC]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                      >
+                        <p className="text-[14px] font-bold">{writing.title}1</p>
+                        <p className="text-[12px] text-[#9f9f9f]">
+                          {new Date(writing.updatedAt).toISOString()}
+                        </p>
+                      </div>
+                    </div>
                   </Link>
                 ))}
               </div>
-            </div>
           </div>
         </div>
       </div>

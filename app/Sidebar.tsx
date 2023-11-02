@@ -11,7 +11,6 @@ import LinkButton from "./LinkButton";
 import Header from "./components/Header";
 
 export default function Sidebar() {
-
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,14 +21,14 @@ export default function Sidebar() {
     <>
       <div
         className={`
-          ${"ml-6 mt-5 lg:hidden"}
+          ${"z-20 fixed ml-6 mt-5 lg:hidden"}
           ${isOpen ? "hidden" : "block pr-[5px]"}
         `}
       >
         <button className="space-y-[4px]" onClick={() => setIsOpen(!isOpen)}>
-          <div className="h-0.5 w-4 bg-gray-600"></div>
-          <div className="h-0.5 w-4 bg-gray-600"></div>
-          <div className="h-0.5 w-4 bg-gray-600"></div>
+          <div className="h-[2px] w-4 bg-gray-600"></div>
+          <div className="h-[2px] w-4 bg-gray-600"></div>
+          <div className="h-[2px] w-4 bg-gray-600"></div>
         </button>
       </div>
       <div
@@ -56,19 +55,35 @@ export default function Sidebar() {
                   <LinkButton name={"Home"} url={"/"} setIsOpen={setIsOpen}>
                     <FaHome size={14} />
                   </LinkButton>
-                  <LinkButton name={"Writings"} url={"/writings"} setIsOpen={setIsOpen}>
+                  <LinkButton
+                    name={"Writings"}
+                    url={"/writings"}
+                    setIsOpen={setIsOpen}
+                  >
                     <MdArticle size={14} />
                   </LinkButton>
-                  <LinkButton name={"Bookmarks"} url={"/bookmarks"} setIsOpen={setIsOpen}>
+                  <LinkButton
+                    name={"Bookmarks"}
+                    url={"/bookmarks"}
+                    setIsOpen={setIsOpen}
+                  >
                     <BsFillBookmarksFill size={14} />
                   </LinkButton>
                 </div>
                 <div className="flex-col px-[24px]">
                   <p className="text-[12px] text-[#9f9f9f]">Me</p>
-                  <LinkButton name={"About"} url={"/about"}  setIsOpen={setIsOpen}>
+                  <LinkButton
+                    name={"About"}
+                    url={"/about"}
+                    setIsOpen={setIsOpen}
+                  >
                     <IoIosBeer size={14} />
                   </LinkButton>
-                  <LinkButton name={"Stack"} url={"/stack"} setIsOpen={setIsOpen}>
+                  <LinkButton
+                    name={"Stack"}
+                    url={"/stack"}
+                    setIsOpen={setIsOpen}
+                  >
                     <BsStack size={14} />
                   </LinkButton>
                 </div>
@@ -79,7 +94,8 @@ export default function Sidebar() {
                   <p className="text-[12px] text-[#9f9f9f]">Online</p>
                   <LinkButton
                     name={"Github"}
-                    url={"https://github.com/leohara"} setIsOpen={setIsOpen}
+                    url={"https://github.com/leohara"}
+                    setIsOpen={setIsOpen}
                   >
                     <AiFillGithub size={14} />
                   </LinkButton>

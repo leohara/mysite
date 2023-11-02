@@ -46,10 +46,7 @@ export default function Container({ bookmarks }: { bookmarks: Bookmark[] }) {
                     href={`/bookmarks/${bookmark.bookmarkId}`}
                     key={bookmark.id}
                   >
-                    <div
-                      key={bookmark.id}
-                      className="mb-[8px] flex-col rounded-lg p-[6px] px-[10px] hover:bg-[#C7FBEC]"
-                    >
+                    <div className="mb-[8px] flex-col rounded-lg p-[6px] px-[10px] hover:bg-[#C7FBEC]">
                       <p className="text-[14px] font-bold">{bookmark.title}</p>
                       <p className="text-[12px] text-[#9f9f9f]">
                         {new Date(bookmark.updatedAt).toISOString()}
