@@ -34,8 +34,6 @@ export default function Container({ bookmarks }: { bookmarks: Bookmark[] }) {
           <Header
             title={"Bookmarks"}
             hasScrolled={hasScrolled}
-            isOpen={true}
-            setIsOpen={() => {}}
             isSide={false}
           />
           <div className="pt-[80px]">
