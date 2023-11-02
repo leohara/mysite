@@ -29,12 +29,12 @@ export default function Container({ writings }: { writings: Writing[] }) {
   return (
     <div
       className={`
-      ${"h-screen w-screen bg-[#fff] pl-[1px] lg:w-[320px] "}
+      ${"h-screen w-screen bg-[#fff] pl-[1px] lg:w-[320px]"}
       ${isDetail ? "hidden lg:block lg:w-[320px]" : ""}
     `}
     >
       <div
-        className="fixed h-screen overflow-y-auto text-[#404040] lg:border-r-[0.5px] lg:border-r-[#eeeff2]"
+        className="fixed h-screen pb-[50px] overflow-y-auto text-[#404040] lg:border-r-[0.5px] lg:border-r-[#eeeff2]"
         onScroll={onScroll}
       >
         <div className="flex-col">
