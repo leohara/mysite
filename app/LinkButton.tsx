@@ -1,17 +1,20 @@
+import { useContext } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { SidebarContext } from "./provider/SidebarProvider";
 
 type Props = {
   name: string;
   url: string;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   children: React.ReactNode;
 };
 
-export default function LinkButton({ name, url, setIsOpen, children }: Props) {
+export default function LinkButton({ name, url, children }: Props) {
   const pathName = usePathname()
     .split("/")
     .filter((segment) => segment != "")[0];
+
+  const { setIsOpen } = useContext(SidebarContext);
 
   function processUrl(name: string): string | undefined {
     if (name === "home") {

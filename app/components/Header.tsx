@@ -1,29 +1,26 @@
+import { useContext } from "react";
 import { AiOutlineClose } from "react-icons/ai";
+import { SidebarContext } from "../provider/SidebarProvider";
 
 type Props = {
   title: string;
   hasScrolled: boolean;
   isSide: boolean;
-  isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export default function Header({
-  title,
-  hasScrolled,
-  isSide,
-  isOpen,
-  setIsOpen,
-}: Props) {
+export default function Header({ title, hasScrolled, isSide }: Props) {
+  const { isOpen, setIsOpen } = useContext(SidebarContext);
+
   return (
     <div
       className={`
-        ${"fixed z-10 h-[56px]"}
+        ${"fixed z-20 h-[56px]"}
         ${
           isSide
             ? "w-[200.5px] border-r-[0.5px] border-r-[#eeeff2] bg-[#f6f6f6]"
             : "w-screen bg-[#fff] lg:w-[319px]"
         }
+        ${isOpen && !isSide ? "bg-[#ccc]" : ""}
         ${hasScrolled ? "border-b shadow-bottom" : "shadow-none"}
         transition-shadow duration-300
         `}

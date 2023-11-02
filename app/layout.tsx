@@ -1,10 +1,9 @@
 /* eslint-disable tailwindcss/no-custom-classname */
+import { SidebarProvider } from "./provider/SidebarProvider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Sidebar from "./Sidebar";
 import "./globals.css";
-// import { useState } from "react";
-// import ButtonContext from "./context/buttonContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,14 +19,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.className} m-0 box-border h-screen w-full overflow-x-hidden p-0`}
-      >
-        <div className="flex">
-          <Sidebar />
-          <div className="flex-1">{children}</div>
-        </div>
-      </body>
+      <SidebarProvider>
+        <body
+          className={`${inter.className} m-0 box-border h-screen w-full overflow-x-hidden p-0`}
+        >
+          <div className="flex">
+            <Sidebar />
+            <div className="flex-1">{children}</div>
+          </div>
+        </body>
+      </SidebarProvider>
     </html>
   );
 }

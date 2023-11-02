@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect, useContext, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AiFillGithub, AiOutlineArrowLeft } from "react-icons/ai";
@@ -11,14 +11,35 @@ import { IoIosBeer } from "react-icons/io";
 import { MdArticle } from "react-icons/md";
 import LinkButton from "./LinkButton";
 import Header from "./components/Header";
+import { SidebarContext } from "./provider/SidebarProvider";
 
 export default function Sidebar() {
   const [hasScrolled, setHasScrolled] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, setIsOpen } = useContext(SidebarContext);
 
   const pathName = usePathname().split("/");
   const isDetail = typeof pathName[2] !== "undefined";
   const returnURL = pathName[1];
+
+  const sidebarRef = useRef<HTMLDivElement>(null);
+  const closeSidebar = useCallback(
+    (e: MouseEvent) => {
+      if (
+        sidebarRef.current &&
+        !sidebarRef.current.contains(e.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    },
+    [setIsOpen],
+  );
+
+  useEffect(() => {
+    document.addEventListener("mousedown", closeSidebar);
+    return () => {
+      document.removeEventListener("mousedown", closeSidebar);
+    };
+  }, [closeSidebar]);
 
   const onScroll = (e: React.UIEvent<HTMLDivElement>) => {
     setHasScrolled(e.currentTarget.scrollTop > 0);
@@ -48,10 +69,11 @@ export default function Sidebar() {
       </Link>
       <div
         className={`
-          ${"z-10 h-screen w-[200px] lg:block"}
+          ${"z-30 h-screen w-[200px] lg:block"}
           ${isOpen ? "block" : "hidden"}
           ${isDetail ? "hidden" : ""}
         `}
+        ref={sidebarRef}
       >
         <div
           className="fixed overflow-y-auto border-r-[0.5px] border-[#eeeff2] bg-[#F6F6F6] pb-[24px] text-[#404040]"
@@ -61,45 +83,27 @@ export default function Sidebar() {
             <Header
               title={"Leo Harada"}
               hasScrolled={hasScrolled}
-              isOpen={isOpen}
-              setIsOpen={setIsOpen}
               isSide={true}
             />
             <div className="pt-[64px]">
               <div className="h-screen w-[200px]">
                 <div className="flex-col px-[24px]">
-                  <LinkButton name={"Home"} url={"/"} setIsOpen={setIsOpen}>
+                  <LinkButton name={"Home"} url={"/"}>
                     <FaHome size={14} />
                   </LinkButton>
-                  <LinkButton
-                    name={"Writings"}
-                    url={"/writings"}
-                    setIsOpen={setIsOpen}
-                  >
+                  <LinkButton name={"Writings"} url={"/writings"}>
                     <MdArticle size={14} />
                   </LinkButton>
-                  <LinkButton
-                    name={"Bookmarks"}
-                    url={"/bookmarks"}
-                    setIsOpen={setIsOpen}
-                  >
+                  <LinkButton name={"Bookmarks"} url={"/bookmarks"}>
                     <BsFillBookmarksFill size={14} />
                   </LinkButton>
                 </div>
                 <div className="flex-col px-[24px]">
                   <p className="text-[12px] text-[#9f9f9f]">Me</p>
-                  <LinkButton
-                    name={"About"}
-                    url={"/about"}
-                    setIsOpen={setIsOpen}
-                  >
+                  <LinkButton name={"About"} url={"/about"}>
                     <IoIosBeer size={14} />
                   </LinkButton>
-                  <LinkButton
-                    name={"Stack"}
-                    url={"/stack"}
-                    setIsOpen={setIsOpen}
-                  >
+                  <LinkButton name={"Stack"} url={"/stack"}>
                     <BsStack size={14} />
                   </LinkButton>
                 </div>
@@ -111,11 +115,10 @@ export default function Sidebar() {
                   <LinkButton
                     name={"Github"}
                     url={"https://github.com/leohara"}
-                    setIsOpen={setIsOpen}
                   >
                     <AiFillGithub size={14} />
                   </LinkButton>
-                  <LinkButton name={"X"} url={"/"} setIsOpen={setIsOpen}>
+                  <LinkButton name={"X"} url={"/"}>
                     <FaXTwitter size={14} />
                   </LinkButton>
                 </div>
