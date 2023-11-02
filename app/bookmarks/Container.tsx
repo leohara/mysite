@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Header from "../components/Header";
+import Link from "next/link";
 
 type Bookmark = {
   id: string;
@@ -28,14 +29,18 @@ export default function Container({ bookmarks }: { bookmarks: Bookmark[] }) {
       <Header title={"Bookmarks"} hasScrolled={hasScrolled} isSide={false} />
       <div className="pt-[80px]">
         <div className="flex-col px-[24px]">
-          {bookmarks.map((writing: Bookmark) => (
-            <div key={writing.id} className="mb-[8px] flex-col">
-              <p className="text-[14px] font-bold">{writing.title}</p>
-              <p className="text-[14px]">{writing.content}</p>
-              <p className="text-[12px] text-[#9f9f9f]">
-                {new Date(writing.updatedAt).toISOString()}
-              </p>
-            </div>
+          {bookmarks.map((bookmark: Bookmark) => (
+            <Link href={`/bookmarks/${bookmark.bookmarkId}`} key={bookmark.id}>
+              <div
+                key={bookmark.id}
+                className="mb-[8px] flex-col rounded-lg p-[6px] px-[10px] hover:bg-[#C7FBEC]"
+              >
+                <p className="text-[14px] font-bold">{bookmark.title}</p>
+                <p className="text-[12px] text-[#9f9f9f]">
+                  {new Date(bookmark.updatedAt).toISOString()}
+                </p>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
