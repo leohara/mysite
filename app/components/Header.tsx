@@ -38,7 +38,7 @@ export default function Header({ title, hasScrolled, isSide }: Props) {
         <p
           className={`
           ${"font-[#363636] font-bold"}
-          ${isSide! ? "" : "pl-[32px]"}
+          ${isSide ? "" : "pl-[32px] lg:pl-[0px]"}
         `}
         >
           {title}
