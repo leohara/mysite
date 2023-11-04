@@ -38,12 +38,16 @@ export default function Container({ writings }: { writings: Writing[] }) {
     >
       <div
         className={`
-          ${"fixed h-screen overflow-y-auto pb-[300px] text-[#404040] lg:border-r-[0.5px] lg:border-r-[#eeeff2]"}
+          ${"fixed h-screen w-screen overflow-y-auto pb-[300px] text-[#404040] lg:border-r-[0.5px] lg:border-r-[#eeeff2]"}
         `}
         onScroll={onScroll}
       >
         <div className="flex-col">
-          <Header title={"Writings"} hasScrolled={hasScrolled} isSide={false} />
+          <Header
+            title={"Writings"}
+            hasScrolled={hasScrolled}
+            position={"middle"}
+          />
           <div className=" pt-[60px] lg:w-[320px]">
             <div className="flex-col px-[24px]">
               {writings.map((writing: Writing) => (
@@ -51,6 +55,171 @@ export default function Container({ writings }: { writings: Writing[] }) {
                   <div
                     className={`
                       ${"my-[4px] h-[60px] w-[300px] flex-col rounded-lg border-b-[1px] border-b-[#eeeff2] p-[6px] px-[10px] hover:bg-[#C7FBEC] sm:w-[600px] md:w-[760px] lg:w-[260px]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                  >
+                    <p className="text-[14px] font-bold">{writing.title}</p>
+                    <p className="text-[12px] text-[#9f9f9f]">
+                      {new Date(writing.updatedAt).toISOString()}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+              {writings.map((writing: Writing) => (
+                <Link href={`/writings/${writing.postId}`} key={writing.id}>
+                  <div
+                    className={`
+                      ${"my-[4px] h-[60px] w-[300px] flex-col rounded-lg border-b-[1px] p-[6px] px-[10px] hover:bg-[#C7FBEC] sm:w-[600px] md:w-[760px] lg:w-[260px]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                  >
+                    <p className="text-[14px] font-bold">{writing.title}</p>
+                    <p className="text-[12px] text-[#9f9f9f]">
+                      {new Date(writing.updatedAt).toISOString()}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+              {writings.map((writing: Writing) => (
+                <Link href={`/writings/${writing.postId}`} key={writing.id}>
+                  <div
+                    className={`
+                      ${"my-[4px] h-[60px] w-[300px] flex-col rounded-lg border-b-[1px] p-[6px] px-[10px] hover:bg-[#C7FBEC] sm:w-[600px] md:w-[760px] lg:w-[260px]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                  >
+                    <p className="text-[14px] font-bold">{writing.title}</p>
+                    <p className="text-[12px] text-[#9f9f9f]">
+                      {new Date(writing.updatedAt).toISOString()}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+              {writings.map((writing: Writing) => (
+                <Link href={`/writings/${writing.postId}`} key={writing.id}>
+                  <div
+                    className={`
+                      ${"my-[4px] h-[60px] w-[300px] flex-col rounded-lg border-b-[1px] p-[6px] px-[10px] hover:bg-[#C7FBEC] sm:w-[600px] md:w-[760px] lg:w-[260px]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                  >
+                    <p className="text-[14px] font-bold">{writing.title}</p>
+                    <p className="text-[12px] text-[#9f9f9f]">
+                      {new Date(writing.updatedAt).toISOString()}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+              {writings.map((writing: Writing) => (
+                <Link href={`/writings/${writing.postId}`} key={writing.id}>
+                  <div
+                    className={`
+                      ${"my-[4px] h-[60px] w-[300px] flex-col rounded-lg border-b-[1px] p-[6px] px-[10px] hover:bg-[#C7FBEC] sm:w-[600px] md:w-[760px] lg:w-[260px]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                  >
+                    <p className="text-[14px] font-bold">{writing.title}</p>
+                    <p className="text-[12px] text-[#9f9f9f]">
+                      {new Date(writing.updatedAt).toISOString()}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+              {writings.map((writing: Writing) => (
+                <Link href={`/writings/${writing.postId}`} key={writing.id}>
+                  <div
+                    className={`
+                      ${"my-[4px] h-[60px] w-[300px] flex-col rounded-lg border-b-[1px] p-[6px] px-[10px] hover:bg-[#C7FBEC] sm:w-[600px] md:w-[760px] lg:w-[260px]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                  >
+                    <p className="text-[14px] font-bold">{writing.title}</p>
+                    <p className="text-[12px] text-[#9f9f9f]">
+                      {new Date(writing.updatedAt).toISOString()}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+              {writings.map((writing: Writing) => (
+                <Link href={`/writings/${writing.postId}`} key={writing.id}>
+                  <div
+                    className={`
+                      ${"my-[4px] h-[60px] w-[300px] flex-col rounded-lg border-b-[1px] p-[6px] px-[10px] hover:bg-[#C7FBEC] sm:w-[600px] md:w-[760px] lg:w-[260px]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                  >
+                    <p className="text-[14px] font-bold">{writing.title}</p>
+                    <p className="text-[12px] text-[#9f9f9f]">
+                      {new Date(writing.updatedAt).toISOString()}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+              {writings.map((writing: Writing) => (
+                <Link href={`/writings/${writing.postId}`} key={writing.id}>
+                  <div
+                    className={`
+                      ${"my-[4px] h-[60px] w-[300px] flex-col rounded-lg border-b-[1px] p-[6px] px-[10px] hover:bg-[#C7FBEC] sm:w-[600px] md:w-[760px] lg:w-[260px]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                  >
+                    <p className="text-[14px] font-bold">{writing.title}</p>
+                    <p className="text-[12px] text-[#9f9f9f]">
+                      {new Date(writing.updatedAt).toISOString()}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+              {writings.map((writing: Writing) => (
+                <Link href={`/writings/${writing.postId}`} key={writing.id}>
+                  <div
+                    className={`
+                      ${"my-[4px] h-[60px] w-[300px] flex-col rounded-lg border-b-[1px] p-[6px] px-[10px] hover:bg-[#C7FBEC] sm:w-[600px] md:w-[760px] lg:w-[260px]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                  >
+                    <p className="text-[14px] font-bold">{writing.title}</p>
+                    <p className="text-[12px] text-[#9f9f9f]">
+                      {new Date(writing.updatedAt).toISOString()}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+              {writings.map((writing: Writing) => (
+                <Link href={`/writings/${writing.postId}`} key={writing.id}>
+                  <div
+                    className={`
+                      ${"my-[4px] h-[60px] w-[300px] flex-col rounded-lg border-b-[1px] p-[6px] px-[10px] hover:bg-[#C7FBEC] sm:w-[600px] md:w-[760px] lg:w-[260px]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                  >
+                    <p className="text-[14px] font-bold">{writing.title}</p>
+                    <p className="text-[12px] text-[#9f9f9f]">
+                      {new Date(writing.updatedAt).toISOString()}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+              {writings.map((writing: Writing) => (
+                <Link href={`/writings/${writing.postId}`} key={writing.id}>
+                  <div
+                    className={`
+                      ${"my-[4px] h-[60px] w-[300px] flex-col rounded-lg border-b-[1px] p-[6px] px-[10px] hover:bg-[#C7FBEC] sm:w-[600px] md:w-[760px] lg:w-[260px]"}
+                      ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
+                      `}
+                  >
+                    <p className="text-[14px] font-bold">{writing.title}</p>
+                    <p className="text-[12px] text-[#9f9f9f]">
+                      {new Date(writing.updatedAt).toISOString()}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+              {writings.map((writing: Writing) => (
+                <Link href={`/writings/${writing.postId}`} key={writing.id}>
+                  <div
+                    className={`
+                      ${"my-[4px] h-[60px] w-[300px] flex-col rounded-lg border-b-[1px] p-[6px] px-[10px] hover:bg-[#C7FBEC] sm:w-[600px] md:w-[760px] lg:w-[260px]"}
                       ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
                       `}
                   >
