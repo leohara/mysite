@@ -52,15 +52,15 @@ export default function Sidebar() {
     <>
       <div
         className={`
-          ${"fixed z-20 ml-[24px] mt-[20px] lg:hidden"}
+          ${"fixed z-20 ml-[24px] mt-[16px] lg:hidden"}
           ${isOpen ? "hidden" : "block pr-[5px]"}
           ${isDetail ? "hidden" : ""}
         `}
       >
         <button className="space-y-[4px]" onClick={() => setIsOpen(!isOpen)}>
-          <div className="h-[2px] w-4 bg-gray-600"></div>
-          <div className="h-[2px] w-4 bg-gray-600"></div>
-          <div className="h-[2px] w-4 bg-gray-600"></div>
+          <div className="h-[2px] w-4 bg-[#404040]"></div>
+          <div className="h-[2px] w-4 bg-[#404040]"></div>
+          <div className="h-[2px] w-4 bg-[#404040]"></div>
         </button>
       </div>
       <Link

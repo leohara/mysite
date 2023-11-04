@@ -2,7 +2,7 @@
 
 import { useState, useContext } from "react";
 import { usePathname } from "next/navigation";
-import Header from "../components/Header";
+import Header from "@/app/components/Header";
 import Link from "next/link";
 import { SidebarContext } from "../provider/SidebarProvider";
 
@@ -31,14 +31,14 @@ export default function Container({ writings }: { writings: Writing[] }) {
   return (
     <div
       className={`
-      ${"h-screen w-screen pl-[1px] lg:w-[320px]"}
+      ${"h-screen pl-[1px] lg:w-[320px]"}
       ${isDetail ? "hidden lg:block lg:w-[320px]" : ""}
       ${isOpen ? "pointer-events-none z-20 bg-[#ccc] opacity-5" : "bg-[#fff]"}
     `}
     >
       <div
         className={`
-          ${"fixed h-screen w-screen overflow-y-auto pb-[300px] text-[#404040] lg:border-r-[0.5px] lg:border-r-[#eeeff2]"}
+          ${"fixed h-screen overflow-y-auto pb-[300px] text-[#404040] lg:border-r-[0.5px] lg:border-r-[#eeeff2]"}
         `}
         onScroll={onScroll}
       >
