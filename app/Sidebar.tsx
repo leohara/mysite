@@ -106,9 +106,9 @@ export default function Sidebar() {
                 <LinkButton name={"Bookmarks"} url={"/bookmarks"}>
                   <BsFillBookmarksFill size={14} />
                 </LinkButton>
-                <LinkButton name={"Stack"} url={"/stack"}>
+                {/* <LinkButton name={"Stack"} url={"/stack"}>
                   <BsStack size={14} />
-                </LinkButton>
+                </LinkButton> */}
                 <LinkButton name={"Projects"} url={"/projects"}>
                   <AiFillProject />
                 </LinkButton>

@@ -2,6 +2,7 @@
 
 import { useState, useContext } from "react";
 import { SidebarContext } from "../provider/SidebarProvider";
+import Container from "./Container";
 import Header from "@/app/components/Header";
 
 export default function Page() {
@@ -23,44 +24,7 @@ export default function Page() {
       >
         <Header title={""} hasScrolled={hasScrolled} position={"right"} />
         <div className="px-[45px] pt-[80px] sm:px-[60px] md:px-[120px] lg:px-[150px]">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum, deserunt impedit tempora recusandae enim dolore. Facere totam aperiam dolorum ad, itaque corporis mollitia amet commodi, numquam quisquam natus quo?</p>
+          <Container />
         </div>
       </div>
     </div>
