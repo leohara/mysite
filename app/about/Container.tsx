@@ -83,7 +83,7 @@ export default function Container() {
                 東北大学 工学部 機械知能・航空工学科
               </p>
               <p className="w-full text-justify leading-tight">
-                04/2020 - present | Tokyo, Japan
+                04/2020 - present |Sendai, Japan
               </p>
             </div>
           </div>
