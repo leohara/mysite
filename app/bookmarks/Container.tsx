@@ -34,7 +34,7 @@ export default function Container({ bookmarks }: { bookmarks: Bookmark[] }) {
           <Header
             title={"Bookmarks"}
             hasScrolled={hasScrolled}
-            isSide={false}
+            position={"middle"}
           />
           <div className="pt-[80px]">
             <div className="h-screen w-[320px]">
