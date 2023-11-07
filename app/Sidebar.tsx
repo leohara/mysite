@@ -8,7 +8,7 @@ import {
   AiOutlineArrowLeft,
   AiFillProject,
 } from "react-icons/ai";
-import { BsFillBookmarksFill, BsStack } from "react-icons/bs";
+import { BsFillBookmarksFill } from "react-icons/bs";
 import { FaHome } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoIosBeer } from "react-icons/io";
@@ -80,7 +80,7 @@ export default function Sidebar() {
         ref={sidebarRef}
       >
         <div
-          className="fixed mb-[200px] overflow-y-auto border-r-[0.5px] border-[#eeeff2] bg-[#F6F6F6] text-[#404040]"
+          className="fixed mb-[200px] h-screen overflow-y-auto border-r-[0.5px] border-[#eeeff2] bg-[#F6F6F6] text-[#404040]"
           onScroll={onScroll}
         >
           <Header
@@ -89,7 +89,7 @@ export default function Sidebar() {
             position={"left"}
           />
           <div className="pt-[64px]">
-            <div className="h-screen w-[200px]">
+            <div className="w-[200px]">
               <div className="flex-col px-[24px]">
                 <LinkButton name={"Home"} url={"/"}>
                   <FaHome size={14} />
