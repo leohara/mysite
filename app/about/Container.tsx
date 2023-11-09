@@ -5,8 +5,23 @@ import Highlight from "./Highlight";
 export default function Container() {
   return (
     <div>
-      <p>Leo Harada</p>
-      <div className="py-[16px]">
+      <p className="py-[16px] text-[20px] font-semibold md:pl-[60px]">
+          Profile 🍻
+      </p>
+      <div className="md:pl-[80px]" >
+        はじめまして. 原田零生 (はらだれお) と申します.
+        プロダクトエンジニアを目指す日本の学生です.
+        幅広い情報科学の領域に興味があります.
+        最近はOSの勉強をしています.
+        人生の究極の目標は宇宙飛行士になることです.
+      </div>
+      <p className="py-[16px] text-[20px] font-semibold md:pl-[60px]">
+          Stack
+      </p>
+      <p className="py-[16px] text-[20px] font-semibold md:pl-[60px]">
+          Favorite
+      </p>
+      <div className="pb-[16px]">
         <p className="py-[16px] text-[20px] font-semibold md:pl-[60px]">
           Experience
         </p>
