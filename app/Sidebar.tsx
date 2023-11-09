@@ -73,7 +73,7 @@ export default function Sidebar() {
       </Link>
       <div
         className={`
-          ${"z-30 w-[200px] lg:block"}
+          ${"z-30 w-[300px] lg:block lg:w-[200px]"}
           ${isOpen ? "fixed" : "hidden"}
           ${isDetail ? "hidden" : ""}
         `}
@@ -89,7 +89,7 @@ export default function Sidebar() {
             position={"left"}
           />
           <div className="pt-[64px]">
-            <div className="w-[200px]">
+            <div className="w-[300px] lg:w-[200px]">
               <div className="flex-col px-[24px]">
                 <LinkButton name={"Home"} url={"/"}>
                   <FaHome size={14} />
