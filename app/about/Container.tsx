@@ -1,30 +1,100 @@
 import ExperienceContainer from "./ExperienceContainer";
 import Experience from "./Experience";
 import Highlight from "./Highlight";
+import {
+  AWS,
+  CPlus,
+  CSS,
+  Django,
+  Docker,
+  Figma,
+  HTML,
+  JS,
+  Mongo,
+  Nextjs,
+  Python,
+  Reactjs,
+  Restframework,
+  Tailwind,
+  TensorFlow,
+  TS,
+  Vercel,
+} from "./icons";
+import Rating from "./Rating";
+import Favorite from "./Favorite";
 
 export default function Container() {
   return (
     <div>
-      <p className="py-[16px] text-[20px] font-semibold md:pl-[60px]">
-          Profile 🍻
-      </p>
-      <div className="md:pl-[80px]" >
+      <p className="pb-[16px] text-[20px] font-semibold ">Profile 🍻</p>
+      <div className="pl-[20px]">
         はじめまして. 原田零生 (はらだれお) と申します.
         プロダクトエンジニアを目指す日本の学生です.
-        幅広い情報科学の領域に興味があります.
-        最近はOSの勉強をしています.
+        幅広い情報科学の領域に興味があります. 最近はOSの勉強をしています.
+        クラフトビール巡りと音楽鑑賞が趣味です.
         人生の究極の目標は宇宙飛行士になることです.
       </div>
-      <p className="py-[16px] text-[20px] font-semibold md:pl-[60px]">
-          Stack
-      </p>
-      <p className="py-[16px] text-[20px] font-semibold md:pl-[60px]">
-          Favorite
-      </p>
+
+      <p className="py-[16px] text-[20px] font-semibold ">Stack</p>
+      <div className="grid grid-cols-1 flex-col gap-[12px] pl-[20px] md:grid-cols-2">
+        <Rating rating={5} name={"HTML"}>
+          <HTML />
+        </Rating>
+        <Rating rating={5} name={"CSS"}>
+          <CSS />
+        </Rating>
+        <Rating rating={4} name={"JavaScript"}>
+          <JS />
+        </Rating>
+        <Rating rating={3} name={"TypeScript"}>
+          <TS />
+        </Rating>
+        <Rating rating={4} name={"React"}>
+          <Reactjs />
+        </Rating>
+        <Rating rating={4} name={"Next.js"}>
+          <Nextjs />
+        </Rating>
+        <Rating rating={4} name={"tailwind"}>
+          <Tailwind />
+        </Rating>
+        <Rating rating={1} name={"Figma"}>
+          <Figma />
+        </Rating>
+        <Rating rating={4} name={"Django"}>
+          <Django />
+        </Rating>
+        <Rating rating={4} name={"DRF"}>
+          <Restframework />
+        </Rating>
+        <Rating rating={2} name={"MongoDB"}>
+          <Mongo />
+        </Rating>
+        <Rating rating={5} name={"Python"}>
+          <Python />
+        </Rating>
+        <Rating rating={3} name={"TensorFlow"}>
+          <TensorFlow />
+        </Rating>
+        <Rating rating={3} name={"C++"}>
+          <CPlus />
+        </Rating>
+        <Rating rating={2} name={"AWS"}>
+          <AWS />
+        </Rating>
+        <Rating rating={4} name={"Vercel"}>
+          <Vercel />
+        </Rating>
+        <Rating rating={3} name={"Docker"}>
+          <Docker />
+        </Rating>
+      </div>
+
+      <p className="py-[16px] text-[20px] font-semibold">Favorite</p>
+      <Favorite />
+
       <div className="pb-[16px]">
-        <p className="py-[16px] text-[20px] font-semibold md:pl-[60px]">
-          Experience
-        </p>
+        <p className="py-[16px] text-[20px] font-semibold">Experience</p>
         <ExperienceContainer>
           <Experience
             title="株式会社キベ"
@@ -35,7 +105,7 @@ export default function Container() {
           >
             <Highlight experience={true}>
               <li>
-                Pythonを用いてAutoCadの図面を自動生成するプログラムを開発しました.
+                Pythonを用いてAutoCadの図面(.scr)を自動生成するプログラムを開発しました.
               </li>
             </Highlight>
           </Experience>
@@ -59,9 +129,7 @@ export default function Container() {
       </div>
       <hr />
       <div className="py-[16px]">
-        <p className="py-[16px] text-[20px] font-semibold md:pl-[60px]">
-          Education
-        </p>
+        <p className="py-[16px] text-[20px] font-semibold">Education</p>
         <ExperienceContainer>
           <Experience
             title="東京大学 情報理工学系研究科"
