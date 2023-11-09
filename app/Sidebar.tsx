@@ -74,7 +74,7 @@ export default function Sidebar() {
       <div
         className={`
           ${"z-30 w-[200px] lg:block"}
-          ${isOpen ? "block" : "hidden"}
+          ${isOpen ? "fixed" : "hidden"}
           ${isDetail ? "hidden" : ""}
         `}
         ref={sidebarRef}
