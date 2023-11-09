@@ -25,25 +25,25 @@ export default function Highlight({
         <div className="relative p-4">
           <div
             className={`
-      ${"absolute left-0 top-0 h-0.5 w-[20px]"}
+      ${"absolute left-0 top-0 h-0.5 w-[10px]"}
       ${experience ? "bg-[#6081a2]" : "bg-[#5a9a92]"}
       `}
           ></div>
           <div
             className={`
-      ${"absolute right-0 top-0 h-0.5 w-[20px]"}
+      ${"absolute right-0 top-0 h-0.5 w-[10px]"}
       ${experience ? "bg-[#6081a2]" : "bg-[#5a9a92]"}
       `}
           ></div>
           <div
             className={`
-      ${"absolute bottom-0 left-0 h-0.5 w-[20px]"}
+      ${"absolute bottom-0 left-0 h-0.5 w-[10px]"}
       ${experience ? "bg-[#6081a2]" : "bg-[#5a9a92]"}
       `}
           ></div>
           <div
             className={`
-      ${"absolute bottom-0 right-0 h-0.5 w-[20px]"}
+      ${"absolute bottom-0 right-0 h-0.5 w-[10px]"}
       ${experience ? "bg-[#6081a2]" : "bg-[#5a9a92]"}
       `}
           ></div>
