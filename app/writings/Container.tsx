@@ -38,7 +38,7 @@ export default function Container({ writings }: { writings: Writing[] }) {
     >
       <div
         className={`
-          ${"fixed h-screen w-full lg:w-[320px] overflow-y-auto pb-[300px] text-[#404040] lg:border-r-[0.5px] lg:border-r-[#eeeff2]"}
+          ${"fixed h-screen w-full overflow-y-auto pb-[300px] text-[#404040] lg:w-[320px] lg:border-r-[0.5px] lg:border-r-[#eeeff2]"}
         `}
         onScroll={onScroll}
       >
