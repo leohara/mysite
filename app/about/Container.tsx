@@ -1,94 +1,89 @@
-// 最後のコンテンツは少し変更することでtimelineの棒を非表示にしている
+import ExperienceContainer from "./ExperienceContainer";
+import Experience from "./Experience";
+import Highlight from "./Highlight";
 
 export default function Container() {
   return (
-    <>
-      <div>
-        <p>Leo Harada</p>
-
-        <p>Experience</p>
-
-        <div className="flex grid-cols-4 flex-col text-[#000] md:grid">
-          <div className="flex md:contents">
-            <div className="relative col-start-1 col-end-2 mr-[16px] md:mx-auto">
-              <div className="absolute top-0 h-[16px] w-[16px] rounded-full bg-[#6081a2] text-center shadow">
-                <div className="absolute left-[3px] top-[3px] h-[10px] w-[10px] rounded-full bg-[#fff] text-center shadow"></div>
-              </div>
-              <div className="flex h-full w-[16px] items-center justify-center">
-                <div className="pointer-events-none h-[100%] w-[4px] bg-[#6081a2]"></div>
-              </div>
-            </div>
-            <div className="col-start-2 col-end-5 mt-[-5px] flex-col">
-              <h3 className="text-lg font-semibold text-[black]">
-                株式会社うるる
-              </h3>
-              <p>AI Engineer</p>
-              <p className="w-full text-justify leading-tight">
-                10/2022 - 06/2023
-              </p>
-            </div>
-          </div>
-          <div className="flex md:contents">
-            <div className="relative col-start-1 col-end-2 mr-[16px] md:mx-auto">
-              <div className="absolute top-[10px] z-10 h-[16px] w-[16px] rounded-full bg-[#6081a2] text-center shadow">
-                <div className="absolute left-[3px] top-[3px] h-[10px] w-[10px] rounded-full bg-[#fff] text-center shadow"></div>
-              </div>
-              <div className="relative flex h-full w-[16px] items-center justify-center">
-                <div className="pointer-events-none absolute top-0 h-[20px] w-[4px] bg-[#6081a2]"></div>
-              </div>
-            </div>
-            <div className="col-start-2 col-end-5 mt-[5px] flex-col">
-              <h3 className="text-lg font-semibold text-[black]">
-                株式会社キベ
-              </h3>
-              <p>System Engineer</p>
-              <p className="w-full text-justify leading-tight">
-                02/2022 - present
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <p>Education</p>
-        <div className="flex grid-cols-4 flex-col text-[#000] md:grid">
-          <div className="flex md:contents">
-            <div className="relative col-start-1 col-end-2 mr-[16px] md:mx-auto">
-              <div className="absolute h-[16px] w-[16px] rounded-full bg-[#6081a2] text-center shadow">
-                <div className="absolute left-[3px] top-[3px] h-[10px] w-[10px] rounded-full bg-[#fff] text-center shadow"></div>
-              </div>
-              <div className="flex h-full w-[16px] items-center justify-center">
-                <div className="pointer-events-none h-full w-[4px] bg-[#6081a2]"></div>
-              </div>
-            </div>
-            <div className="col-start-2 col-end-5 mt-[-6px] flex-col">
-              <p className="mb-1 text-lg font-semibold text-[black]">
-                東京大学 情報理工学系研究科 コンピュータ科学専攻
-              </p>
-              <p className="w-full text-justify leading-tight">
-                04/2024 - | Tokyo, Japan
-              </p>
-            </div>
-          </div>
-          <div className="flex md:contents">
-            <div className="relative col-start-1 col-end-2 mr-[16px] md:mx-auto">
-              <div className="absolute top-[10px] z-10 h-[16px] w-[16px] rounded-full bg-[#6081a2] text-center shadow">
-                <div className="absolute left-[3px] top-[3px] h-[10px] w-[10px] rounded-full bg-[#fff] text-center shadow"></div>
-              </div>
-              <div className="relative flex w-[16px] items-center justify-center">
-                <div className="pointer-events-none absolute top-0 h-[20px] w-[4px] bg-[#6081a2]"></div>
-              </div>
-            </div>
-            <div className="col-start-2 col-end-5 mt-[5px] flex-col">
-              <p className="mb-1 text-lg font-semibold text-[black]">
-                東北大学 工学部 機械知能・航空工学科
-              </p>
-              <p className="w-full text-justify leading-tight">
-                04/2020 - present | Tokyo, Japan
-              </p>
-            </div>
-          </div>
-        </div>
+    <div>
+      <p>Leo Harada</p>
+      <div className="py-[16px]">
+        <p className="py-[16px] text-[20px] font-semibold md:pl-[60px]">
+          Experience
+        </p>
+        <ExperienceContainer>
+          <Experience
+            title="株式会社キベ"
+            subtitle="- System Engineer"
+            term="02/2022 - 現在"
+            last={false}
+            experience={true}
+          >
+            <Highlight experience={true}>
+              <li>
+                Pythonを用いてAutoCadの図面を自動生成するプログラムを開発しました.
+              </li>
+            </Highlight>
+          </Experience>
+          <Experience
+            title="株式会社うるる"
+            subtitle="- AI Engineer"
+            term="10/2022 - 06/2023"
+            last={true}
+            experience={true}
+          >
+            <Highlight experience={true}>
+              <li>
+                Transformerを用いた自然言語処理で文書の分類モデルを開発しました.
+              </li>
+              <li>
+                ChatGPTのAPIを用いて文書内の特定の項目を抽出するアプリケーションを開発しました.
+              </li>
+            </Highlight>
+          </Experience>
+        </ExperienceContainer>
       </div>
-    </>
+      <hr />
+      <div className="py-[16px]">
+        <p className="py-[16px] text-[20px] font-semibold md:pl-[60px]">
+          Education
+        </p>
+        <ExperienceContainer>
+          <Experience
+            title="東京大学 情報理工学系研究科"
+            subtitle="- コンピュータ科学専攻"
+            term="04/2024 - "
+            last={false}
+            experience={false}
+          >
+            <Highlight experience={false}>
+              <li>修士課程で進学する予定です.</li>
+            </Highlight>
+          </Experience>
+          <Experience
+            title="東北大学 工学部"
+            subtitle="- 機械知能・航空工学科"
+            term="04/2020 - 現在"
+            last={true}
+            experience={false}
+          >
+            <Highlight experience={false}>
+              <li>
+                4力学 (材料, 熱, 流体, 機械) や制御工学, 宇宙工学,
+                プログラミングなどを学びました.
+              </li>
+              <li>
+                コンピュータアーキテクチャのラボに所属しています.
+                専門は動画像圧縮の効率化,
+                特にフレーム間予測における演算量削減に関する研究です.
+              </li>
+              <li>
+                人力飛行機の翼の主任をしていました. 鳥人間コンテスト (第44回,
+                人力プロペラ機ディスタンス部門) に出場して優勝しました.
+              </li>
+            </Highlight>
+          </Experience>
+        </ExperienceContainer>
+      </div>
+    </div>
   );
 }

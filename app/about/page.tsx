@@ -23,7 +23,7 @@ export default function Page() {
         onScroll={onScroll}
       >
         <Header title={""} hasScrolled={hasScrolled} position={"right"} />
-        <div className="px-[45px] pt-[80px] sm:px-[60px] md:px-[120px] lg:px-[150px]">
+        <div className="px-[15px] pt-[80px] sm:px-[60px] md:px-[120px] lg:px-[150px]">
           <Container />
         </div>
       </div>

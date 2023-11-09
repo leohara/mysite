@@ -1,8 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { usePathname } from "next/navigation";
 import Header from "../components/Header";
 import Link from "next/link";
+import { SidebarContext } from "../provider/SidebarProvider";
 
 type Bookmark = {
   id: string;
@@ -16,6 +18,11 @@ type Bookmark = {
 
 export default function Container({ bookmarks }: { bookmarks: Bookmark[] }) {
   const [hasScrolled, setHasScrolled] = useState(false);
+  const { isOpen } = useContext(SidebarContext);
+
+  const pathName = usePathname().split("/");
+  const isDetail = typeof pathName[2] !== "undefined";
+  const detailName = pathName[2];
 
   const onScroll = (e: React.UIEvent<HTMLDivElement>) => {
     setHasScrolled(e.currentTarget.scrollTop > 0);
@@ -23,11 +30,17 @@ export default function Container({ bookmarks }: { bookmarks: Bookmark[] }) {
 
   return (
     <div
-      className="h-screen w-[320px] border-r-[0.5px] border-r-[#eeeff2] bg-[#fff] pl-[1px]"
-      onScroll={onScroll}
+      className={`
+    ${"h-screen pl-[1px] lg:w-[320px]"}
+    ${isDetail ? "hidden lg:block" : ""}
+    ${isOpen ? "pointer-events-none z-20 bg-[#ccc] opacity-5" : "bg-[#fff]"}
+  `}
     >
       <div
-        className="fixed overflow-y-auto pb-[24px] text-[#404040]"
+        className={`
+      ${"fixed h-screen w-full overflow-y-auto pb-[300px] text-[#404040] lg:w-[320px] lg:border-r-[0.5px] lg:border-r-[#eeeff2]"}
+        ${isDetail ? "" : "w-full"}
+      `}
         onScroll={onScroll}
       >
         <div className="flex-col">
@@ -36,23 +49,30 @@ export default function Container({ bookmarks }: { bookmarks: Bookmark[] }) {
             hasScrolled={hasScrolled}
             position={"middle"}
           />
-          <div className="pt-[80px]">
-            <div className="h-screen w-[320px]">
-              <div className="flex-col px-[24px]">
-                {bookmarks.map((bookmark: Bookmark) => (
-                  <Link
-                    href={`/bookmarks/${bookmark.bookmarkId}`}
-                    key={bookmark.id}
+          <div className=" pt-[60px] lg:w-[320px]">
+            <div className="flex-col px-[24px]">
+              {bookmarks.map((bookmark: Bookmark) => (
+                <Link
+                  href={`/writings/${bookmark.bookmarkId}`}
+                  key={bookmark.id}
+                >
+                  <div
+                    className={`
+                  ${"my-[4px] h-[60px] w-full flex-col rounded-lg border-b-[1px] border-b-[#eeeff2] p-[6px] px-[10px] hover:bg-[#C7FBEC] sm:w-[600px] md:w-[760px] lg:w-[260px]"}
+                    ${
+                      detailName == bookmark.bookmarkId
+                        ? "!bg-[aquamarine]"
+                        : ""
+                    }
+                    `}
                   >
-                    <div className="mb-[8px] flex-col rounded-lg p-[6px] px-[10px] hover:bg-[#C7FBEC]">
-                      <p className="text-[14px] font-bold">{bookmark.title}</p>
-                      <p className="text-[12px] text-[#9f9f9f]">
-                        {new Date(bookmark.updatedAt).toISOString()}
-                      </p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+                    <p className="text-[14px] font-bold">{bookmark.title}</p>
+                    <p className="text-[12px] text-[#9f9f9f]">
+                      {new Date(bookmark.updatedAt).toISOString()}
+                    </p>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
