@@ -17,7 +17,7 @@ export default function Header({ title, hasScrolled, position }: Props) {
         ${"fixed z-20 h-[48px]"}
         ${
           position == "left"
-            ? "w-[200.5px] border-r-[0.5px] border-r-[#eeeff2] bg-[#f6f6f6]"
+            ? "w-[300.5px] border-r-[0.5px] border-r-[#eeeff2] bg-[#f6f6f6] lg:w-[200.5px]"
             : ""
         }
         ${position == "middle" ? "w-screen bg-[#fff] lg:w-[319px]" : ""}
