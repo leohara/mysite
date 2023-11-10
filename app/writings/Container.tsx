@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { usePathname } from "next/navigation";
 import Header from "@/app/components/Header";
 import Link from "next/link";
@@ -18,7 +18,10 @@ type Writing = {
 
 export default function Container({ writings }: { writings: Writing[] }) {
   const [hasScrolled, setHasScrolled] = useState(false);
-  const { isOpen } = useContext(SidebarContext);
+  const { isOpen, setIsOpen } = useContext(SidebarContext);
+  useEffect(() => {
+    setIsOpen(false);
+  }, [setIsOpen]);
 
   const pathName = usePathname().split("/");
   const isDetail = typeof pathName[2] !== "undefined";

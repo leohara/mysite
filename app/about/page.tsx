@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { SidebarContext } from "../provider/SidebarProvider";
 import Container from "./Container";
 import Header from "@/app/components/Header";
@@ -11,7 +11,10 @@ export default function Page() {
     setHasScrolled(e.currentTarget.scrollTop > 0);
   };
 
-  const { isOpen } = useContext(SidebarContext);
+  const { isOpen, setIsOpen } = useContext(SidebarContext);
+  useEffect(() => {
+    setIsOpen(false);
+  }, [setIsOpen]);
 
   return (
     <div className="flex-1">
