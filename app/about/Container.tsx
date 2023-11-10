@@ -10,9 +10,9 @@ export default function Container() {
       <p className="pb-[16px] text-[20px] font-semibold ">Profile 🍻</p>
       <div className="pl-[20px]">
         leohara is a Japanese student who wants to be a product engineer.
-        I'm interested in web development, especially in the frontend.
-        I also like to drink craft beer and listen to music.
-        My ultimate goal in life is to become an astronaut.
+        I&apos;m interested in web development, especially in the frontend. I
+        also like to drink craft beer and listen to music. My ultimate goal in
+        life is to become an astronaut.
       </div>
 
       <p className="py-[16px] text-[20px] font-semibold">Favorite</p>
@@ -30,7 +30,8 @@ export default function Container() {
           >
             <Highlight experience={true}>
               <li>
-                Developed a program using Python to automatically generate AutoCAD drawings (.scr).
+                Developed a program using Python to automatically generate
+                AutoCAD drawings (.scr).
               </li>
             </Highlight>
           </Experience>
@@ -43,10 +44,12 @@ export default function Container() {
           >
             <Highlight experience={true}>
               <li>
-                Developed a document classification model using natural language processing with Transformers.
+                Developed a document classification model using natural language
+                processing with Transformers.
               </li>
               <li>
-                Developed an application using ChatGPT's API to extract specific items from documents.
+                Developed an application using ChatGPT&apos;s API to extract
+                specific items from documents.
               </li>
             </Highlight>
           </Experience>
@@ -64,7 +67,7 @@ export default function Container() {
             experience={false}
           >
             <Highlight experience={false}>
-              <li>Planning to pursue a master's degree.</li>
+              <li>Planning to pursue a master&apos;s degree.</li>
             </Highlight>
           </Experience>
           <Experience
@@ -76,13 +79,18 @@ export default function Container() {
           >
             <Highlight experience={false}>
               <li>
-                Studied four mechanics (materials, thermal, fluids, mechanical), control engineering, aerospace engineering, and programming.
+                Studied four mechanics (materials, thermal, fluids, mechanical),
+                control engineering, aerospace engineering, and programming.
               </li>
               <li>
-                Member of a lab specializing in computer architecture, focusing on research in video image compression efficiency, especially in reducing computational load in inter-frame prediction.
+                Member of a lab specializing in computer architecture, focusing
+                on research in video image compression efficiency, especially in
+                reducing computational load in inter-frame prediction.
               </li>
               <li>
-                Served as the chief of wings for a human-powered airplane. Won the 44th Birdman Rally (鳥人間コンテスト) in the Human-powered Propeller Aircraft Category.
+                Served as the chief of wings for a human-powered airplane. Won
+                the 44th Birdman Rally (鳥人間コンテスト) in the Human-powered
+                Propeller Aircraft Category.
               </li>
             </Highlight>
           </Experience>
