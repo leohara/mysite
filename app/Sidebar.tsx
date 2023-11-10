@@ -84,7 +84,7 @@ export default function Sidebar() {
           onScroll={onScroll}
         >
           <Header
-            title={"Leo Harada"}
+            title={"leohara"}
             hasScrolled={hasScrolled}
             position={"left"}
           />
