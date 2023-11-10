@@ -1,26 +1,7 @@
 import ExperienceContainer from "./ExperienceContainer";
 import Experience from "./Experience";
 import Highlight from "./Highlight";
-import {
-  AWS,
-  CPlus,
-  CSS,
-  Django,
-  Docker,
-  Figma,
-  HTML,
-  JS,
-  Mongo,
-  Nextjs,
-  Python,
-  Reactjs,
-  Restframework,
-  Tailwind,
-  TensorFlow,
-  TS,
-  Vercel,
-} from "./icons";
-import Rating from "./Rating";
+import Stack from "./Stack";
 import Favorite from "./Favorite";
 
 export default function Container() {
@@ -28,66 +9,10 @@ export default function Container() {
     <div>
       <p className="pb-[16px] text-[20px] font-semibold ">Profile 🍻</p>
       <div className="pl-[20px]">
-        はじめまして. 原田零生 (はらだれお) と申します.
-        プロダクトエンジニアを目指す日本の学生です.
-        幅広い情報科学の領域に興味があります. 最近はOSの勉強をしています.
-        クラフトビール巡りと音楽鑑賞が趣味です.
-        人生の究極の目標は宇宙飛行士になることです.
-      </div>
-
-      <p className="py-[16px] text-[20px] font-semibold ">Stack</p>
-      <div className="grid grid-cols-1 flex-col gap-[12px] pl-[20px] md:grid-cols-2">
-        <Rating rating={5} name={"HTML"}>
-          <HTML />
-        </Rating>
-        <Rating rating={5} name={"CSS"}>
-          <CSS />
-        </Rating>
-        <Rating rating={4} name={"JavaScript"}>
-          <JS />
-        </Rating>
-        <Rating rating={3} name={"TypeScript"}>
-          <TS />
-        </Rating>
-        <Rating rating={4} name={"React"}>
-          <Reactjs />
-        </Rating>
-        <Rating rating={4} name={"Next.js"}>
-          <Nextjs />
-        </Rating>
-        <Rating rating={4} name={"tailwind"}>
-          <Tailwind />
-        </Rating>
-        <Rating rating={1} name={"Figma"}>
-          <Figma />
-        </Rating>
-        <Rating rating={4} name={"Django"}>
-          <Django />
-        </Rating>
-        <Rating rating={4} name={"DRF"}>
-          <Restframework />
-        </Rating>
-        <Rating rating={2} name={"MongoDB"}>
-          <Mongo />
-        </Rating>
-        <Rating rating={5} name={"Python"}>
-          <Python />
-        </Rating>
-        <Rating rating={3} name={"TensorFlow"}>
-          <TensorFlow />
-        </Rating>
-        <Rating rating={3} name={"C++"}>
-          <CPlus />
-        </Rating>
-        <Rating rating={2} name={"AWS"}>
-          <AWS />
-        </Rating>
-        <Rating rating={4} name={"Vercel"}>
-          <Vercel />
-        </Rating>
-        <Rating rating={3} name={"Docker"}>
-          <Docker />
-        </Rating>
+        leohara is a Japanese student who wants to be a product engineer.
+        I'm interested in web development, especially in the frontend.
+        I also like to drink craft beer and listen to music.
+        My ultimate goal in life is to become an astronaut.
       </div>
 
       <p className="py-[16px] text-[20px] font-semibold">Favorite</p>
@@ -105,7 +30,7 @@ export default function Container() {
           >
             <Highlight experience={true}>
               <li>
-                Pythonを用いてAutoCadの図面(.scr)を自動生成するプログラムを開発しました.
+                Developed a program using Python to automatically generate AutoCAD drawings (.scr).
               </li>
             </Highlight>
           </Experience>
@@ -118,10 +43,10 @@ export default function Container() {
           >
             <Highlight experience={true}>
               <li>
-                Transformerを用いた自然言語処理で文書の分類モデルを開発しました.
+                Developed a document classification model using natural language processing with Transformers.
               </li>
               <li>
-                ChatGPTのAPIを用いて文書内の特定の項目を抽出するアプリケーションを開発しました.
+                Developed an application using ChatGPT's API to extract specific items from documents.
               </li>
             </Highlight>
           </Experience>
@@ -139,7 +64,7 @@ export default function Container() {
             experience={false}
           >
             <Highlight experience={false}>
-              <li>修士課程で進学する予定です.</li>
+              <li>Planning to pursue a master's degree.</li>
             </Highlight>
           </Experience>
           <Experience
@@ -151,22 +76,20 @@ export default function Container() {
           >
             <Highlight experience={false}>
               <li>
-                4力学 (材料, 熱, 流体, 機械) や制御工学, 宇宙工学,
-                プログラミングなどを学びました.
+                Studied four mechanics (materials, thermal, fluids, mechanical), control engineering, aerospace engineering, and programming.
               </li>
               <li>
-                コンピュータアーキテクチャのラボに所属しています.
-                専門は動画像圧縮の効率化,
-                特にフレーム間予測における演算量削減に関する研究です.
+                Member of a lab specializing in computer architecture, focusing on research in video image compression efficiency, especially in reducing computational load in inter-frame prediction.
               </li>
               <li>
-                人力飛行機の翼の主任をしていました. 鳥人間コンテスト (第44回,
-                人力プロペラ機ディスタンス部門) に出場して優勝しました.
+                Served as the chief of wings for a human-powered airplane. Won the 44th Birdman Rally (鳥人間コンテスト) in the Human-powered Propeller Aircraft Category.
               </li>
             </Highlight>
           </Experience>
         </ExperienceContainer>
       </div>
+
+      <Stack />
     </div>
   );
 }

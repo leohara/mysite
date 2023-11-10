@@ -1,7 +1,5 @@
-import { useContext } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SidebarContext } from "./provider/SidebarProvider";
 
 type Props = {
   name: string;
@@ -14,8 +12,6 @@ export default function LinkButton({ name, url, children }: Props) {
     .split("/")
     .filter((segment) => segment != "")[0];
 
-  const { setIsOpen } = useContext(SidebarContext);
-
   function processUrl(name: string): string | undefined {
     if (name === "home") {
       return undefined;
@@ -24,7 +20,7 @@ export default function LinkButton({ name, url, children }: Props) {
   }
 
   return (
-    <Link href={url} className="" onClick={() => setIsOpen(false)}>
+    <Link href={url} className="">
       <div
         className={`
           ${"mb-[12px] flex items-center rounded-lg p-[6px] px-[10px] hover:bg-[#C7FBEC]"}

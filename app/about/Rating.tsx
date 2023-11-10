@@ -27,16 +27,16 @@ export default function Rating({
   );
 
   return (
-    <div className="flex items-center justify-center md:items-start md:justify-normal">
-      <div className="h-[70px] w-[70px] rounded-[5px] border-[1px] p-[4px]">
-        {childrenWithProps}
-      </div>
-      <div className="flex-col pl-[36px] md:pl-[16px]">
-        <p className="pt-[12px] text-center font-semibold">{name}</p>
-        <div className="flex">
-          {filledStars}
-          {outlinedStars}
+    <div className="pb-[8px]">
+      <div className="flex items-center justify-center">
+        <div className="h-[70px] w-[70px] rounded-[5px] border-[1px] p-[4px]">
+          {childrenWithProps}
         </div>
+      </div>
+      <p className="pt-[8px] text-center font-semibold">{name}</p>
+      <div className="flex items-center justify-center">
+        {filledStars}
+        {outlinedStars}
       </div>
     </div>
   );
