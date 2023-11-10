@@ -32,7 +32,7 @@ export default function Favorite() {
               <p>2003</p>
             </Album>
             <Album name="fantasma.jpg">
-              <p>fantasma</p>
+              <p>Fantasma</p>
               <p>Cornelius</p>
               <p>1997</p>
             </Album>
