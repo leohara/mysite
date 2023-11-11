@@ -30,7 +30,9 @@ export default function Container() {
       </div>
 
       <p className="py-[16px] text-[20px] font-semibold">Favorite</p>
-      <Favorite />
+      <div className="pl-[20px]" >
+        <Favorite />
+      </div>
 
       <div className="pb-[16px]">
         <p className="py-[16px] text-[20px] font-semibold">Experience</p>
