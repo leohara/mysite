@@ -4,6 +4,20 @@ import Highlight from "./Highlight";
 import Stack from "./Stack";
 import Favorite from "./Favorite";
 
+function List({ experience }: { experience: boolean }) {
+  return (
+    <p
+      className={`
+    ${"mr-[4px] font-bold"}
+    ${experience ? "text-[#6081a2]" : "text-[#5a9a92]"}
+    `}
+    >
+      {" "}
+      -{" "}
+    </p>
+  );
+}
+
 export default function Container() {
   return (
     <div>
@@ -16,7 +30,9 @@ export default function Container() {
       </div>
 
       <p className="py-[16px] text-[20px] font-semibold">Favorite</p>
-      <Favorite />
+      <div className="pl-[20px]">
+        <Favorite />
+      </div>
 
       <div className="pb-[16px]">
         <p className="py-[16px] text-[20px] font-semibold">Experience</p>
@@ -29,7 +45,8 @@ export default function Container() {
             experience={true}
           >
             <Highlight experience={true}>
-              <li>
+              <li className="flex">
+                <List experience={true} />
                 Developed a program using Python to automatically generate
                 AutoCAD drawings (.scr).
               </li>
@@ -43,11 +60,13 @@ export default function Container() {
             experience={true}
           >
             <Highlight experience={true}>
-              <li>
+              <li className="flex">
+                <List experience={true} />
                 Developed a document classification model using natural language
                 processing with Transformers.
               </li>
-              <li>
+              <li className="flex">
+                <List experience={true} />
                 Developed an application using ChatGPT&apos;s API to extract
                 specific items from documents.
               </li>
@@ -67,7 +86,10 @@ export default function Container() {
             experience={false}
           >
             <Highlight experience={false}>
-              <li>Planning to pursue a master&apos;s degree.</li>
+              <li className="flex">
+                <List experience={false} />
+                Planning to pursue a master&apos;s degree.
+              </li>
             </Highlight>
           </Experience>
           <Experience
@@ -78,16 +100,19 @@ export default function Container() {
             experience={false}
           >
             <Highlight experience={false}>
-              <li>
+              <li className="flex">
+                <List experience={false} />
                 Studied four mechanics (materials, thermal, fluids, mechanical),
                 control engineering, aerospace engineering, and programming.
               </li>
-              <li>
+              <li className="flex">
+                <List experience={false} />
                 Member of a lab specializing in computer architecture, focusing
                 on research in video image compression efficiency, especially in
                 reducing computational load in inter-frame prediction.
               </li>
-              <li>
+              <li className="flex">
+                <List experience={false} />
                 Served as the chief of wings for a human-powered airplane. Won
                 the 44th Birdman Rally (鳥人間コンテスト) in the Human-powered
                 Propeller Aircraft Category.

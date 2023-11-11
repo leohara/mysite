@@ -10,7 +10,7 @@ export default function Album({
   return (
     <div className="pb-[8px]">
       <div className="flex">
-        <div className="h-[80px] w-[80px]">
+        <div className="h-[80px] w-[80px] transition hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none">
           <Image
             className="rounded-[15px] border-[1px] border-gray-300"
             src={`/album/${name}`}

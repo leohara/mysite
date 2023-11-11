@@ -26,7 +26,7 @@ export default function Stack() {
   return (
     <>
       <p className="py-[16px] text-[20px] font-semibold ">Stack</p>
-      <div className="grid grid-cols-3 flex-col gap-[2px] md:grid-cols-4">
+      <div className="grid grid-cols-3 flex-col gap-[2px] md:grid-cols-5">
         <Rating rating={5} name={"HTML"}>
           <HTML />
         </Rating>

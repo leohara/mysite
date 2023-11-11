@@ -47,7 +47,7 @@ export default function Highlight({
       ${experience ? "bg-[#6081a2]" : "bg-[#5a9a92]"}
       `}
           ></div>
-          <ul className="list-disc pl-4">{children}</ul>
+          <ul className="list-none pl-4">{children}</ul>
         </div>
       </div>
     </>
