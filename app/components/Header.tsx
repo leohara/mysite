@@ -21,13 +21,17 @@ export default function Header({ title, hasScrolled, position }: Props) {
             : ""
         }
         ${position == "middle" ? "w-screen bg-[#fff] lg:w-[319px]" : ""}
-        ${position == "right" ? "w-screen bg-[#fff]" : ""}
+        ${
+          position == "right"
+            ? "w-screen bg-[#fff]  lg:w-[calc(100vw-519px)]"
+            : ""
+        }
         ${isOpen && position !== "left" ? "bg-[#ccc] opacity-5" : ""}
         ${hasScrolled ? "border-b shadow-bottom" : "shadow-none"}
         transition-shadow duration-300
         `}
     >
-      <div className="flex px-[28px] pb-[14px] pt-[16px]">
+      <div className="flex px-[25px] pb-[14px] pt-[16px]">
         <button
           className={`
             ${"mr-[16px] lg:hidden"}

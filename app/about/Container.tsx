@@ -12,15 +12,14 @@ function List({ experience }: { experience: boolean }) {
     ${experience ? "text-[#6081a2]" : "text-[#5a9a92]"}
     `}
     >
-      {" "}
-      -{" "}
+      -
     </p>
   );
 }
 
 export default function Container() {
   return (
-    <div>
+    <>
       <p className="pb-[16px] text-[20px] font-semibold ">Profile 🍻</p>
       <div className="pl-[20px]">
         leohara is a Japanese student who wants to be a product engineer.
@@ -54,7 +53,7 @@ export default function Container() {
           </Experience>
           <Experience
             title="株式会社うるる"
-            subtitle="- AI Engineer"
+            subtitle="- AI & Backend Engineer"
             term="10/2022 - 06/2023"
             last={true}
             experience={true}
@@ -123,6 +122,6 @@ export default function Container() {
       </div>
 
       <Stack />
-    </div>
+    </>
   );
 }

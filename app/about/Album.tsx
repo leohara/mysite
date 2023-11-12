@@ -19,7 +19,7 @@ export default function Album({
             alt="album image"
           />
         </div>
-        <div className="flex-1 flex-col pl-[40px]">{children}</div>
+        <div className="flex-1 flex-col pl-[10px]">{children}</div>
       </div>
     </div>
   );

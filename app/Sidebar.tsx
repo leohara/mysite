@@ -64,7 +64,7 @@ export default function Sidebar() {
         </button>
       </div>
       <Link
-        className={`${"fixed z-20 ml-[22px] mt-[19px]"} ${
+        className={`${"fixed z-20 ml-[20px] mt-[16px]"} ${
           isDetail ? "lg:hidden" : "hidden"
         }`}
         href={`/${returnURL}`}

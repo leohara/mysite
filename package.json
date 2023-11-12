@@ -11,14 +11,25 @@
     "vercel-build": "prisma generate && next build"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.0.0",
+    "@mdx-js/react": "^3.0.0",
+    "@next/mdx": "^14.0.2",
     "@prisma/client": "^5.5.2",
     "@svgr/webpack": "^8.1.0",
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/mdx": "^2.0.10",
     "cors": "^2.8.5",
+    "katex": "^0.16.9",
     "next": "13.5.6",
     "prisma": "^5.5.2",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^4.11.0"
+    "react-icons": "^4.11.0",
+    "react-markdown": "^9.0.0",
+    "react-syntax-highlighter": "^15.5.0",
+    "rehype-katex": "^7.0.0",
+    "remark-gfm": "^4.0.0",
+    "remark-math": "^6.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
