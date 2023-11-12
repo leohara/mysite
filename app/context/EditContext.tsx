@@ -11,9 +11,9 @@ type EditContextType = {
 
 export const EditContext = createContext<EditContextType>({
   title: "",
-  setTitle: (title) => {},
+  setTitle: () => {},
   link: "",
-  setLink: (link) => {},
+  setLink: () => {},
   isDraft: true,
-  setIsDraft: (isDraft) => {},
+  setIsDraft: () => {},
 });

@@ -7,5 +7,5 @@ type TextContextType = {
 
 export const TextContext = createContext<TextContextType>({
   markdown: "",
-  setMarkdown: (markdown) => {},
+  setMarkdown: () => {},
 });

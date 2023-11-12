@@ -1,9 +1,8 @@
 "use client";
 
-import { useContext, useEffect } from "react";
-import styles from "./navbar.module.css";
-import { EditContext } from "@/app/provider/EditContext";
-import PublishSlider from "./PublishSlider";
+import { EditContext } from "@/app/context/EditContext";
+import { useContext } from "react";
+import PublishSlider from "../../../../components/publishSlider/PublishSlider";
 
 type EditContextType = {
   title: string;
@@ -19,18 +18,20 @@ export default function Navbar() {
     useContext<EditContextType>(EditContext);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.navbar}>
-        <input
-          className={styles.titleBox}
-          type="text"
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <div className={styles.block}>
+    <div className="fixed h-[150px] w-full bg-[#f3f4f5]">
+      <div className="flex h-full flex-col gap-[10px] p-[20px]">
+        <div className="flex">
           <input
-            className={styles.linkBox}
+            className="h-[24px] flex-1 rounded-[10px] border-none pl-[8px] text-[24px] placeholder:text-[20px] focus:border-[2px] focus:border-solid focus:border-[#fff] focus:outline-none"
+            type="text"
+            placeholder="Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </div>
+        <div className="flex">
+          <input
+            className="h-[24px] flex-1 rounded-[6px] border-none pl-[8px] text-[24px] focus:border-[2px] focus:border-solid focus:border-[#fff] focus:outline-none"
             type="text"
             placeholder="Permanent Link"
             value={link}
@@ -38,9 +39,15 @@ export default function Navbar() {
           />
           <PublishSlider isDraft={isDraft} setIsDraft={setIsDraft} />
         </div>
-        <div className={styles.bottomBox}>
-          <input className={styles.tagBox} type="text" placeholder="Tag" />
-          <div className={styles.edit}>保存</div>
+        <div className="flex h-[24px] flex-1">
+          <input
+            className="h-[24px] flex-1 rounded-[6px] border-none pl-[8px] text-[16px] focus:border-[2px] focus:border-solid  focus:border-[#fff] focus:outline-none"
+            type="text"
+            placeholder="Tag"
+          />
+          <div className="ml-[15px] mt-[-2px] h-[28px] w-[56px] cursor-pointer rounded-[10px] bg-[#3ea8ff] text-center text-[16px] leading-[28px]">
+            保存
+          </div>
         </div>
       </div>
     </div>
