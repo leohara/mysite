@@ -1,5 +1,8 @@
 "use client";
 
+// TODO: server componentにして, コンテンツを取得する
+// TODO: react-markdownを入れる
+
 import { useState, useEffect, useContext } from "react";
 import { SidebarContext } from "@/app/provider/SidebarProvider";
 import Header from "@/app/components/Header";

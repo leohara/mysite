@@ -5,16 +5,6 @@ import styles from "./navbar.module.css";
 import { EditContext } from "@/app/provider/EditContext";
 import PublishSlider from "./PublishSlider";
 
-type Writing = {
-  id: string;
-  title: string;
-  postId: string;
-  content: string | null;
-  published: boolean;
-  createdAt: Date;
-  updatedAt: Date;
-};
-
 type EditContextType = {
   title: string;
   setTitle: React.Dispatch<React.SetStateAction<string>>;
@@ -24,7 +14,7 @@ type EditContextType = {
   setIsDraft: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export default function Navbar({ writing }: { writing: Writing }) {
+export default function Navbar() {
   const { title, setTitle, link, setLink, isDraft, setIsDraft } =
     useContext<EditContextType>(EditContext);
 
