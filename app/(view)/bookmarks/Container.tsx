@@ -11,7 +11,7 @@ type Bookmark = {
   title: string;
   url: string;
   bookmarkId: string;
-  content: string | null;
+  content: string;
   createdAt: Date;
   updatedAt: Date;
 };
