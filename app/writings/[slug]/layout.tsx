@@ -26,10 +26,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         className="fixed h-screen w-screen overflow-y-auto pb-[200px] text-[#000] lg:w-[calc(100vw-519px)] lg:border-l-[0.5px] lg:border-l-[#eeeff2]"
         onScroll={onScroll}
       >
-        <Header title={""} hasScrolled={hasScrolled} position={"right"} />
-        <div className="px-[45px] pt-[80px]">
-          {children}
-        </div>
+        <Header title={"detail"} hasScrolled={hasScrolled} position={"right"} />
+        <div className="px-[45px] pt-[80px]">{children}</div>
       </div>
     </div>
   );

@@ -23,7 +23,7 @@ export default function Sidebar() {
 
   const pathName = usePathname().split("/");
   const isDetail = typeof pathName[2] !== "undefined";
-  const returnURL = pathName[1];
+  const categoryURL = pathName[1];
 
   const sidebarRef = useRef<HTMLDivElement>(null);
   const closeSidebar = useCallback(
@@ -67,7 +67,7 @@ export default function Sidebar() {
         className={`${"fixed z-20 ml-[20px] mt-[16px]"} ${
           isDetail ? "lg:hidden" : "hidden"
         }`}
-        href={`/${returnURL}`}
+        href={`/${categoryURL}`}
       >
         <AiOutlineArrowLeft size={24} />
       </Link>
@@ -84,41 +84,73 @@ export default function Sidebar() {
           onScroll={onScroll}
         >
           <Header
-            title={"leohara"}
+            title={categoryURL != "control-panel" ? "leohara" : "Edit"}
             hasScrolled={hasScrolled}
             position={"left"}
           />
           <div className="pt-[64px]">
             <div className="w-[300px] lg:w-[200px]">
+              {categoryURL != "control-panel" ? (
+                <div className="flex-col px-[24px]">
+                  <LinkButton name={"Home"} url={"/"}>
+                    <FaHome size={14} />
+                  </LinkButton>
+                </div>
+              ) : (
+                ""
+              )}
               <div className="flex-col px-[24px]">
-                <LinkButton name={"Home"} url={"/"}>
-                  <FaHome size={14} />
-                </LinkButton>
+                {categoryURL != "control-panel" ? (
+                  <>
+                    <p className="text-[12px] text-[#9f9f9f]">Me</p>
+                    <LinkButton name={"About"} url={"/about"}>
+                      <IoIosBeer />
+                    </LinkButton>
+                    <LinkButton name={"Writings"} url={"/writings"}>
+                      <MdArticle size={14} />
+                    </LinkButton>
+                    <LinkButton name={"Bookmarks"} url={"/bookmarks"}>
+                      <BsFillBookmarksFill size={14} />
+                    </LinkButton>
+                    <LinkButton name={"Projects"} url={"/projects"}>
+                      <AiFillProject />
+                    </LinkButton>
+                  </>
+                ) : (
+                  <>
+                    <LinkButton
+                      name={"Writings"}
+                      url={"/control-panel/writings"}
+                    >
+                      <MdArticle size={14} />
+                    </LinkButton>
+                    <LinkButton
+                      name={"Bookmarks"}
+                      url={"/control-panel/bookmarks"}
+                    >
+                      <BsFillBookmarksFill size={14} />
+                    </LinkButton>
+                  </>
+                )}
               </div>
-              <div className="flex-col px-[24px]">
-                <p className="text-[12px] text-[#9f9f9f]">Me</p>
-                <LinkButton name={"About"} url={"/about"}>
-                  <IoIosBeer />
-                </LinkButton>
-                <LinkButton name={"Writings"} url={"/writings"}>
-                  <MdArticle size={14} />
-                </LinkButton>
-                <LinkButton name={"Bookmarks"} url={"/bookmarks"}>
-                  <BsFillBookmarksFill size={14} />
-                </LinkButton>
-                <LinkButton name={"Projects"} url={"/projects"}>
-                  <AiFillProject />
-                </LinkButton>
-              </div>
-              <div className="flex-col px-[24px]">
-                <p className="text-[12px] text-[#9f9f9f]">Online</p>
-                <LinkButton name={"Github"} url={"https://github.com/leohara"}>
-                  <AiFillGithub size={14} />
-                </LinkButton>
-                <LinkButton name={"X"} url={"/"}>
-                  <FaXTwitter size={14} />
-                </LinkButton>
-              </div>
+              {categoryURL != "control-panel" ? (
+                <>
+                  <div className="flex-col px-[24px]">
+                    <p className="text-[12px] text-[#9f9f9f]">Online</p>
+                    <LinkButton
+                      name={"Github"}
+                      url={"https://github.com/leohara"}
+                    >
+                      <AiFillGithub size={14} />
+                    </LinkButton>
+                    <LinkButton name={"X"} url={"/"}>
+                      <FaXTwitter size={14} />
+                    </LinkButton>
+                  </div>
+                </>
+              ) : (
+                <></>
+              )}
             </div>
           </div>
         </div>
