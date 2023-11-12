@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, useContext } from "react";
-import { SidebarContext } from "./provider/SidebarProvider";
 import Header from "@/app/components/Header";
+import { useContext, useEffect, useState } from "react";
+import { SidebarContext } from "../../provider/SidebarProvider";
 
 export default function Page() {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -26,9 +26,7 @@ export default function Page() {
       >
         <Header title={""} hasScrolled={hasScrolled} position={"right"} />
         <div className="px-[45px] pt-[80px] sm:px-[60px] md:px-[120px] lg:px-[150px]">
-          <p>
-            このサイトは、ソフトウェアエンジニア原田零生のポートフォリオです。本サイトでは自身の制作実績や技術ブログを掲載しています。
-          </p>
+          <p>作成中...</p>
         </div>
       </div>
     </div>

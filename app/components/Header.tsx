@@ -23,6 +23,11 @@ export default function Header({ title, hasScrolled, position }: Props) {
         ${position == "middle" ? "w-screen bg-[#fff] lg:w-[319px]" : ""}
         ${
           position == "right"
+            ? "w-screen bg-[#fff]  lg:w-[calc(100vw-199px)]"
+            : ""
+        }
+        ${
+          position == "right-detail"
             ? "w-screen bg-[#fff]  lg:w-[calc(100vw-519px)]"
             : ""
         }

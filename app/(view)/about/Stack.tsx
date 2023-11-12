@@ -1,25 +1,25 @@
 import {
   AWS,
   CPlus,
-  Cloudinary,
   CSS,
+  Cloudinary,
   Django,
   Docker,
   Figma,
   HTML,
-  Jest,
   JS,
+  Jest,
   Mongo,
   Nextjs,
   Prisma,
   Python,
   Reactjs,
   Restframework,
+  TS,
   Tailwind,
   TensorFlow,
-  TS,
   Vercel,
-} from "../components/icons";
+} from "../../components/icons";
 import Rating from "./Rating";
 
 export default function Stack() {

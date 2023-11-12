@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect, useContext } from "react";
-import { usePathname } from "next/navigation";
 import Header from "@/app/components/Header";
 import Link from "next/link";
-import { SidebarContext } from "../provider/SidebarProvider";
+import { usePathname } from "next/navigation";
+import { useContext, useEffect, useState } from "react";
+import { SidebarContext } from "../../provider/SidebarProvider";
 
 type Writing = {
   id: string;

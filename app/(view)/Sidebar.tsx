@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useRef, useEffect, useContext, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import {
   AiFillGithub,
-  AiOutlineArrowLeft,
   AiFillProject,
+  AiOutlineArrowLeft,
 } from "react-icons/ai";
 import { BsFillBookmarksFill } from "react-icons/bs";
 import { FaHome } from "react-icons/fa";
@@ -14,8 +14,8 @@ import { FaXTwitter } from "react-icons/fa6";
 import { IoIosBeer } from "react-icons/io";
 import { MdArticle } from "react-icons/md";
 import LinkButton from "./LinkButton";
-import Header from "./components/Header";
-import { SidebarContext } from "./provider/SidebarProvider";
+import Header from "../components/Header";
+import { SidebarContext } from "../provider/SidebarProvider";
 
 export default function Sidebar() {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -23,7 +23,7 @@ export default function Sidebar() {
 
   const pathName = usePathname().split("/");
   const isDetail = typeof pathName[2] !== "undefined";
-  const categoryURL = pathName[1];
+  const returnURL = pathName[1];
 
   const sidebarRef = useRef<HTMLDivElement>(null);
   const closeSidebar = useCallback(
@@ -67,7 +67,7 @@ export default function Sidebar() {
         className={`${"fixed z-20 ml-[20px] mt-[16px]"} ${
           isDetail ? "lg:hidden" : "hidden"
         }`}
-        href={`/${categoryURL}`}
+        href={`/${returnURL}`}
       >
         <AiOutlineArrowLeft size={24} />
       </Link>
@@ -84,73 +84,41 @@ export default function Sidebar() {
           onScroll={onScroll}
         >
           <Header
-            title={categoryURL != "control-panel" ? "leohara" : "Edit"}
+            title={"leohara"}
             hasScrolled={hasScrolled}
             position={"left"}
           />
           <div className="pt-[64px]">
             <div className="w-[300px] lg:w-[200px]">
-              {categoryURL != "control-panel" ? (
-                <div className="flex-col px-[24px]">
-                  <LinkButton name={"Home"} url={"/"}>
-                    <FaHome size={14} />
-                  </LinkButton>
-                </div>
-              ) : (
-                ""
-              )}
               <div className="flex-col px-[24px]">
-                {categoryURL != "control-panel" ? (
-                  <>
-                    <p className="text-[12px] text-[#9f9f9f]">Me</p>
-                    <LinkButton name={"About"} url={"/about"}>
-                      <IoIosBeer />
-                    </LinkButton>
-                    <LinkButton name={"Writings"} url={"/writings"}>
-                      <MdArticle size={14} />
-                    </LinkButton>
-                    <LinkButton name={"Bookmarks"} url={"/bookmarks"}>
-                      <BsFillBookmarksFill size={14} />
-                    </LinkButton>
-                    <LinkButton name={"Projects"} url={"/projects"}>
-                      <AiFillProject />
-                    </LinkButton>
-                  </>
-                ) : (
-                  <>
-                    <LinkButton
-                      name={"Writings"}
-                      url={"/control-panel/writings"}
-                    >
-                      <MdArticle size={14} />
-                    </LinkButton>
-                    <LinkButton
-                      name={"Bookmarks"}
-                      url={"/control-panel/bookmarks"}
-                    >
-                      <BsFillBookmarksFill size={14} />
-                    </LinkButton>
-                  </>
-                )}
+                <LinkButton name={"Home"} url={"/"}>
+                  <FaHome size={14} />
+                </LinkButton>
               </div>
-              {categoryURL != "control-panel" ? (
-                <>
-                  <div className="flex-col px-[24px]">
-                    <p className="text-[12px] text-[#9f9f9f]">Online</p>
-                    <LinkButton
-                      name={"Github"}
-                      url={"https://github.com/leohara"}
-                    >
-                      <AiFillGithub size={14} />
-                    </LinkButton>
-                    <LinkButton name={"X"} url={"/"}>
-                      <FaXTwitter size={14} />
-                    </LinkButton>
-                  </div>
-                </>
-              ) : (
-                <></>
-              )}
+              <div className="flex-col px-[24px]">
+                <p className="text-[12px] text-[#9f9f9f]">Me</p>
+                <LinkButton name={"About"} url={"/about"}>
+                  <IoIosBeer />
+                </LinkButton>
+                <LinkButton name={"Writings"} url={"/writings"}>
+                  <MdArticle size={14} />
+                </LinkButton>
+                <LinkButton name={"Bookmarks"} url={"/bookmarks"}>
+                  <BsFillBookmarksFill size={14} />
+                </LinkButton>
+                <LinkButton name={"Projects"} url={"/projects"}>
+                  <AiFillProject />
+                </LinkButton>
+              </div>
+              <div className="flex-col px-[24px]">
+                <p className="text-[12px] text-[#9f9f9f]">Online</p>
+                <LinkButton name={"Github"} url={"https://github.com/leohara"}>
+                  <AiFillGithub size={14} />
+                </LinkButton>
+                <LinkButton name={"X"} url={"/"}>
+                  <FaXTwitter size={14} />
+                </LinkButton>
+              </div>
             </div>
           </div>
         </div>
