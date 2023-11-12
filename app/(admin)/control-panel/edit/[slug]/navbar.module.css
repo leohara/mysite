@@ -1,0 +1,82 @@
+.container {
+  height: 150px;
+  width: 100%;
+  position: fixed;
+  background-color: #F6F6F6;
+}
+
+.navbar {
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+
+.titleBox {
+  flex: 1;
+  height: 40px;
+  padding-left: 8px;
+  font-size: 24px;
+  border: none;
+  border-radius: 10px;
+}
+
+.titleBox:focus {
+  box-shadow: 0 0 5px 0 #449CB0;
+  border: 2px solid #FFF !important;
+  outline: none;
+}
+
+.block {
+  display: flex;
+}
+
+.linkBox {
+  flex: 1;
+  height: 24px;
+  padding-left: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+}
+
+.linkBox:focus {
+  box-shadow: 0 0 3px 0 #449CB0;
+  border: 2px solid #FFF !important;
+  outline: none;
+}
+
+.bottomBox {
+  flex: 1;
+  height: 24px;
+  display: flex;
+}
+
+.tagBox {
+  height: 24px;
+  flex: 1;
+  padding-left: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+}
+
+.tagBox:focus {
+  box-shadow: 0 0 3px 0 #449CB0;
+  border: 2px solid #FFF !important;
+  outline: none;
+}
+
+.edit {
+  margin-top: -2px;
+  margin-left: 15px;
+  width: 56px;
+  height: 28px;
+  border-radius: 10px;
+  line-height: 28px;
+  font-size: 16px;
+  text-align: center;
+  background-color: #3EA8FF;
+  cursor: pointer;
+}
