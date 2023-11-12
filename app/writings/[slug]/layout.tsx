@@ -27,7 +27,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         onScroll={onScroll}
       >
         <Header title={""} hasScrolled={hasScrolled} position={"right"} />
-        <div className="px-[45px] pt-[80px] sm:px-[60px] md:px-[120px] lg:px-[150px]">
+        <div className="px-[45px] pt-[80px]">
           {children}
         </div>
       </div>
