@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import styles from "./page.module.css";
 
 type Writing = {
   id: string;
@@ -13,23 +12,7 @@ type Writing = {
   updatedAt: Date;
 };
 
-type Bookmark = {
-  id: string;
-  title: string;
-  url: string;
-  bookmarkId: string;
-  content: string;
-  createdAt: Date;
-  updatedAt: Date;
-};
-
-export default function Container({
-  writings,
-  bookmarks,
-}: {
-  writings: Writing[];
-  bookmarks: Bookmark[];
-}) {
+export default function Container({ writings }: { writings: Writing[] }) {
   const formatDate = (date: Date) => {
     const year = date.getFullYear();
     const month = (date.getMonth() + 1).toString().padStart(2, "0");
@@ -73,28 +56,6 @@ export default function Container({
                 <Link href={`/control-panel/new`} className="bg-[aquamarine]">
                   new
                 </Link>
-              </div>
-            </div>
-          );
-        })}
-        {bookmarks.map((topic) => {
-          return (
-            <div key={topic.title} className={styles.topicContainer}>
-              <div className={styles.wrapper}>
-                <div className={styles.title}>{topic.title}</div>
-                <div className={styles.createdAt}>
-                  {formatDate(topic.createdAt)}
-                </div>
-                <div className={styles.updatedAt}>
-                  {formatDate(topic.updatedAt)}
-                </div>
-                <div className={styles.content}>{topic.content}</div>
-                <div
-                  className={styles.edit}
-                  // onClick={() => clickHandle(topic.postId)}
-                >
-                  編集する
-                </div>
               </div>
             </div>
           );

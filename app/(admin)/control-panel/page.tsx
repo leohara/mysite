@@ -5,13 +5,10 @@ export default async function Page() {
   const writings = await prisma.writing.findMany({
     orderBy: { updatedAt: "desc" },
   });
-  const bookmarks = await prisma.bookmark.findMany({
-    orderBy: { updatedAt: "desc" },
-  });
 
   return (
     <>
-      <Container writings={writings} bookmarks={bookmarks} />
+      <Container writings={writings} />
     </>
   );
 }
