@@ -3,10 +3,9 @@
 import { prisma } from "@/app/lib/db/prisma";
 
 export async function editWriting(formData: FormData, id: string) {
-  "use server";
   const title = formData.get("title");
   const link = formData.get("link");
-  const isPublished = formData.get("isPublished") ? true : false;
+  const isPublished = !!formData.get("isPublished");
   const markdown = formData.get("markdown");
   if (!title) return "no title provided";
   if (!link) return "no link provided";

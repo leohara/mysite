@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { redirect } from "next/navigation";
-import NextAuthSessionProvider from "@/app/provider/SessionProvider";
-import "./globals.css";
+import "@/app/globals.css";
 import { getServerSession } from "next-auth/next";
+import NextAuthSessionProvider from "@/app/provider/SessionProvider";
 import { authOptions } from "@/app/utils/authOptions";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "edit page",
+  title: "Control Panel",
   description: "beatleos",
 };
 
@@ -22,12 +22,14 @@ export default async function RootLayout({
   if (!session) redirect("/api/auth/signin");
 
   return (
-    <html lang="en">
-      <body
-        className={`${inter.className} m-0 box-border h-screen w-full overflow-x-hidden p-0`}
-      >
-        <NextAuthSessionProvider>{children}</NextAuthSessionProvider>
-      </body>
-    </html>
+    <NextAuthSessionProvider>
+      <html lang="en">
+        <body
+          className={`${inter.className} m-0 box-border h-screen w-full overflow-x-hidden p-0`}
+        >
+          {children}
+        </body>
+      </html>
+    </NextAuthSessionProvider>
   );
 }
