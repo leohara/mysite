@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { EditContext } from "@/app/context/EditContext";
 import { TextContext } from "@/app/context/TextContext";
@@ -29,7 +29,7 @@ export default function Container({ writing }: WritingProps) {
 
   const action = async (formData: FormData) => {
     await editWriting(formData, postId);
-  }
+  };
 
   return (
     <TextContext.Provider value={{ markdown, setMarkdown }}>
@@ -58,7 +58,10 @@ export default function Container({ writing }: WritingProps) {
                   value={link}
                   onChange={(e) => setLink(e.target.value)}
                 />
-                <PublishSlider isDraft={isPublished} setIsDraft={setIsPublished} />
+                <PublishSlider
+                  isDraft={isPublished}
+                  setIsDraft={setIsPublished}
+                />
               </div>
               <div className="flex h-[24px] flex-1">
                 <input
@@ -66,7 +69,10 @@ export default function Container({ writing }: WritingProps) {
                   type="text"
                   placeholder="Tag"
                 />
-                <button type="submit" className="ml-[15px] mt-[-2px] h-[28px] w-[56px] cursor-pointer rounded-[10px] bg-[#3ea8ff] text-center text-[16px] leading-[28px]">
+                <button
+                  type="submit"
+                  className="ml-[15px] mt-[-2px] h-[28px] w-[56px] cursor-pointer rounded-[10px] bg-[#3ea8ff] text-center text-[16px] leading-[28px]"
+                >
                   保存
                 </button>
               </div>

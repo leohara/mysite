@@ -9,12 +9,12 @@ type EditContextType = {
   setTitle: React.Dispatch<React.SetStateAction<string>>;
   link: string;
   setLink: React.Dispatch<React.SetStateAction<string>>;
-  isDraft: boolean;
-  setIsDraft: React.Dispatch<React.SetStateAction<boolean>>;
+  isPublished: boolean;
+  setIsPublished: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export default function Navbar() {
-  const { title, setTitle, link, setLink, isDraft, setIsDraft } =
+  const { title, setTitle, link, setLink, isPublished, setIsPublished } =
     useContext<EditContextType>(EditContext);
 
   return (
@@ -37,7 +37,7 @@ export default function Navbar() {
             value={link}
             onChange={(e) => setLink(e.target.value)}
           />
-          <PublishSlider isDraft={isDraft} setIsDraft={setIsDraft} />
+          <PublishSlider isDraft={isPublished} setIsDraft={setIsPublished} />
         </div>
         <div className="flex h-[24px] flex-1">
           <input

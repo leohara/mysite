@@ -7,7 +7,6 @@ type Props = {
 };
 
 const PublishSlider = ({ isDraft, setIsDraft }: Props) => {
-
   return (
     <div className={styles.container}>
       <input

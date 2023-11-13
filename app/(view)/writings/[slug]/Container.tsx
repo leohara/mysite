@@ -1,11 +1,10 @@
-'use client';
+"use client";
 
 import { useState, useEffect, useContext } from "react";
 import { Writing } from "@prisma/client";
 import { SidebarContext } from "@/app/provider/SidebarProvider";
 import Header from "@/app/components/Header";
 import Detail from "./Detail";
-
 
 type WritingProps = {
   writing: Writing;
@@ -44,5 +43,4 @@ export default function Layout({ writing }: WritingProps) {
       </div>
     </div>
   );
-
 }
