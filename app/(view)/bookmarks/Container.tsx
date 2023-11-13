@@ -53,7 +53,8 @@ export default function Container({ bookmarks }: { bookmarks: Bookmark[] }) {
             position={"middle"}
           />
           <div className=" pt-[60px] lg:w-[320px]">
-            <div className="flex-col px-[24px]">
+            <p>作成中</p>
+            {/* <div className="flex-col px-[24px]">
               {bookmarks.map((bookmark: Bookmark) => (
                 <Link
                   href={`/writings/${bookmark.bookmarkId}`}
@@ -76,7 +77,7 @@ export default function Container({ bookmarks }: { bookmarks: Bookmark[] }) {
                   </div>
                 </Link>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

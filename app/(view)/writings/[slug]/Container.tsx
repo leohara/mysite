@@ -33,11 +33,11 @@ export default function Layout({ writing }: WritingProps) {
         onScroll={onScroll}
       >
         <Header
-          title={"detail"}
+          title={writing.title}
           hasScrolled={hasScrolled}
           position={"right-detail"}
         />
-        <div className="px-[45px] pt-[50px]">
+        <div className="px-[45px] pt-[80px]">
           <Detail content={writing.content} />
         </div>
       </div>

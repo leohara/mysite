@@ -36,7 +36,9 @@ export default function Header({ title, hasScrolled, position }: Props) {
         transition-shadow duration-300
         `}
     >
-      <div className="flex px-[25px] pb-[14px] pt-[16px]">
+      <div className=
+        "flex w-full px-[25px] pb-[14px] pt-[16px]"
+      >
         <button
           className={`
             ${"mr-[16px] lg:hidden"}
@@ -50,6 +52,7 @@ export default function Header({ title, hasScrolled, position }: Props) {
           className={`
           ${"font-[#363636] font-bold"}
           ${position == "left" ? "" : "pl-[32px] lg:pl-[0px]"}
+          ${position == "right-detail" ? "truncate" : ""}
         `}
         >
           {title}
