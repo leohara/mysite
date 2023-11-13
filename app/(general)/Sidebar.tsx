@@ -13,9 +13,9 @@ import { FaHome } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoIosBeer } from "react-icons/io";
 import { MdArticle } from "react-icons/md";
-import LinkButton from "./LinkButton";
 import Header from "../components/Header";
 import { SidebarContext } from "../provider/SidebarProvider";
+import LinkButton from "./LinkButton";
 
 export default function Sidebar() {
   const [hasScrolled, setHasScrolled] = useState(false);
