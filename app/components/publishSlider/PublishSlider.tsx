@@ -7,6 +7,7 @@ type Props = {
 };
 
 const PublishSlider = ({ isDraft, setIsDraft }: Props) => {
+
   return (
     <div className={styles.container}>
       <input
@@ -15,6 +16,7 @@ const PublishSlider = ({ isDraft, setIsDraft }: Props) => {
         id={`switchNew`}
         className={styles.switch}
         type="checkbox"
+        name="isPublished"
       />
       <label
         style={{ background: isDraft ? "#3EA8FF" : "" }}

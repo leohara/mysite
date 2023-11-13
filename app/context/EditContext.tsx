@@ -5,8 +5,8 @@ type EditContextType = {
   setTitle: React.Dispatch<React.SetStateAction<string>>;
   link: string;
   setLink: React.Dispatch<React.SetStateAction<string>>;
-  isDraft: boolean;
-  setIsDraft: React.Dispatch<React.SetStateAction<boolean>>;
+  isPublished: boolean;
+  setIsPublished: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const EditContext = createContext<EditContextType>({
@@ -14,6 +14,6 @@ export const EditContext = createContext<EditContextType>({
   setTitle: () => {},
   link: "",
   setLink: () => {},
-  isDraft: true,
-  setIsDraft: () => {},
+  isPublished: true,
+  setIsPublished: () => {},
 });
