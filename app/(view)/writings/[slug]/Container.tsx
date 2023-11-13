@@ -1,13 +1,17 @@
-"use client";
-
-// TODO: server componentにして, コンテンツを取得する
-// TODO: react-markdownを入れる
+'use client';
 
 import { useState, useEffect, useContext } from "react";
+import { Writing } from "@prisma/client";
 import { SidebarContext } from "@/app/provider/SidebarProvider";
 import Header from "@/app/components/Header";
+import Detail from "./Detail";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+
+type WritingProps = {
+  writing: Writing;
+};
+
+export default function Layout({ writing }: WritingProps) {
   const [hasScrolled, setHasScrolled] = useState(false);
   const onScroll = (e: React.UIEvent<HTMLDivElement>) => {
     setHasScrolled(e.currentTarget.scrollTop > 0);
@@ -34,8 +38,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           hasScrolled={hasScrolled}
           position={"right-detail"}
         />
-        <div className="px-[45px] pt-[80px]">{children}</div>
+        <div className="px-[45px] pt-[50px]">
+          <Detail content={writing.content} />
+        </div>
       </div>
     </div>
   );
+
 }

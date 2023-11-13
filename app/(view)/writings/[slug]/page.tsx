@@ -1,3 +1,15 @@
-export default function Page() {
-  return <div>page</div>;
+import { prisma } from "@/app/lib/db/prisma";
+import Container from "./Container";
+
+export default async function Page({ params }: { params: { slug: string } }) {
+  const writing = await prisma.writing.findUnique({
+    where: { postId: params.slug },
+  });
+  if (!writing) return <div>not found</div>;
+
+  return (
+    <>
+      <Container writing={writing} />
+    </>
+  );
 }
