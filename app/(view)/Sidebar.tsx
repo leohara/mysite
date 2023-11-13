@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useRef, useEffect, useContext, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import {
   AiFillGithub,
-  AiOutlineArrowLeft,
   AiFillProject,
+  AiOutlineArrowLeft,
 } from "react-icons/ai";
 import { BsFillBookmarksFill } from "react-icons/bs";
 import { FaHome } from "react-icons/fa";
@@ -14,8 +14,8 @@ import { FaXTwitter } from "react-icons/fa6";
 import { IoIosBeer } from "react-icons/io";
 import { MdArticle } from "react-icons/md";
 import LinkButton from "./LinkButton";
-import Header from "./components/Header";
-import { SidebarContext } from "./provider/SidebarProvider";
+import Header from "../components/Header";
+import { SidebarContext } from "../provider/SidebarProvider";
 
 export default function Sidebar() {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -64,7 +64,7 @@ export default function Sidebar() {
         </button>
       </div>
       <Link
-        className={`${"fixed z-20 ml-[22px] mt-[19px]"} ${
+        className={`${"fixed z-20 ml-[20px] mt-[16px]"} ${
           isDetail ? "lg:hidden" : "hidden"
         }`}
         href={`/${returnURL}`}

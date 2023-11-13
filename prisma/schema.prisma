@@ -19,7 +19,7 @@ model Writing {
   id        String @id @map("_id") @default(auto()) @db.ObjectId
   title     String
   postId    String  @unique
-  content   String?
+  content   String
   published Boolean @default(false)
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @default(now()) @updatedAt @map("updated_at")
@@ -32,7 +32,7 @@ model Bookmark {
   title      String
   url        String   @unique
   bookmarkId String   @unique
-  content    String?
+  content    String
   createdAt  DateTime @default(now()) @map("created_at")
   updatedAt  DateTime @default(now()) @map("updated_at")
 
