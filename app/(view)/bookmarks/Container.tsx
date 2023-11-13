@@ -53,13 +53,9 @@ export default function Container({ bookmarks }: { bookmarks: Bookmark[] }) {
             position={"middle"}
           />
           <div className=" pt-[60px] lg:w-[320px]">
-            <p>作成中</p>
-            {/* <div className="flex-col px-[24px]">
+            <div className="flex-col px-[24px]">
               {bookmarks.map((bookmark: Bookmark) => (
-                <Link
-                  href={`/writings/${bookmark.bookmarkId}`}
-                  key={bookmark.id}
-                >
+                <Link href={`/`} key={bookmark.id}>
                   <div
                     className={`
                   ${"my-[4px] h-[60px] w-full flex-col rounded-lg border-b-[1px] border-b-[#eeeff2] p-[6px] px-[10px] hover:bg-[#C7FBEC] sm:w-[600px] md:w-[760px] lg:w-[260px]"}
@@ -70,14 +66,14 @@ export default function Container({ bookmarks }: { bookmarks: Bookmark[] }) {
                     }
                     `}
                   >
-                    <p className="text-[14px] font-bold">{bookmark.title}</p>
+                    <p className="text-[14px] font-bold"></p>
                     <p className="text-[12px] text-[#9f9f9f]">
                       {new Date(bookmark.updatedAt).toISOString()}
                     </p>
                   </div>
                 </Link>
               ))}
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
