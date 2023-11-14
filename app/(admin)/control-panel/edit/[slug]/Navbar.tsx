@@ -24,6 +24,7 @@ export default function Navbar() {
           <input
             className="h-[24px] flex-1 rounded-[10px] border-none pl-[8px] text-[24px] placeholder:text-[20px] focus:border-[2px] focus:border-solid focus:border-[#fff] focus:outline-none"
             type="text"
+            name="title"
             placeholder="Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
@@ -33,6 +34,7 @@ export default function Navbar() {
           <input
             className="h-[24px] flex-1 rounded-[6px] border-none pl-[8px] text-[24px] focus:border-[2px] focus:border-solid focus:border-[#fff] focus:outline-none"
             type="text"
+            name="link"
             placeholder="Permanent Link"
             value={link}
             onChange={(e) => setLink(e.target.value)}
@@ -45,9 +47,12 @@ export default function Navbar() {
             type="text"
             placeholder="Tag"
           />
-          <div className="ml-[15px] mt-[-2px] h-[28px] w-[56px] cursor-pointer rounded-[10px] bg-[#3ea8ff] text-center text-[16px] leading-[28px]">
+          <button
+            type="submit"
+            className="ml-[15px] mt-[-2px] h-[28px] w-[56px] cursor-pointer rounded-[10px] bg-[#3ea8ff] text-center text-[16px] leading-[28px]"
+          >
             保存
-          </div>
+          </button>
         </div>
       </div>
     </div>
