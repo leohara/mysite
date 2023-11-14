@@ -1,10 +1,11 @@
 "use client";
 
+import { useState } from "react";
+import { toast } from "react-hot-toast";
 import { editWriting } from "@/app/(admin)/control-panel/components/actions";
 import { EditContext } from "@/app/context/EditContext";
 import { TextContext } from "@/app/context/TextContext";
 import { Writing } from "@prisma/client";
-import { useState } from "react";
 import Editor from "../../components/Editor";
 import Navbar from "../../components/Navbar";
 import Preview from "../../components/Preview";
@@ -21,7 +22,12 @@ export default function Container({ writing }: WritingProps) {
   const [markdown, setMarkdown] = useState<string>(writing.content);
 
   const action = async (formData: FormData) => {
-    await editWriting(formData, postId);
+    const result = await editWriting(formData, postId);
+    if (result?.error) {
+      toast.error("Error!");
+    } else {
+      toast.success("Success!");
+    }
   };
 
   return (
