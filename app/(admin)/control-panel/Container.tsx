@@ -2,20 +2,20 @@
 
 import Link from "next/link";
 import { SessionProvider } from "next-auth/react";
+import { Writing } from "@prisma/client";
+import { MdOutlineEdit } from "react-icons/md";
+import { AiOutlineDelete } from "react-icons/ai";
 import { formatDate } from "@/app/components/formatDate";
 import { deleteWriting } from "./components/actions";
+import PostId from "@/app/components/pageList/PostId";
+import Status from "@/app/components/pageList/Status";
+import DateAt from "@/app/components/pageList/DateAt";
 
-type Writing = {
-  id: string;
-  title: string;
-  postId: string;
-  content: string | null;
-  published: boolean;
-  createdAt: Date;
-  updatedAt: Date;
+type WritingProps = {
+  writings: Writing[];
 };
 
-export default function Container({ writings }: { writings: Writing[] }) {
+export default function Container({ writings }: WritingProps) {
   const action = async (formData: FormData) => {
     await deleteWriting(formData);
   };
@@ -23,47 +23,49 @@ export default function Container({ writings }: { writings: Writing[] }) {
   return (
     <SessionProvider>
       <div className="fixed">
-        <div className="flex h-[60px] w-screen bg-[#f79945] pl-[80px] pt-[15px] text-[#fff]">
-          <div className="w-[400px]">Title</div>
-          <div className="w-[150px]">URL</div>
-          <div className="w-[80px]">type</div>
-          <div className="w-[300px]">Status</div>
-          <div className="w-[100px]">Updated</div>
-          <div className="w-[100px]">edit</div>
-          <div className="w-[100px]">delete</div>
+        <div className="h-[60px] w-screen bg-[#3ea8ff] pl-[80px] pt-[15px] text-[#fff]">
+          <div className="flex gap-[30px]">
+            <div className="w-[400px] pl-[4px]">Title</div>
+            <div className="w-[200px] pl-[4px]">URL</div>
+            <div className="w-[75px] pl-[4px]">Status</div>
+            <div className="w-[90px] pl-[4px]">Updated</div>
+            <div className="w-[90px] pl-[4px]">Created</div>
+            <div className="w-[80px] text-center">Edit</div>
+            <div className="w-[80px] text-center">delete</div>
+          </div>
         </div>
-        <div className="h-[calc(100vh-60px)] overflow-y-auto">
+        <div className="h-[calc(100vh-60px)] overflow-y-auto pb-[300px]">
           {writings.map((writing) => {
             return (
               <div
                 key={writing.title}
-                className="flex h-[60px] w-screen pl-[80px] pt-[15px]"
+                className="h-[80px] w-screen border-b-[1px] border-solid py-[15px] pl-[80px]"
               >
-                <div className="top-[50%] flex gap-[20px]">
-                  <div className="">
-                    {writing.published ? "Published" : "Draft"}
+                <div className="top-[50%] flex gap-[30px]">
+                  {/* タイトル部分 */}
+                  <div className="w-[400px] ">
+                    <div className="line-clamp-2">{writing.title}</div>
                   </div>
-                  <div className="">{writing.title}</div>
-                  <div className="">{formatDate(writing.createdAt)}</div>
-                  <div className="">{formatDate(writing.updatedAt)}</div>
-                  <div className="">{writing.content}</div>
+                  <PostId postId={writing.postId} />
+                  <Status isPublished={writing.published} />
+                  <DateAt date={formatDate(writing.updatedAt)} />
+                  <DateAt date={formatDate(writing.createdAt)} />
                   <Link
                     href={`/control-panel/edit/${writing.postId}`}
-                    className="bg-[aquamarine]"
+                    className="w-[80px]"
                   >
-                    編集する
+                    <div className="ml-[20px] h-[40px] w-[40px] rounded-[50%] border-[1px] border-[#9f9f9f] pl-[4px] pt-[3px]">
+                      <MdOutlineEdit size={30} />
+                    </div>
                   </Link>
-                  <Link href={`/control-panel/new`} className="bg-[aquamarine]">
-                    new
-                  </Link>
-                  <form action={action}>
+                  <form className="w-[80px]" action={action}>
                     <button
                       type="submit"
                       value={writing.id}
                       name="delete"
-                      className="bg-[aquamarine]"
+                      className="ml-[20px] h-[40px] w-[40px] rounded-[50%] border-[1px] border-[#9f9f9f] pl-[4px]"
                     >
-                      消去
+                      <AiOutlineDelete size={30} />
                     </button>
                   </form>
                 </div>
@@ -72,6 +74,12 @@ export default function Container({ writings }: { writings: Writing[] }) {
           })}
         </div>
       </div>
+      <Link
+        href={`/control-panel/new`}
+        className="fixed right-[40px] top-[70px] z-10 h-[40px] w-[90px] rounded-[16px] bg-[#f17280] pt-[8px] text-center text-[#fff]"
+      >
+        新規
+      </Link>
     </SessionProvider>
   );
 }

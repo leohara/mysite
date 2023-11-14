@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-type EditContextType = {
+export type EditContextType = {
   title: string;
   setTitle: React.Dispatch<React.SetStateAction<string>>;
   link: string;
