@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { SessionProvider } from "next-auth/react";
+import { formatDate } from "@/app/components/formatDate";
+import { deleteWriting } from "./components/actions";
 
 type Writing = {
   id: string;
@@ -14,12 +16,9 @@ type Writing = {
 };
 
 export default function Container({ writings }: { writings: Writing[] }) {
-  const formatDate = (date: Date) => {
-    const year = date.getFullYear();
-    const month = (date.getMonth() + 1).toString().padStart(2, "0");
-    const day = date.getDate().toString().padStart(2, "0");
 
-    return `${year}-${month}-${day}`;
+  const action = async (formData: FormData) => {
+    await deleteWriting(formData);
   };
 
   return (
@@ -58,6 +57,9 @@ export default function Container({ writings }: { writings: Writing[] }) {
                   <Link href={`/control-panel/new`} className="bg-[aquamarine]">
                     new
                   </Link>
+                  <form action={action}>
+                    <button type="submit" value={writing.id} name="delete" className="bg-[aquamarine]">消去</button>
+                  </form>
                 </div>
               </div>
             );
