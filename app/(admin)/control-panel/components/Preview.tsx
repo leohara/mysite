@@ -12,7 +12,7 @@ export default function Preview() {
   const { markdown } = useContext(TextContext);
 
   return (
-    <div className="h-full flex-1 overflow-y-auto border-r-[0.5px] border-solid border-[#ccc] p-[20px]">
+    <div className="h-full flex-1 overflow-y-auto border-r-[0.5px] border-solid border-[#ccc] p-[20px] pb-[150px]">
       <ReactMarkdown
         components={{
           code(props) {

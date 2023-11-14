@@ -7,7 +7,7 @@ export default function Editor() {
   return (
     <div className="h-full flex-1 p-[20px]">
       <textarea
-        className="h-full w-full resize-none border-none text-[16px] outline-none"
+        className="h-full w-full resize-none border-none pb-[150px] text-[16px] outline-none"
         placeholder="write your post here ..."
         value={markdown}
         name="markdown"
