@@ -1,9 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { addWriting } from "@/app/(admin)/control-panel/components/actions";
 import { EditContext } from "@/app/context/EditContext";
 import { TextContext } from "@/app/context/TextContext";
-import { useState } from "react";
 import Editor from "@/app/(admin)/control-panel/components/Editor";
 import Navbar from "@/app/(admin)/control-panel/components/Navbar";
 import Preview from "@/app/(admin)/control-panel/components/Preview";

@@ -2,7 +2,7 @@
 
 import { useContext } from "react";
 import { EditContextType, EditContext } from "@/app/context/EditContext";
-import PublishSlider from "../../../components/publishSlider/PublishSlider";
+import PublishSlider from "@/app/components/publishSlider/PublishSlider";
 
 export default function Navbar() {
   const { title, setTitle, link, setLink, isPublished, setIsPublished } =

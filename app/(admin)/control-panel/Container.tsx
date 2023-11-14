@@ -76,7 +76,7 @@ export default function Container({ writings }: WritingProps) {
       </div>
       <Link
         href={`/control-panel/new`}
-        className="fixed right-[40px] top-[70px] z-10 h-[40px] w-[90px] rounded-[16px] bg-[#f17280] pt-[8px] text-center text-[#fff]"
+        className="fixed right-[40px] top-[40px] z-10 h-[40px] w-[90px] rounded-[16px] bg-[#f17280] pt-[8px] text-center text-[#fff]"
       >
         新規
       </Link>
