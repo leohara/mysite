@@ -53,21 +53,24 @@ export default function Container({ writings }: { writings: Writing[] }) {
           />
           <div className=" pt-[60px] lg:w-[320px]">
             <div className="flex-col px-[24px]">
-              {writings.map((writing: Writing) => (
-                <Link href={`/writings/${writing.postId}`} key={writing.id}>
-                  <div
-                    className={`
+              {writings.map(
+                (writing: Writing) =>
+                  writing.published && (
+                    <Link href={`/writings/${writing.postId}`} key={writing.id}>
+                      <div
+                        className={`
                       ${"my-[4px] h-auto w-full flex-col border-b-[1px] border-b-[#eeeff2] p-[6px] px-[10px] sm:w-[600px] md:w-[760px] lg:w-[260px] lg:rounded-lg lg:hover:bg-[#C7FBEC]"}
                       ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
                       `}
-                  >
-                    <p className="text-[14px] font-bold">{writing.title}</p>
-                    <p className="text-[12px] text-[#9f9f9f]">
-                      {new Date(writing.updatedAt).toISOString()}
-                    </p>
-                  </div>
-                </Link>
-              ))}
+                      >
+                        <p className="text-[14px] font-bold">{writing.title}</p>
+                        <p className="text-[12px] text-[#9f9f9f]">
+                          {new Date(writing.updatedAt).toISOString()}
+                        </p>
+                      </div>
+                    </Link>
+                  ),
+              )}
             </div>
           </div>
         </div>

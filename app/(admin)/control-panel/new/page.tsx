@@ -1,3 +1,9 @@
-export default function Page() {
-  return <div>new page</div>;
+import Container from "./Container";
+
+export default async function Page() {
+  return (
+    <>
+      <Container />
+    </>
+  );
 }
