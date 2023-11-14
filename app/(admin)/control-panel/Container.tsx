@@ -16,7 +16,6 @@ type Writing = {
 };
 
 export default function Container({ writings }: { writings: Writing[] }) {
-
   const action = async (formData: FormData) => {
     await deleteWriting(formData);
   };
@@ -58,7 +57,14 @@ export default function Container({ writings }: { writings: Writing[] }) {
                     new
                   </Link>
                   <form action={action}>
-                    <button type="submit" value={writing.id} name="delete" className="bg-[aquamarine]">消去</button>
+                    <button
+                      type="submit"
+                      value={writing.id}
+                      name="delete"
+                      className="bg-[aquamarine]"
+                    >
+                      消去
+                    </button>
                   </form>
                 </div>
               </div>

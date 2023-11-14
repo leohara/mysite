@@ -63,7 +63,7 @@ export async function deleteWriting(formData: FormData) {
       where: {
         id: id.toString(),
       },
-    })
+    });
   } catch (error) {
     console.error("Error updating writing:", error);
     throw error;
