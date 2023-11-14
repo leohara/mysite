@@ -37,8 +37,8 @@ export default function Container({ writing }: WritingProps) {
       >
         <form action={action}>
           <Navbar />
-          <div className="fixed inset-x-0 top-[150px] h-[full]">
-            <div className="flex h-[calc(100vh-150px)]">
+          <div className="fixed inset-x-0 top-[110px] h-[full]">
+            <div className="flex h-[calc(100vh-110px)]">
               <Preview />
               <Editor />
             </div>
