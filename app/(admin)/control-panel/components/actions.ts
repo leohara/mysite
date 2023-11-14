@@ -22,8 +22,9 @@ export async function addWriting(formData: FormData) {
       },
     });
   } catch (error) {
-    console.error("Error updating writing:", error);
-    throw error;
+    return {
+      error: "問題が発生しました",
+    };
   }
   redirect("/control-panel");
 }
@@ -33,9 +34,18 @@ export async function editWriting(formData: FormData, id: string) {
   const link = formData.get("link");
   const isPublished = !!formData.get("isPublished");
   const markdown = formData.get("markdown");
-  if (!title) return "no title provided";
-  if (!link) return "no link provided";
-  if (!markdown) return "no description provided";
+  if (!title)
+    return {
+      error: "問題が発生しました",
+    };
+  if (!link)
+    return {
+      error: "問題が発生しました",
+    };
+  if (!markdown)
+    return {
+      error: "問題が発生しました",
+    };
 
   try {
     await prisma.writing.update({
@@ -49,10 +59,11 @@ export async function editWriting(formData: FormData, id: string) {
       },
     });
   } catch (error) {
-    console.error("Error updating writing:", error);
-    throw error;
+    return {
+      error: "問題が発生しました",
+    };
   }
-  redirect("/control-panel");
+  redirect(`/control-panel/edit/${link}`);
 }
 
 export async function deleteWriting(formData: FormData) {
@@ -65,8 +76,9 @@ export async function deleteWriting(formData: FormData) {
       },
     });
   } catch (error) {
-    console.error("Error updating writing:", error);
-    throw error;
+    return {
+      error: "問題が発生しました",
+    };
   }
   redirect("/control-panel");
 }

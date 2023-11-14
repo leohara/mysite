@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { redirect } from "next/navigation";
 import "@/app/globals.css";
 import { getServerSession } from "next-auth/next";
+import { Toaster } from "react-hot-toast";
 import NextAuthSessionProvider from "@/app/provider/SessionProvider";
 import { authOptions } from "@/app/utils/authOptions";
 
@@ -28,6 +29,7 @@ export default async function RootLayout({
           className={`${inter.className} m-0 box-border h-screen w-full overflow-x-hidden p-0`}
         >
           {children}
+          <Toaster position="top-center" />
         </body>
       </html>
     </NextAuthSessionProvider>

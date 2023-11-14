@@ -4,12 +4,12 @@ import Link from "next/link";
 import { SessionProvider } from "next-auth/react";
 import { Writing } from "@prisma/client";
 import { MdOutlineEdit } from "react-icons/md";
-import { AiOutlineDelete } from "react-icons/ai";
 import { formatDate } from "@/app/components/formatDate";
 import { deleteWriting } from "./components/actions";
 import PostId from "@/app/components/pageList/PostId";
 import Status from "@/app/components/pageList/Status";
 import DateAt from "@/app/components/pageList/DateAt";
+import Delete from "@/app/components/pageList/Delete";
 
 type WritingProps = {
   writings: Writing[];
@@ -58,16 +58,18 @@ export default function Container({ writings }: WritingProps) {
                       <MdOutlineEdit size={30} />
                     </div>
                   </Link>
-                  <form className="w-[80px]" action={action}>
-                    <button
-                      type="submit"
-                      value={writing.id}
-                      name="delete"
-                      className="ml-[20px] h-[40px] w-[40px] rounded-[50%] border-[1px] border-[#9f9f9f] pl-[4px]"
-                    >
-                      <AiOutlineDelete size={30} />
-                    </button>
-                  </form>
+                  <Delete>
+                    <form className="w-[80px]" action={action}>
+                      <button
+                        type="submit"
+                        value={writing.id}
+                        name="delete"
+                        className="ml-[10px] h-[25px] w-[60px] rounded-[16px] bg-[#bd0302] text-center text-[14px] text-[#fff]"
+                      >
+                        delete
+                      </button>
+                    </form>
+                  </Delete>
                 </div>
               </div>
             );
