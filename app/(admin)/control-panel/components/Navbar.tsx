@@ -16,10 +16,11 @@ export default function Navbar() {
     <div className="fixed h-[110px] w-full bg-[#f3f4f5]">
       <div className="flex h-full flex-col gap-[10px] p-[20px]">
         <div className="flex">
-          <Link href="/control-panel"
-              className="mt-[-2px] h-[28px] w-[30px] cursor-pointer"
-             >
-            <AiOutlineArrowLeft size={22} color={'#808080'} />
+          <Link
+            href="/control-panel"
+            className="mt-[-2px] h-[28px] w-[30px] cursor-pointer"
+          >
+            <AiOutlineArrowLeft size={22} color={"#808080"} />
           </Link>
           <input
             className="h-[24px] flex-1 rounded-[10px] border-none pl-[8px] text-[24px] placeholder:text-[20px] focus:border-[2px] focus:border-solid focus:border-[#fff] focus:outline-none"

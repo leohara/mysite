@@ -8,15 +8,18 @@ export async function addWriting(formData: FormData) {
   const link = formData.get("link");
   const isPublished = !!formData.get("isPublished");
   const markdown = formData.get("markdown");
-  if (!title) return {
-    error: "タイトルを入力してください",
-  };
-  if (!link) return {
-    error: "リンクを設定してください",
-  };
-  if (!markdown) return {
-    error: "最低でも1文字以上の本文を入力してください",
-  };
+  if (!title)
+    return {
+      error: "タイトルを入力してください",
+    };
+  if (!link)
+    return {
+      error: "リンクを設定してください",
+    };
+  if (!markdown)
+    return {
+      error: "最低でも1文字以上の本文を入力してください",
+    };
 
   try {
     await prisma.writing.create({
@@ -74,9 +77,10 @@ export async function editWriting(formData: FormData, id: string) {
 
 export async function deleteWriting(formData: FormData) {
   const id = formData.get("delete");
-  if (!id) return {
-    error: "問題が発生しました",
-  }
+  if (!id)
+    return {
+      error: "問題が発生しました",
+    };
   try {
     await prisma.writing.delete({
       where: {
