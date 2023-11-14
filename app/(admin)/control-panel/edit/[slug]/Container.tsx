@@ -24,9 +24,9 @@ export default function Container({ writing }: WritingProps) {
   const action = async (formData: FormData) => {
     const result = await editWriting(formData, postId);
     if (result?.error) {
-      toast.error("Error!");
+      toast.error(result.error);
     } else {
-      toast.success("Success!");
+      toast.success("更新しました");
     }
   };
 

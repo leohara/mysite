@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { toast } from "react-hot-toast";
 import { addWriting } from "@/app/(admin)/control-panel/components/actions";
 import { EditContext } from "@/app/context/EditContext";
 import { TextContext } from "@/app/context/TextContext";
@@ -15,7 +16,12 @@ export default function Container() {
   const [markdown, setMarkdown] = useState<string>("");
 
   const action = async (formData: FormData) => {
-    await addWriting(formData);
+    const result = await addWriting(formData);
+    if (result?.error) {
+      toast.error(result.error);
+    } else {
+      toast.success("追加しました");
+    }
   };
 
   return (

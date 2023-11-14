@@ -8,9 +8,15 @@ export async function addWriting(formData: FormData) {
   const link = formData.get("link");
   const isPublished = !!formData.get("isPublished");
   const markdown = formData.get("markdown");
-  if (!title) return "no title provided";
-  if (!link) return "no link provided";
-  if (!markdown) return "no description provided";
+  if (!title) return {
+    error: "タイトルを入力してください",
+  };
+  if (!link) return {
+    error: "リンクを設定してください",
+  };
+  if (!markdown) return {
+    error: "最低でも1文字以上の本文を入力してください",
+  };
 
   try {
     await prisma.writing.create({
@@ -23,7 +29,7 @@ export async function addWriting(formData: FormData) {
     });
   } catch (error) {
     return {
-      error: "問題が発生しました",
+      error: "保存できませんでした",
     };
   }
   redirect("/control-panel");
@@ -36,15 +42,15 @@ export async function editWriting(formData: FormData, id: string) {
   const markdown = formData.get("markdown");
   if (!title)
     return {
-      error: "問題が発生しました",
+      error: "タイトルを入力してください",
     };
   if (!link)
     return {
-      error: "問題が発生しました",
+      error: "リンクを設定してください",
     };
   if (!markdown)
     return {
-      error: "問題が発生しました",
+      error: "最低でも1文字以上の本文を入力してください",
     };
 
   try {
@@ -60,7 +66,7 @@ export async function editWriting(formData: FormData, id: string) {
     });
   } catch (error) {
     return {
-      error: "問題が発生しました",
+      error: "保存できませんでした",
     };
   }
   redirect(`/control-panel/edit/${link}`);
@@ -68,7 +74,9 @@ export async function editWriting(formData: FormData, id: string) {
 
 export async function deleteWriting(formData: FormData) {
   const id = formData.get("delete");
-  if (!id) return "no id provided";
+  if (!id) return {
+    error: "問題が発生しました",
+  }
   try {
     await prisma.writing.delete({
       where: {
