@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint --fix 'app/**/*.{ts,tsx}'",
     "lint-fix": "eslint --fix './app/**/*.{ts,tsx}' && prettier --write './app/**/*.{ts,tsx}'",
-    "vercel-build": "prisma generate && next build"
+    "vercel-build": "prisma generate && next build",
+    "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.0",
