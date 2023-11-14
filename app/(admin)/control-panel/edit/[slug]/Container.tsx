@@ -24,9 +24,9 @@ export default function Container({ writing }: WritingProps) {
   const action = async (formData: FormData) => {
     const result = await editWriting(formData, postId);
     if (result?.error) {
-      toast.error("Error!");
+      toast.error(result.error);
     } else {
-      toast.success("Success!");
+      toast.success("更新しました");
     }
   };
 
@@ -37,8 +37,8 @@ export default function Container({ writing }: WritingProps) {
       >
         <form action={action}>
           <Navbar />
-          <div className="fixed inset-x-0 top-[150px] h-[full]">
-            <div className="flex h-[calc(100vh-150px)]">
+          <div className="fixed inset-x-0 top-[110px] h-[full]">
+            <div className="flex h-[calc(100vh-110px)]">
               <Preview />
               <Editor />
             </div>

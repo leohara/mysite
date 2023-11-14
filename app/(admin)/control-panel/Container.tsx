@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { SessionProvider } from "next-auth/react";
+import { toast } from "react-hot-toast";
 import { Writing } from "@prisma/client";
 import { MdOutlineEdit } from "react-icons/md";
 import { formatDate } from "@/app/components/formatDate";
@@ -17,7 +18,12 @@ type WritingProps = {
 
 export default function Container({ writings }: WritingProps) {
   const action = async (formData: FormData) => {
-    await deleteWriting(formData);
+    const result = await deleteWriting(formData);
+    if (result?.error) {
+      toast.error(result.error);
+    } else {
+      toast.success("削除に成功しました");
+    }
   };
 
   return (
