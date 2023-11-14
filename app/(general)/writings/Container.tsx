@@ -54,6 +54,7 @@ export default function Container({ writings }: { writings: Writing[] }) {
           <div className=" pt-[60px] lg:w-[320px]">
             <div className="flex-col px-[24px]">
               {writings.map((writing: Writing) => (
+                writing.published && (
                 <Link href={`/writings/${writing.postId}`} key={writing.id}>
                   <div
                     className={`
@@ -66,7 +67,7 @@ export default function Container({ writings }: { writings: Writing[] }) {
                       {new Date(writing.updatedAt).toISOString()}
                     </p>
                   </div>
-                </Link>
+                </Link>)
               ))}
             </div>
           </div>
