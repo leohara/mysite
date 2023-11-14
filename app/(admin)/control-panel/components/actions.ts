@@ -1,6 +1,7 @@
 "use server";
 
 import { prisma } from "@/app/lib/db/prisma";
+import { redirect } from "next/navigation";
 
 export async function editWriting(formData: FormData, id: string) {
   const title = formData.get("title");
@@ -26,4 +27,30 @@ export async function editWriting(formData: FormData, id: string) {
     console.error("Error updating writing:", error);
     throw error;
   }
+  redirect("/control-panel");
+}
+
+export async function addWriting(formData: FormData) {
+  const title = formData.get("title");
+  const link = formData.get("link");
+  const isPublished = !!formData.get("isPublished");
+  const markdown = formData.get("markdown");
+  if (!title) return "no title provided";
+  if (!link) return "no link provided";
+  if (!markdown) return "no description provided";
+
+  try {
+    await prisma.writing.create({
+      data: {
+        title: title.toString(),
+        postId: link.toString(),
+        content: markdown.toString(),
+        published: isPublished,
+      },
+    });
+  } catch (error) {
+    console.error("Error updating writing:", error);
+    throw error;
+  }
+  redirect("/control-panel");
 }

@@ -1,27 +1,21 @@
 "use client";
 
-import { editWriting } from "@/app/(admin)/control-panel/components/actions";
+import { addWriting } from "@/app/(admin)/control-panel/components/actions";
 import { EditContext } from "@/app/context/EditContext";
 import { TextContext } from "@/app/context/TextContext";
-import { Writing } from "@prisma/client";
 import { useState } from "react";
-import Editor from "../../components/Editor";
-import Navbar from "../../components/Navbar";
-import Preview from "../../components/Preview";
+import Editor from "@/app/(admin)/control-panel/components/Editor";
+import Navbar from "@/app/(admin)/control-panel/components/Navbar";
+import Preview from "@/app/(admin)/control-panel/components/Preview";
 
-type WritingProps = {
-  writing: Writing;
-};
-
-export default function Container({ writing }: WritingProps) {
-  const [postId] = useState<string>(writing.id);
-  const [title, setTitle] = useState<string>(writing.title);
-  const [link, setLink] = useState<string>(writing.postId);
-  const [isPublished, setIsPublished] = useState<boolean>(writing.published);
-  const [markdown, setMarkdown] = useState<string>(writing.content);
+export default function Container() {
+  const [title, setTitle] = useState<string>("");
+  const [link, setLink] = useState<string>("");
+  const [isPublished, setIsPublished] = useState<boolean>(false);
+  const [markdown, setMarkdown] = useState<string>("");
 
   const action = async (formData: FormData) => {
-    await editWriting(formData, postId);
+    await addWriting(formData);
   };
 
   return (

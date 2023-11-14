@@ -2,7 +2,7 @@
 
 import { EditContext } from "@/app/context/EditContext";
 import { useContext } from "react";
-import PublishSlider from "../../../../components/publishSlider/PublishSlider";
+import PublishSlider from "../../../components/publishSlider/PublishSlider";
 
 type EditContextType = {
   title: string;
