@@ -7,6 +7,7 @@ import {
   AiFillGithub,
   AiFillProject,
   AiOutlineArrowLeft,
+  AiOutlineClose,
 } from "react-icons/ai";
 import { BsFillBookmarksFill } from "react-icons/bs";
 import { FaHome } from "react-icons/fa";
@@ -51,76 +52,88 @@ export default function Sidebar() {
 
   return (
     <>
-      <div
-        className={`
-        ${"fixed z-20 ml-[24px] mt-[16px] lg:hidden"}
-        ${isOpen ? "hidden" : "block pr-[5px]"}
-        ${isDetail ? "hidden" : ""}
-        `}
-      >
-        <button className="space-y-[4px]" onClick={() => setIsOpen(!isOpen)}>
-          <div className="h-[2px] w-4 bg-[#404040]"></div>
-          <div className="h-[2px] w-4 bg-[#404040]"></div>
-          <div className="h-[2px] w-4 bg-[#404040]"></div>
-        </button>
-      </div>
       <Link
         className={`
-        ${"fixed z-20 ml-[20px] mt-[16px]"} 
+        ${"fixed z-30 ml-[20px] mt-[16px]"} 
         ${isDetail ? "block lg:hidden" : "hidden"}
         `}
         href={`/${returnURL}`}
       >
         <AiOutlineArrowLeft size={24} />
       </Link>
-      <div
-        className={`
-          ${"z-30 grid grid-cols-[0fr] overflow-hidden transition-all duration-[800ms] ease-in-out lg:grid-cols-[1fr]"}
+      <div className={`${isOpen ? "w-[320px]" : "lg:w-[200px]"}`}>
+        <div
+          className={`
+          ${"z-30 grid grid-cols-[0fr] overflow-hidden transition-all duration-500 ease-in-out lg:grid-cols-[1fr]"}
           ${isOpen ? "grid-cols-[1fr]" : "grid-cols-[0fr]"}
         `}
-        ref={sidebarRef}
-      >
-        <div
-          className="h-screen overflow-y-auto border-r-[0.5px] border-r-[#eeeff2] bg-[#F6F6F6] text-[#404040]"
-          onScroll={onScroll}
+          ref={sidebarRef}
         >
-          <Header
-            title={"leohara"}
-            hasScrolled={hasScrolled}
-            position={"left"}
-          />
-          <div className="pt-[32px]">
-            <div className="flex-col px-[24px]">
-              <LinkButton name={"Home"} url={"/"}>
-                <FaHome size={14} />
-              </LinkButton>
-            </div>
-            <div className="flex-col px-[24px]">
-              <p className="text-[12px] text-[#9f9f9f]">Me</p>
-              <LinkButton name={"About"} url={"/about"}>
-                <IoIosBeer />
-              </LinkButton>
-              <LinkButton name={"Writings"} url={"/writings"}>
-                <MdArticle size={14} />
-              </LinkButton>
-              <LinkButton name={"Bookmarks"} url={"/bookmarks"}>
-                <BsFillBookmarksFill size={14} />
-              </LinkButton>
-              <LinkButton name={"Projects"} url={"/projects"}>
-                <AiFillProject />
-              </LinkButton>
-            </div>
-            <div className="flex-col px-[24px]">
-              <p className="text-[12px] text-[#9f9f9f]">Online</p>
-              <LinkButton name={"Github"} url={"https://github.com/leohara"}>
-                <AiFillGithub size={14} />
-              </LinkButton>
-              <LinkButton name={"X"} url={"/"}>
-                <FaXTwitter size={14} />
-              </LinkButton>
+          <div
+            className={`
+          ${"h-screen overflow-y-auto border-r-[0.5px] border-r-[#eeeff2] bg-[#F6F6F6] text-[#404040]"}
+          `}
+            onScroll={onScroll}
+          >
+            <Header
+              title={"leohara"}
+              hasScrolled={hasScrolled}
+              position={"left"}
+            />
+            <div className="pt-[32px]">
+              <div className="flex-col px-[24px]">
+                <LinkButton name={"Home"} url={"/"}>
+                  <FaHome size={14} />
+                </LinkButton>
+              </div>
+              <div className="flex-col px-[24px]">
+                <p className="text-[12px] text-[#9f9f9f]">Me</p>
+                <LinkButton name={"About"} url={"/about"}>
+                  <IoIosBeer />
+                </LinkButton>
+                <LinkButton name={"Writings"} url={"/writings"}>
+                  <MdArticle size={14} />
+                </LinkButton>
+                <LinkButton name={"Bookmarks"} url={"/bookmarks"}>
+                  <BsFillBookmarksFill size={14} />
+                </LinkButton>
+                <LinkButton name={"Projects"} url={"/projects"}>
+                  <AiFillProject />
+                </LinkButton>
+              </div>
+              <div className="flex-col px-[24px]">
+                <p className="text-[12px] text-[#9f9f9f]">Online</p>
+                <LinkButton name={"Github"} url={"https://github.com/leohara"}>
+                  <AiFillGithub size={14} />
+                </LinkButton>
+                <LinkButton name={"X"} url={"/"}>
+                  <FaXTwitter size={14} />
+                </LinkButton>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className={`
+        ${"fixed z-20 ml-[24px] mt-[17px] lg:hidden"}
+        ${isOpen ? "" : "pr-[5px] lg:block"}
+        ${isDetail ? "hidden" : ""}
+        `}
+      >
+        <button className="space-y-[4px]" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? (
+            <div className="pt-[1px]">
+              <AiOutlineClose size={18} />
+            </div>
+          ) : (
+            <>
+              <div className="h-[2px] w-4 bg-[#404040]"></div>
+              <div className="h-[2px] w-4 bg-[#404040]"></div>
+              <div className="h-[2px] w-4 bg-[#404040]"></div>
+            </>
+          )}
+        </button>
       </div>
     </>
   );

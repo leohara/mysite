@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { AiOutlineClose } from "react-icons/ai";
 import { SidebarContext } from "../provider/SidebarProvider";
 
 type Props = {
@@ -9,7 +8,7 @@ type Props = {
 };
 
 export default function Header({ title, hasScrolled, position }: Props) {
-  const { isOpen, setIsOpen } = useContext(SidebarContext);
+  const { isOpen } = useContext(SidebarContext);
 
   return (
     <div
@@ -27,7 +26,7 @@ export default function Header({ title, hasScrolled, position }: Props) {
         }
         ${
           position == "right"
-            ? "g:w-[calc(100vw-200px)] fixed w-screen  border-r-[0.5px] border-r-[#eeeff2] bg-[#fff]"
+            ? "fixed w-screen border-r-[0.5px] border-r-[#eeeff2] bg-[#fff] lg:w-[calc(100vw-200px)]"
             : ""
         }
         ${
@@ -40,20 +39,11 @@ export default function Header({ title, hasScrolled, position }: Props) {
         transition-shadow duration-300
         `}
     >
-      <div className="flex w-full px-[25px] pb-[14px] pt-[16px]">
-        <button
-          className={`
-            ${"mr-[16px] lg:hidden"}
-            ${position == "left" ? "" : "hidden"}
-          `}
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <AiOutlineClose size={16} />
-        </button>
+      <div className="w-full px-[25px] pb-[14px] pt-[16px]">
         <p
           className={`
           ${"font-[#363636] font-bold"}
-          ${position == "left" ? "" : "pl-[32px] lg:pl-[0px]"}
+          ${position == "left" ? "pl-[24px]" : "pl-[32px] lg:pl-[0px]"}
           ${position == "right-detail" ? "truncate" : ""}
         `}
         >
