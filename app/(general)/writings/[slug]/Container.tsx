@@ -24,12 +24,12 @@ export default function Layout({ writing }: WritingProps) {
   return (
     <div
       className={`
-        ${"h-screen w-screen lg:w-[calc(100vw-519px)]"}
+        ${"h-screen w-screen lg:w-[calc(100vw-520px)]"}
         ${isOpen ? "pointer-events-none z-20 bg-[#ccc] opacity-5" : "bg-[#fff]"}
         `}
     >
       <div
-        className="fixed h-screen w-screen overflow-y-auto pb-[200px] text-[#000] lg:w-[calc(100vw-519px)] lg:border-l-[0.5px] lg:border-l-[#eeeff2]"
+        className="fixed h-screen w-screen overflow-y-auto pb-[200px] text-[#000] lg:w-[calc(100vw-520px)]"
         onScroll={onScroll}
       >
         <Header

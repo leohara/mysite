@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <SidebarProvider>
         <body
-          className={`${inter.className} m-0 box-border h-screen w-full overflow-x-hidden p-0`}
+          className={`${inter.className} m-0 box-border h-screen w-full overflow-hidden p-0`}
         >
           <div className="flex">
             <Sidebar />

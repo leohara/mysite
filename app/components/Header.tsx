@@ -14,21 +14,25 @@ export default function Header({ title, hasScrolled, position }: Props) {
   return (
     <div
       className={`
-        ${"fixed z-20 h-[48px]"}
+        ${"z-20 h-[48px] overflow-hidden"}
         ${
           position == "left"
-            ? "w-[300.5px] border-r-[0.5px] border-r-[#eeeff2] bg-[#f6f6f6] lg:w-[200.5px]"
+            ? "grid w-[300px] grid-cols-[0fr] bg-[#f6f6f6] lg:w-[200px] lg:grid-cols-[1fr]"
             : ""
         }
-        ${position == "middle" ? "w-screen bg-[#fff] lg:w-[319px]" : ""}
+        ${
+          position == "middle"
+            ? "fixed w-screen border-r-[0.5px] border-r-[#eeeff2] bg-[#fff] lg:w-[320px]"
+            : ""
+        }
         ${
           position == "right"
-            ? "w-screen bg-[#fff]  lg:w-[calc(100vw-199px)]"
+            ? "g:w-[calc(100vw-200px)] fixed w-screen  border-r-[0.5px] border-r-[#eeeff2] bg-[#fff]"
             : ""
         }
         ${
           position == "right-detail"
-            ? "w-screen bg-[#fff]  lg:w-[calc(100vw-519px)]"
+            ? "fixed w-screen border-r-[0.5px]  border-r-[#eeeff2] bg-[#fff] lg:w-[calc(100vw-520px)]"
             : ""
         }
         ${isOpen && position !== "left" ? "bg-[#ccc] opacity-5" : ""}

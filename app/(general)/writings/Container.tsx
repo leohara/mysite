@@ -34,7 +34,7 @@ export default function Container({ writings }: { writings: Writing[] }) {
   return (
     <div
       className={`
-      ${"h-screen pl-[1px] lg:w-[320px]"}
+      ${"h-screen lg:w-[320px]"}
       ${isDetail ? "hidden lg:block" : ""}
       ${isOpen ? "pointer-events-none z-20 bg-[#ccc] opacity-5" : "bg-[#fff]"}
     `}
@@ -51,7 +51,7 @@ export default function Container({ writings }: { writings: Writing[] }) {
             hasScrolled={hasScrolled}
             position={"middle"}
           />
-          <div className=" pt-[60px] lg:w-[320px]">
+          <div className=" pt-[64px] lg:w-[320px]">
             <div className="flex-col px-[24px]">
               {writings.map(
                 (writing: Writing) =>
