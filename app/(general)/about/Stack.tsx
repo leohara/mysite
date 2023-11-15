@@ -45,7 +45,7 @@ export default function Stack() {
         <Rating rating={4} name={"Next.js"}>
           <Nextjs />
         </Rating>
-        <Rating rating={3} name={"Prisma"}>
+        <Rating rating={4} name={"Prisma"}>
           <Prisma />
         </Rating>
         <Rating rating={1} name={"Jest"}>
