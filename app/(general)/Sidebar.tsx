@@ -7,6 +7,7 @@ import {
   AiFillGithub,
   AiFillProject,
   AiOutlineArrowLeft,
+  AiOutlineClose,
 } from "react-icons/ai";
 import { BsFillBookmarksFill } from "react-icons/bs";
 import { FaHome } from "react-icons/fa";
@@ -48,48 +49,38 @@ export default function Sidebar() {
   const onScroll = (e: React.UIEvent<HTMLDivElement>) => {
     setHasScrolled(e.currentTarget.scrollTop > 0);
   };
+
   return (
     <>
-      <div
-        className={`
-          ${"fixed z-20 ml-[24px] mt-[16px] lg:hidden"}
-          ${isOpen ? "hidden" : "block pr-[5px]"}
-          ${isDetail ? "hidden" : ""}
-        `}
-      >
-        <button className="space-y-[4px]" onClick={() => setIsOpen(!isOpen)}>
-          <div className="h-[2px] w-4 bg-[#404040]"></div>
-          <div className="h-[2px] w-4 bg-[#404040]"></div>
-          <div className="h-[2px] w-4 bg-[#404040]"></div>
-        </button>
-      </div>
       <Link
-        className={`${"fixed z-20 ml-[20px] mt-[16px]"} ${
-          isDetail ? "lg:hidden" : "hidden"
-        }`}
+        className={`
+        ${"fixed z-30 ml-[20px] mt-[16px]"} 
+        ${isDetail ? "block lg:hidden" : "hidden"}
+        `}
         href={`/${returnURL}`}
       >
         <AiOutlineArrowLeft size={24} />
       </Link>
-      <div
-        className={`
-          ${"z-30 w-[300px] lg:block lg:w-[200px]"}
-          ${isOpen ? "fixed" : "hidden"}
-          ${isDetail ? "hidden" : ""}
-        `}
-        ref={sidebarRef}
-      >
+      <div className={`${isOpen ? "w-[320px]" : "lg:w-[200px]"}`}>
         <div
-          className="fixed mb-[200px] h-screen overflow-y-auto border-r-[0.5px] border-[#eeeff2] bg-[#F6F6F6] text-[#404040]"
-          onScroll={onScroll}
+          className={`
+          ${"z-30 grid grid-cols-[0fr] overflow-hidden transition-all duration-500 ease-in-out lg:grid-cols-[1fr]"}
+          ${isOpen ? "grid-cols-[1fr]" : "grid-cols-[0fr]"}
+        `}
+          ref={sidebarRef}
         >
-          <Header
-            title={"leohara"}
-            hasScrolled={hasScrolled}
-            position={"left"}
-          />
-          <div className="pt-[64px]">
-            <div className="w-[300px] lg:w-[200px]">
+          <div
+            className={`
+          ${"h-screen overflow-y-auto border-r-[0.5px] border-r-[#eeeff2] bg-[#F6F6F6] text-[#404040]"}
+          `}
+            onScroll={onScroll}
+          >
+            <Header
+              title={"leohara"}
+              hasScrolled={hasScrolled}
+              position={"left"}
+            />
+            <div className="pt-[32px]">
               <div className="flex-col px-[24px]">
                 <LinkButton name={"Home"} url={"/"}>
                   <FaHome size={14} />
@@ -122,6 +113,27 @@ export default function Sidebar() {
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className={`
+        ${"fixed z-20 ml-[24px] mt-[17px] lg:hidden"}
+        ${isOpen ? "" : "pr-[5px] lg:block"}
+        ${isDetail ? "hidden" : ""}
+        `}
+      >
+        <button className="space-y-[4px]" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? (
+            <div className="pt-[1px]">
+              <AiOutlineClose size={18} />
+            </div>
+          ) : (
+            <>
+              <div className="h-[2px] w-4 bg-[#404040]"></div>
+              <div className="h-[2px] w-4 bg-[#404040]"></div>
+              <div className="h-[2px] w-4 bg-[#404040]"></div>
+            </>
+          )}
+        </button>
       </div>
     </>
   );
