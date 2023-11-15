@@ -7,7 +7,6 @@ import {
   AiFillGithub,
   AiFillProject,
   AiOutlineArrowLeft,
-  AiOutlineClose,
 } from "react-icons/ai";
 import { BsFillBookmarksFill } from "react-icons/bs";
 import { FaHome } from "react-icons/fa";
@@ -71,7 +70,7 @@ export default function Sidebar() {
         >
           <div
             className={`
-          ${"h-screen overflow-y-auto border-r-[0.5px] border-r-[#eeeff2] bg-[#F6F6F6] text-[#404040]"}
+          ${"h-screen overflow-y-auto border-r-[0.5px] border-r-[#eeeff2] bg-[#f6f6f6] text-[#404040]"}
           `}
             onScroll={onScroll}
           >
@@ -80,7 +79,7 @@ export default function Sidebar() {
               hasScrolled={hasScrolled}
               position={"left"}
             />
-            <div className="pt-[32px]">
+            <div className="pt-[16px]">
               <div className="flex-col px-[24px]">
                 <LinkButton name={"Home"} url={"/"}>
                   <FaHome size={14} />
@@ -120,21 +119,7 @@ export default function Sidebar() {
         ${isOpen ? "" : "pr-[5px] lg:block"}
         ${isDetail ? "hidden" : ""}
         `}
-      >
-        <button className="space-y-[4px]" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? (
-            <div className="pt-[1px]">
-              <AiOutlineClose size={18} />
-            </div>
-          ) : (
-            <>
-              <div className="h-[2px] w-4 bg-[#404040]"></div>
-              <div className="h-[2px] w-4 bg-[#404040]"></div>
-              <div className="h-[2px] w-4 bg-[#404040]"></div>
-            </>
-          )}
-        </button>
-      </div>
+      ></div>
     </>
   );
 }
