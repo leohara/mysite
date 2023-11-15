@@ -31,7 +31,7 @@ export default function Container() {
 
       <p className="py-[16px] text-[20px] font-semibold">Favorite</p>
       <div className="pl-[20px]">
-        <Favorite title={"Hall of Fame"} >
+        <Favorite title={"Hall of Fame"}>
           <Album name="revolver.jpg">
             <p>Revolver</p>
             <p>The Beatles (1966)</p>
@@ -57,7 +57,7 @@ export default function Container() {
             <p>Jack Johnson (2001)</p>
           </Album>
         </Favorite>
-        <Favorite title={"Albums I Listened to a Lot in 2023"} >
+        <Favorite title={"Albums I Listened to a Lot in 2023"}>
           <Album name="cafe_blue.jpg">
             <p>Café Bleu</p>
             <p>The Style Council (1984)</p>
@@ -80,10 +80,10 @@ export default function Container() {
           </Album>
           <Album name="route20.jpg">
             <p>ROUTE 20 HIT ROAD</p>
-            <p>EGO-WRAPPIN' (2016)</p>
+            <p>EGO-WRAPPIN&apos; (2016)</p>
           </Album>
         </Favorite>
-        <Favorite title={"Albums I Listened to a Lot in 2022"} >
+        <Favorite title={"Albums I Listened to a Lot in 2022"}>
           <Album name="3x3x3.jpg">
             <p>3×3×3</p>
             <p>ゆらゆら帝国 (1998)</p>

@@ -1,10 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import Album from "./Album";
 import { GoTriangleRight, GoTriangleDown } from "react-icons/go";
 
-export default function Favorite({ children, title }: { children: React.ReactNode, title: string }) {
+export default function Favorite({
+  children,
+  title,
+}: {
+  children: React.ReactNode;
+  title: string;
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -20,7 +25,7 @@ export default function Favorite({ children, title }: { children: React.ReactNod
       `}
       >
         <div className="mt-[8px] grid grid-cols-1 overflow-hidden pt-[8px] lg:grid-cols-2">
-          { children }
+          {children}
         </div>
       </div>
     </>
