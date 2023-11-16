@@ -64,7 +64,7 @@ export default function Container({ writings }: { writings: Writing[] }) {
                       ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
                       `}
                       >
-                        <p className="text-[16px] font-bold">{writing.title}</p>
+                        <p className="truncate text-[16px] font-bold">{writing.title}</p>
                         <p className="text-[12px] text-[#9f9f9f]">
                           {formatDate(writing.updatedAt)}
                         </p>
