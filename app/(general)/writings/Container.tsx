@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import { SidebarContext } from "../../provider/SidebarProvider";
+import { formatDate } from "@/app/lib/formatDate";
 
 type Writing = {
   id: string;
@@ -63,9 +64,9 @@ export default function Container({ writings }: { writings: Writing[] }) {
                       ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
                       `}
                       >
-                        <p className="text-[14px] font-bold">{writing.title}</p>
+                        <p className="text-[16px] font-bold">{writing.title}</p>
                         <p className="text-[12px] text-[#9f9f9f]">
-                          {new Date(writing.updatedAt).toISOString()}
+                          {formatDate(writing.updatedAt)}
                         </p>
                       </div>
                     </Link>

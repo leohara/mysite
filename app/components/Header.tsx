@@ -36,7 +36,7 @@ export default function Header({ title, hasScrolled, position }: Props) {
             : ""
         }
         ${isOpen && position !== "left" ? "bg-[#ccc]" : ""}
-        ${hasScrolled ? "border-b opacity-80 shadow-bottom" : "shadow-none"}
+        ${hasScrolled ? "border-b opacity-95 shadow-bottom" : "shadow-none"}
         transition-shadow duration-300
         `}
     >
@@ -72,10 +72,15 @@ export default function Header({ title, hasScrolled, position }: Props) {
         </button>
         <p
           className={`
-            ${"font-[#363636] font-bold"}
+            ${"font-[#363636] font-bold transition-opacity duration-300"}
             ${position == "left" ? "" : "pl-[24px] lg:pl-[0px]"}
             ${isOpen ? "pl-[24px]" : ""}
-            ${position == "right-detail" ? "ml-[12px] truncate" : ""}
+            ${position == "right-detail" ? "ml-[12px] truncate opacity-0" : ""}
+            ${
+              position == "right-detail" && hasScrolled
+                ? "ml-[12px] truncate opacity-100"
+                : ""
+            }
           `}
         >
           {title}
