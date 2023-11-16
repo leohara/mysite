@@ -8,7 +8,7 @@ import { TextContext } from "@/app/context/TextContext";
 import { Writing } from "@prisma/client";
 import Editor from "../../components/Editor";
 import Navbar from "../../components/Navbar";
-import Preview from "../../components/Preview";
+import MarkdownPreview from "@/app/components/MarkdownPreview";
 
 type WritingProps = {
   writing: Writing;
@@ -39,7 +39,7 @@ export default function Container({ writing }: WritingProps) {
           <Navbar />
           <div className="fixed inset-x-0 top-[110px] h-[full]">
             <div className="flex h-[calc(100vh-110px)]">
-              <Preview />
+              <MarkdownPreview content={markdown} />
               <Editor />
             </div>
           </div>

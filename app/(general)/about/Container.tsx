@@ -31,7 +31,7 @@ export default function Container() {
 
       <p className="py-[16px] text-[20px] font-semibold">Favorite</p>
       <div className="pl-[20px]">
-        <Favorite title={"Hall of Fame"}>
+        <Favorite title={"My Hall of Fame"}>
           <Album name="revolver.jpg">
             <p>Revolver</p>
             <p>The Beatles (1966)</p>

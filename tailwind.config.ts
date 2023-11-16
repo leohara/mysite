@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       boxShadow: {
-        'bottom': '0 2px 2px -1px rgba(0, 0, 0, 0.1)', // ここに新しいボックスシャドウを追加
+        'bottom': '0 2px 2px -1px rgba(0, 0, 0, 0.1)', 
       }
     }
   },

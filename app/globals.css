@@ -23,7 +23,7 @@
 }
 
 .markdown a {
-  @apply text-blue-600 font-semibold;
+  @apply text-blue-600 font-semibold underline decoration-1 decoration-blue-600;
 }
 
 .markdown strong a {
@@ -59,11 +59,7 @@
 }
 
 .markdown code {
-  @apply font-mono text-sm inline bg-gray-200 rounded px-1 py-5;
-}
-
-.markdown pre {
-  @apply bg-gray-100 rounded p-4;
+  @apply font-mono text-sm inline-block bg-gray-200 rounded px-1 py-1;
 }
 
 .markdown pre code {
@@ -94,7 +90,6 @@
   @apply border py-1 px-3;
 }
 
-Override pygments style background color.
 .markdown .highlight pre {
-  @apply bg-gray-100 !important;
+  @apply bg-gray-100 rounded p-4;
 }

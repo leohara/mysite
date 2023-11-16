@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from "react";
-import { toast } from "react-hot-toast";
-import { addWriting } from "@/app/(admin)/control-panel/components/actions";
-import { EditContext } from "@/app/context/EditContext";
-import { TextContext } from "@/app/context/TextContext";
 import Editor from "@/app/(admin)/control-panel/components/Editor";
 import Navbar from "@/app/(admin)/control-panel/components/Navbar";
-import Preview from "@/app/(admin)/control-panel/components/Preview";
+import { addWriting } from "@/app/(admin)/control-panel/components/actions";
+import MarkdownPreview from "@/app/components/MarkdownPreview";
+import { EditContext } from "@/app/context/EditContext";
+import { TextContext } from "@/app/context/TextContext";
+import { useState } from "react";
+import { toast } from "react-hot-toast";
 
 export default function Container() {
   const [title, setTitle] = useState<string>("");
@@ -33,7 +33,7 @@ export default function Container() {
           <Navbar />
           <div className="fixed inset-x-0 top-[110px] h-[full]">
             <div className="flex h-[calc(100vh-110px)]">
-              <Preview />
+              <MarkdownPreview content={markdown} />
               <Editor />
             </div>
           </div>
