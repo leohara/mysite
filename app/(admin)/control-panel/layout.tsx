@@ -21,15 +21,22 @@ export default async function RootLayout({
   const session = await getAuthSession();
   if (!session) redirect("/api/auth/signin");
   const EMAIL = process.env.MY_EMAIL;
-  if (session?.user?.email !== EMAIL) return <NotFound />;
 
   return (
     <html lang="en">
       <body
         className={`${inter.className} m-0 box-border h-screen w-full overflow-x-hidden p-0`}
       >
-        {children}
-        <Toaster position="top-center" />
+        {session?.user?.email !== EMAIL ? (
+          <>
+            <NotFound />
+          </>
+        ) : (
+          <>
+            {children}
+            <Toaster position="top-center" />
+          </>
+        )}
       </body>
     </html>
   );
