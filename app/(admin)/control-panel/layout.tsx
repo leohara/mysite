@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { redirect } from "next/navigation";
 import "@/app/globals.css";
-import { getServerSession } from "next-auth/next";
 import { Toaster } from "react-hot-toast";
-import NextAuthSessionProvider from "@/app/provider/SessionProvider";
-import { authOptions } from "@/app/utils/authOptions";
+import { getAuthSession } from "@/app/lib/next-auth/getAuthSession";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,19 +17,17 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const session = await getServerSession(authOptions);
+  const session = await getAuthSession();
   if (!session) redirect("/api/auth/signin");
 
   return (
-    <NextAuthSessionProvider>
-      <html lang="en">
-        <body
-          className={`${inter.className} m-0 box-border h-screen w-full overflow-x-hidden p-0`}
-        >
-          {children}
-          <Toaster position="top-center" />
-        </body>
-      </html>
-    </NextAuthSessionProvider>
+    <html lang="en">
+      <body
+        className={`${inter.className} m-0 box-border h-screen w-full overflow-x-hidden p-0`}
+      >
+        {children}
+        <Toaster position="top-center" />
+      </body>
+    </html>
   );
 }
