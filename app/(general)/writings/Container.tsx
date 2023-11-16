@@ -1,23 +1,18 @@
 "use client";
 
-import Header from "@/app/components/Header";
+import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useContext, useEffect, useState } from "react";
+import { Writing } from "@prisma/client";
 import { SidebarContext } from "../../provider/SidebarProvider";
+import Header from "@/app/components/Header";
 import { formatDate } from "@/app/lib/formatDate";
 
-type Writing = {
-  id: string;
-  title: string;
-  postId: string;
-  content: string | null;
-  published: boolean;
-  createdAt: Date;
-  updatedAt: Date;
+type WritingProps = {
+  writings: Writing[];
 };
 
-export default function Container({ writings }: { writings: Writing[] }) {
+export default function Container({ writings }: WritingProps) {
   const [hasScrolled, setHasScrolled] = useState(false);
   const { isOpen, setIsOpen } = useContext(SidebarContext);
   useEffect(() => {
