@@ -44,7 +44,7 @@ export default function Layout({ writing }: WritingProps) {
               {writing.title}
             </h1>
             <p className="pt-[12px] text-[16px] text-[#9f9f9f]">
-              {formatDate(writing.updatedAt)}
+              {formatDate(writing.createdAt)}
             </p>
           </div>
           <Markdown content={writing.content} />
