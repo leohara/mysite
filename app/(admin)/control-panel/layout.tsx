@@ -21,7 +21,7 @@ export default async function RootLayout({
   const session = await getAuthSession();
   if (!session) redirect("/api/auth/signin");
   const EMAIL = process.env.MY_EMAIL;
-  if (session?.user?.email !== EMAIL ) return <NotFound />;
+  if (session?.user?.email !== EMAIL) return <NotFound />;
 
   return (
     <html lang="en">
