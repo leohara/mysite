@@ -38,9 +38,9 @@ export default function Layout({ writing }: WritingProps) {
           hasScrolled={hasScrolled}
           position={"right-detail"}
         />
-        <div className="px-[32px] pt-[80px] lg:px-[48px]">
+        <div className="px-[32px] pt-[50px] lg:px-[48px]">
           <div className="py-[36px] text-center">
-            <h1 className="break-words px-[16px] text-[24px] lg:w-full">
+            <h1 className="break-words px-[16px] text-[24px] font-bold lg:w-full">
               {writing.title}
             </h1>
             <p className="pt-[12px] text-[16px] text-[#9f9f9f]">
