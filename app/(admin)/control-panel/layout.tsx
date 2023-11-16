@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import "@/app/globals.css";
 import { Toaster } from "react-hot-toast";
 import { getAuthSession } from "@/app/lib/next-auth/getAuthSession";
+import NotFound from "@/app/(admin)/not-found";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,8 @@ export default async function RootLayout({
 }) {
   const session = await getAuthSession();
   if (!session) redirect("/api/auth/signin");
+  const EMAIL = process.env.MY_EMAIL;
+  if (session?.user?.email !== EMAIL) return <NotFound />;
 
   return (
     <html lang="en">
