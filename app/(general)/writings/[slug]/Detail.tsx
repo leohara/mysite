@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Ref } from "react";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -7,29 +7,56 @@ import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 
+type CodeProps = {
+  className?: string;
+  children?: React.ReactNode;
+  node: any;
+};
+
+const CodeBlock = React.forwardRef<HTMLDivElement, CodeProps>((props, ref) => {
+  const { children, className, node, ...rest } = props;
+  const match = /language-(\w+)/.exec(className || "");
+  const title = node?.data?.meta
+    ?.split(" ")[0]
+    ?.split("=")[1]
+    ?.replace(/"/g, "");
+  return (
+    <div>
+      {title && (
+        <div className="inline h-[15px] border-[1px] border-x-[0px] border-t-[0px] border-b-[#1e1e1e] px-[16px] text-[15px] text-[#1e1e1e]">
+          {title}
+        </div>
+      )}
+      {match ? (
+        <SyntaxHighlighter
+          {...rest}
+          style={vscDarkPlus}
+          language={match[1]}
+          PreTag="div"
+          ref={ref as Ref<SyntaxHighlighter>}
+          className={`
+        ${"rounded-[12px]"}
+        `}
+        >
+          {String(children).replace(/\n$/, "")}
+        </SyntaxHighlighter>
+      ) : (
+        <code {...rest} className="rounded-[16px]">
+          {children}
+        </code>
+      )}
+    </div>
+  );
+});
+CodeBlock.displayName = "CodeBlock";
+
 export default function Detail({ content }: { content: string }) {
   return (
     <ReactMarkdown
       components={{
-        code(props) {
-          const { children, className, ...rest } = props;
-          const match = /language-(\w+)/.exec(className || "");
-          return match ? (
-            <SyntaxHighlighter
-              {...rest}
-              style={vscDarkPlus}
-              language={match[1]}
-              PreTag="div"
-              ref={React.createRef<SyntaxHighlighter>()}
-            >
-              {String(children).replace(/\n$/, "")}
-            </SyntaxHighlighter>
-          ) : (
-            <code {...rest} className={className}>
-              {children}
-            </code>
-          );
-        },
+        code: CodeBlock as any,
+        pre: ({ children }) => <pre className="">{children}</pre>,
+        div: ({ children }) => <div className="">{children}</div>,
       }}
       remarkPlugins={[remarkGfm, remarkMath, remarkBreaks]}
       rehypePlugins={[rehypeKatex]}

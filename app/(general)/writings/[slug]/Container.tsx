@@ -5,6 +5,7 @@ import { Writing } from "@prisma/client";
 import { SidebarContext } from "@/app/provider/SidebarProvider";
 import Header from "@/app/components/Header";
 import Detail from "./Detail";
+import { formatDate } from "@/app/lib/formatDate";
 
 type WritingProps = {
   writing: Writing;
@@ -37,7 +38,15 @@ export default function Layout({ writing }: WritingProps) {
           hasScrolled={hasScrolled}
           position={"right-detail"}
         />
-        <div className="px-[45px] pt-[80px]">
+        <div className="px-[32px] pt-[80px] lg:px-[48px]">
+          <div className="py-[36px] text-center">
+            <h1 className="w-screen break-words px-[16px] text-[24px] lg:w-full">
+              {writing.title}
+            </h1>
+            <p className="pt-[12px] text-[16px] text-[#9f9f9f]">
+              {formatDate(writing.updatedAt)}
+            </p>
+          </div>
           <Detail content={writing.content} />
         </div>
       </div>
