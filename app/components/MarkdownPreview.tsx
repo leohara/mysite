@@ -21,7 +21,7 @@ const CodeBlock = React.forwardRef<HTMLDivElement, CodeProps>((props, ref) => {
     ?.split("=")[1]
     ?.replace(/"/g, "");
   return (
-    <div>
+    <div className="inline">
       {title && (
         <div className="inline h-[15px] border-[1px] border-x-[0px] border-t-[0px] border-b-[#1e1e1e] px-[16px] text-[15px] text-[#1e1e1e]">
           {title}
@@ -50,19 +50,20 @@ const CodeBlock = React.forwardRef<HTMLDivElement, CodeProps>((props, ref) => {
 });
 CodeBlock.displayName = "CodeBlock";
 
-export default function Detail({ content }: { content: string }) {
+export default function MarkdownPreview({ content }: { content: string }) {
   return (
-    <ReactMarkdown
-      components={{
-        code: CodeBlock as any,
-        pre: ({ children }) => <pre className="">{children}</pre>,
-        div: ({ children }) => <div className="">{children}</div>,
-      }}
-      remarkPlugins={[remarkGfm, remarkMath, remarkBreaks]}
-      rehypePlugins={[rehypeKatex]}
-      className="markdown"
-    >
-      {content}
-    </ReactMarkdown>
+    <div className="h-full flex-1 overflow-y-auto border-r-[0.5px] border-solid border-[#ccc] p-[20px] pb-[150px]">
+      <ReactMarkdown
+        components={{
+          code: CodeBlock as any,
+          pre: ({ children }) => <pre className="">{children}</pre>,
+        }}
+        remarkPlugins={[remarkGfm, remarkMath, remarkBreaks]}
+        rehypePlugins={[rehypeKatex]}
+        className="markdown"
+      >
+        {content}
+      </ReactMarkdown>
+    </div>
   );
 }

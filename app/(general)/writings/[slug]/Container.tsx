@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect, useContext } from "react";
-import { Writing } from "@prisma/client";
-import { SidebarContext } from "@/app/provider/SidebarProvider";
 import Header from "@/app/components/Header";
-import Detail from "./Detail";
+import Markdown from "@/app/components/Markdown";
 import { formatDate } from "@/app/lib/formatDate";
+import { SidebarContext } from "@/app/provider/SidebarProvider";
+import { Writing } from "@prisma/client";
+import { useContext, useEffect, useState } from "react";
 
 type WritingProps = {
   writing: Writing;
@@ -47,7 +47,7 @@ export default function Layout({ writing }: WritingProps) {
               {formatDate(writing.updatedAt)}
             </p>
           </div>
-          <Detail content={writing.content} />
+          <Markdown content={writing.content} />
         </div>
       </div>
     </div>
