@@ -1,13 +1,20 @@
-import WritingList from "./WritingList";
+export const dynamic = "force-dynamic";
 
-export default function WritingLayout({
+import { prisma } from "@/app/lib/db/prisma";
+import Container from "./Container";
+
+export default async function WritingLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const writings = await prisma.writing.findMany({
+    orderBy: { updatedAt: "desc" },
+  });
+
   return (
     <div className="flex">
-      <WritingList />
+      <Container writings={writings} />
       <div className="flex-1">{children}</div>
     </div>
   );
