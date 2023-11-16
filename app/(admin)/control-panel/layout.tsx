@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { redirect } from "next/navigation";
 import "@/app/globals.css";
 import { Toaster } from "react-hot-toast";
+import { env } from "@/app/lib/env";
 import { getAuthSession } from "@/app/lib/next-auth/getAuthSession";
 import NotFound from "@/app/(admin)/not-found";
 
@@ -20,7 +21,7 @@ export default async function RootLayout({
 }) {
   const session = await getAuthSession();
   if (!session) redirect("/api/auth/signin");
-  const EMAIL = process.env.MY_EMAIL;
+  const EMAIL = env.MY_EMAIL;
 
   return (
     <html lang="en">

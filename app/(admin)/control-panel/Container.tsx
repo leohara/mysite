@@ -5,7 +5,7 @@ import { SessionProvider } from "next-auth/react";
 import { toast } from "react-hot-toast";
 import { Writing } from "@prisma/client";
 import { MdOutlineEdit } from "react-icons/md";
-import { formatDate } from "@/app/components/formatDate";
+import { formatDate } from "@/app/lib/formatDate";
 import { deleteWriting } from "./components/actions";
 import PostId from "@/app/components/pageList/PostId";
 import Status from "@/app/components/pageList/Status";
