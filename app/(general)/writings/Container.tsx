@@ -59,9 +59,11 @@ export default function Container({ writings }: WritingProps) {
                       ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
                       `}
                       >
-                        <p className="truncate text-[16px] font-bold">
-                          {writing.title}
-                        </p>
+                        <div className="line-clamp-2">
+                          <p className="text-[16px] font-bold">
+                            {writing.title}
+                          </p>
+                        </div>
                         <p className="text-[12px] text-[#9f9f9f]">
                           {formatDate(writing.updatedAt)}
                         </p>
