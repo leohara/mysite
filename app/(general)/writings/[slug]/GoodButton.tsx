@@ -34,7 +34,7 @@ export default function GoodButton({
           )}
         </button>
       </div>
-      <div className="pb-[80px] text-center">
+      <div className="pb-[150px] text-center">
         {count < 19 ? <></> : <p className="font-semibold">Thank You!</p>}
       </div>
     </>

@@ -70,12 +70,14 @@ export default function Layout({ writing }: WritingProps) {
           </div>
           <Markdown content={writing.content} />
         </div>
-        <GoodButton
-          count={count}
-          isClicked={isClicked}
-          likes={likes}
-          clickHandler={clickHandler}
-        />
+        <div className="pt-[50px]">
+          <GoodButton
+            count={count}
+            isClicked={isClicked}
+            likes={likes}
+            clickHandler={clickHandler}
+          />
+        </div>
       </div>
     </div>
   );
