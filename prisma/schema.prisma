@@ -23,6 +23,7 @@ model Writing {
   published Boolean @default(false)
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @default(now()) @updatedAt @map("updated_at")
+  likes     Int      @default(0) @map("likes")
 
   @@map("writings")
 }
@@ -37,12 +38,4 @@ model Bookmark {
   updatedAt  DateTime @default(now()) @map("updated_at")
 
   @@map("bookmarks")
-}
-
-model User {
-  id       String   @id @default(auto()) @map("_id") @db.ObjectId
-  email    String   @unique
-  password String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
 }

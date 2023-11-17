@@ -5,7 +5,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const writing = await prisma.writing.findUnique({
     where: { postId: params.slug },
   });
-  if (!writing) return <div>not found</div>;
+  if (!writing || !writing.published) return <div>not found</div>;
 
   return (
     <>

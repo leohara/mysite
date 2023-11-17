@@ -40,7 +40,7 @@ export default function Container({ writings }: WritingProps) {
             <div className="w-[80px] text-center">delete</div>
           </div>
         </div>
-        <div className="h-[calc(100vh-60px)] overflow-y-auto pb-[300px]">
+        <div className="h-[calc(100vh-60px)] overflow-y-auto pb-[150px]">
           {writings.map((writing) => {
             return (
               <div
@@ -52,7 +52,10 @@ export default function Container({ writings }: WritingProps) {
                   <div className="w-[400px] ">
                     <div className="line-clamp-2">{writing.title}</div>
                   </div>
-                  <PostId postId={writing.postId} />
+                  <PostId
+                    postId={writing.postId}
+                    published={writing.published}
+                  />
                   <Status isPublished={writing.published} />
                   <DateAt date={formatDate(writing.updatedAt)} />
                   <DateAt date={formatDate(writing.createdAt)} />
