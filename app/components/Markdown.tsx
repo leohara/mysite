@@ -52,7 +52,7 @@ CodeBlock.displayName = "CodeBlock";
 
 export default function Markdown({ content }: { content: string }) {
   return (
-    <div className="h-full flex-1 overflow-y-auto pb-[150px]">
+    <div className="h-full flex-1 overflow-y-auto">
       <ReactMarkdown
         components={{
           code: CodeBlock as any,
