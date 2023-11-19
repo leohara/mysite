@@ -60,55 +60,53 @@ export default function Sidebar() {
       >
         <AiOutlineArrowLeft size={24} />
       </Link>
-      <div className={`${isOpen ? "w-[320px]" : "lg:w-[200px]"}`}>
-        <div
-          className={`
-          ${"z-30 grid grid-cols-[0fr] overflow-hidden transition-all duration-500 ease-in-out lg:grid-cols-[1fr]"}
+      <div
+        className={`
+          ${"z-30 grid grid-cols-[0fr] overflow-hidden transition-all duration-500 ease-in-out lg:w-[200px] lg:grid-cols-[1fr]"}
           ${isOpen ? "grid-cols-[1fr]" : "grid-cols-[0fr]"}
         `}
-          ref={sidebarRef}
-        >
-          <div
-            className={`
+        ref={sidebarRef}
+      >
+        <div
+          className={`
           ${"h-screen overflow-y-auto border-r-[0.5px] border-r-[#eeeff2] bg-[#f6f6f6] text-[#404040]"}
           `}
-            onScroll={onScroll}
-          >
-            <Header
-              title={"leohara"}
-              hasScrolled={hasScrolled}
-              position={"left"}
-            />
-            <div className="pt-[16px]">
-              <div className="flex-col px-[24px]">
-                <LinkButton name={"Home"} url={"/"}>
-                  <FaHome size={14} />
-                </LinkButton>
-              </div>
-              <div className="flex-col px-[24px]">
-                <p className="text-[12px] text-[#9f9f9f]">Me</p>
-                <LinkButton name={"About"} url={"/about"}>
-                  <IoIosBeer />
-                </LinkButton>
-                <LinkButton name={"Writings"} url={"/writings"}>
-                  <MdArticle size={14} />
-                </LinkButton>
-                <LinkButton name={"Bookmarks"} url={"/bookmarks"}>
-                  <BsFillBookmarksFill size={14} />
-                </LinkButton>
-                <LinkButton name={"Projects"} url={"/projects"}>
-                  <AiFillProject />
-                </LinkButton>
-              </div>
-              <div className="flex-col px-[24px]">
-                <p className="text-[12px] text-[#9f9f9f]">Online</p>
-                <LinkButton name={"Github"} url={"https://github.com/leohara"}>
-                  <AiFillGithub size={14} />
-                </LinkButton>
-                <LinkButton name={"X"} url={"/"}>
-                  <FaXTwitter size={14} />
-                </LinkButton>
-              </div>
+          onScroll={onScroll}
+        >
+          <Header
+            title={"leohara"}
+            hasScrolled={hasScrolled}
+            position={"left"}
+          />
+          <div className="pt-[16px]">
+            <div className="flex-col px-[24px]">
+              <LinkButton name={"Home"} url={"/"}>
+                <FaHome size={14} />
+              </LinkButton>
+            </div>
+            <div className="flex-col px-[24px]">
+              <p className="text-[12px] text-[#9f9f9f]">Me</p>
+              <LinkButton name={"About"} url={"/about"}>
+                <IoIosBeer />
+              </LinkButton>
+              <LinkButton name={"Writings"} url={"/writings"}>
+                <MdArticle size={14} />
+              </LinkButton>
+              <LinkButton name={"Bookmarks"} url={"/bookmarks"}>
+                <BsFillBookmarksFill size={14} />
+              </LinkButton>
+              <LinkButton name={"Projects"} url={"/projects"}>
+                <AiFillProject />
+              </LinkButton>
+            </div>
+            <div className="flex-col px-[24px]">
+              <p className="text-[12px] text-[#9f9f9f]">Online</p>
+              <LinkButton name={"Github"} url={"https://github.com/leohara"}>
+                <AiFillGithub size={14} />
+              </LinkButton>
+              <LinkButton name={"X"} url={"/"}>
+                <FaXTwitter size={14} />
+              </LinkButton>
             </div>
           </div>
         </div>
