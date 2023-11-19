@@ -39,10 +39,7 @@ export default function Layout({ writing }: WritingProps) {
 
   return (
     <div
-      className={`
-        ${"h-screen w-screen lg:w-[calc(100vw-520px)]"}
-        ${isOpen ? "pointer-events-none z-20 bg-[#ccc] opacity-5" : "bg-[#fff]"}
-        `}
+      className="h-screen w-screen lg:w-[calc(100vw-520px)]"
     >
       <div
         className="fixed h-screen w-screen overflow-y-auto text-[#000] lg:w-[calc(100vw-520px)]"
