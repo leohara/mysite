@@ -30,9 +30,9 @@ export default function Container({ writings }: WritingProps) {
   return (
     <div
       className={`
-      ${"h-screen lg:w-[320px]"}
+      ${"h-screen transition-opacity duration-500 ease-in-out lg:w-[320px]"}
       ${isDetail ? "hidden lg:block" : ""}
-      ${isOpen ? "pointer-events-none z-20 bg-[#ccc] opacity-5" : "bg-[#fff]"}
+      ${isOpen ? "pointer-events-none z-20 opacity-5" : ""}
     `}
     >
       <div

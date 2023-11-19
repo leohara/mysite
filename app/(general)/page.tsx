@@ -19,8 +19,8 @@ export default function Page() {
     <div className="flex-1">
       <div
         className={`
-        ${"fixed h-screen overflow-y-auto pb-[200px] text-[#050505]"}
-        ${isOpen ? "pointer-events-none z-20 bg-[#ccc] opacity-5" : "bg-[#fff]"}
+        ${"fixed h-screen overflow-y-auto pb-[200px] text-[#050505] transition-opacity duration-500 ease-in-out"}
+        ${isOpen ? "pointer-events-none z-20 opacity-5" : ""}
         `}
         onScroll={onScroll}
       >
