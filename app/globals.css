@@ -63,7 +63,7 @@
 }
 
 .markdown pre code {
-  @apply block bg-transparent p-0 overflow-visible rounded-none;
+  @apply block w-full bg-transparent p-4 overflow-x-scroll rounded-[8px] bg-[#111827] ;
 }
 
 .markdown ul {
@@ -92,4 +92,16 @@
 
 .markdown .highlight pre {
   @apply bg-gray-100 rounded p-4;
+}
+
+.markdown p span span.katex-html {
+  @apply hidden;
+}
+
+.markdown span span span.katex-html {
+  @apply hidden;
+}
+
+.markdown code ::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+  display:none;
 }

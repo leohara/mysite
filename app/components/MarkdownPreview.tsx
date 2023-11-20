@@ -1,69 +1,63 @@
-import React, { Ref } from "react";
-import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import 'highlight.js/styles/atom-one-dark.css';
 import rehypeKatex from "rehype-katex";
 import remarkBreaks from "remark-breaks";
-import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
+import { visit } from 'unist-util-visit';
 
-type CodeProps = {
-  className?: string;
-  children?: React.ReactNode;
-  node: any;
+import { unified } from 'unified'
+import remarkGfm from 'remark-gfm'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import rehypeStringify from 'rehype-stringify'
+import rehypeHighlight from 'rehype-highlight'
+
+const MyCustomComponent = () => {
+  // ここにカスタムコンポーネントのロジックを記述
+  return <div>custom components</div>;
 };
 
-const CodeBlock = React.forwardRef<HTMLDivElement, CodeProps>((props, ref) => {
-  const { children, className, node, ...rest } = props;
-  const match = /language-(\w+)/.exec(className || "");
-  const title = node?.data?.meta
-    ?.split(" ")[0]
-    ?.split("=")[1]
-    ?.replace(/"/g, "");
-  return (
-    <div className="inline">
-      {title && (
-        <div className="inline h-[15px] border-[1px] border-x-[0px] border-t-[0px] border-b-[#1e1e1e] px-[16px] text-[15px] text-[#1e1e1e]">
-          {title}
-        </div>
-      )}
-      {match ? (
-        <SyntaxHighlighter
-          {...rest}
-          style={vscDarkPlus}
-          language={match[1]}
-          PreTag="div"
-          ref={ref as Ref<SyntaxHighlighter>}
-          className={`
-        ${"rounded-[12px]"}
-        `}
-        >
-          {String(children).replace(/\n$/, "")}
-        </SyntaxHighlighter>
-      ) : (
-        <code {...rest} className="rounded-[16px]">
-          {children}
-        </code>
-      )}
-    </div>
-  );
-});
-CodeBlock.displayName = "CodeBlock";
+const customCodeBlock = () => {
+  return (tree: any) => {
+    visit(tree, 'element', (node) => {
+      if (node.tagName === 'p' && node.children[0].type === 'text') {
+        if (node.children[0].value.startsWith('[comment]')) {
+          node.tagName = 'div';
+          node.properties = {
+            className: ['alert'],
+          };
+          node.children[0].value = node.children[0].value.replace(
+            /\[\/?comment\]/g,
+            ''
+          );
+        }
+      }
+    });
+  };
+};
+
+const markdownToHtml = (markdown: string) =>
+unified()
+  .use(remarkParse)
+  .use(remarkGfm)
+  .use(remarkBreaks)
+  .use(remarkMath)
+  .use(remarkRehype, {
+    allowDangerousHtml: true // trueにしておくことで、自分でカスタマイスしたタグをそのまま吐き出してくれるようになります。
+  })
+  .use(rehypeHighlight)
+  .use(rehypeKatex)
+  .use(rehypeStringify, {
+    allowDangerousHtml: true
+  })
+  // .use(customCode)
+  .processSync(markdown).value as string
 
 export default function MarkdownPreview({ content }: { content: string }) {
+
   return (
     <div className="h-full flex-1 overflow-y-auto border-r-[0.5px] border-solid border-[#ccc] p-[20px] pb-[150px]">
-      <ReactMarkdown
-        components={{
-          code: CodeBlock as any,
-          pre: ({ children }) => <pre className="">{children}</pre>,
-        }}
-        remarkPlugins={[remarkGfm, remarkMath, remarkBreaks]}
-        rehypePlugins={[rehypeKatex]}
-        className="markdown"
-      >
-        {content}
-      </ReactMarkdown>
+      <div className="markdown" dangerouslySetInnerHTML={{ __html: markdownToHtml(content) }} />
+      {/* {markdownToHtml(content)} */}
     </div>
   );
 }
