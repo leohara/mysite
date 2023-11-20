@@ -27,8 +27,18 @@ export default function Page() {
         <Header title={""} hasScrolled={hasScrolled} position={"right"} />
         <div className="px-[45px] pt-[80px] sm:px-[60px] md:px-[120px] lg:px-[150px]">
           <p>
-            このサイトは、ソフトウェアエンジニア原田零生のポートフォリオです。本サイトでは自身の制作実績や技術ブログを掲載しています。
+            {/* このサイトは、ソフトウェアエンジニア原田零生のポートフォリオです。本サイトでは自身の制作実績や技術ブログを掲載しています。 */}
           </p>
+          <div className="bg-[#32302f] flex" >
+            <span className="rounded-[50%] ">!</span>
+            <p>メッセージをここに</p>
+          </div>
+          <div className="bg-[#cef] rounded-[16px] flex" >
+            <span className="rounded-[50%] bg-[#acf] h-[22px] w-[22px] text-center">
+              <p className="text-[#fff] font-bold">!</p>
+            </span>
+            <p>メッセージをここに</p>
+          </div>
         </div>
       </div>
     </div>
