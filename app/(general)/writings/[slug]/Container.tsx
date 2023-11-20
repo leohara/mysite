@@ -2,12 +2,12 @@
 
 import { useState, useEffect, useContext, useTransition } from "react";
 import { Writing } from "@prisma/client";
-import Header from "@/app/components/Header";
-import Markdown from "@/app/components/Markdown";
-import GoodButton from "./GoodButton";
-import { formatDate } from "@/app/lib/formatDate";
 import { SidebarContext } from "@/app/provider/SidebarProvider";
+import { formatDate } from "@/app/lib/formatDate";
+import Header from "@/app/components/Header";
+import MarkdownPreview from "@/app/components/Text/MarkdownPreview";
 import { addCount } from "./actions";
+import GoodButton from "./GoodButton";
 
 type WritingProps = {
   writing: Writing;
@@ -61,7 +61,9 @@ export default function Layout({ writing }: WritingProps) {
             )}
           </div>
         </div>
-        <Markdown content={writing.content} />
+        <div className="h-full flex-1 overflow-y-auto">
+          <MarkdownPreview content={writing.content} />
+        </div>
       </div>
       <div className="pt-[50px]">
         <GoodButton

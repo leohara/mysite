@@ -22,8 +22,8 @@
   @apply font-semibold;
 }
 
-.markdown a {
-  @apply text-blue-600 font-semibold underline decoration-1 decoration-blue-600;
+.markdown p a {
+  @apply text-blue-600 font-semibold no-underline decoration-blue-600;
 }
 
 .markdown strong a {
@@ -62,8 +62,12 @@
   @apply font-mono text-sm inline-block bg-gray-200 rounded px-1 py-1;
 }
 
-.markdown pre code {
-  @apply block bg-transparent p-0 overflow-visible rounded-none;
+.markdown div pre code {
+  @apply block w-full bg-transparent p-4 overflow-x-scroll rounded-tr-[8px] rounded-tl-[0px] rounded-b-[8px] bg-[#111827] ;
+}
+
+.markdown div div.remark-code-title {
+  @apply bg-[#313e51] text-[#ebecee] text-[12px] py-[2px] px-[8px] rounded-t-[4px] font-extralight w-fit;
 }
 
 .markdown ul {
@@ -92,4 +96,16 @@
 
 .markdown .highlight pre {
   @apply bg-gray-100 rounded p-4;
+}
+
+.markdown p span span.katex-html {
+  @apply hidden;
+}
+
+.markdown span span span.katex-html {
+  @apply hidden;
+}
+
+.markdown code ::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+  @apply hidden;
 }
