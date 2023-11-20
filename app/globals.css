@@ -22,8 +22,8 @@
   @apply font-semibold;
 }
 
-.markdown a {
-  @apply text-blue-600 font-semibold underline decoration-1 decoration-blue-600;
+.markdown p a {
+  @apply text-blue-600 font-semibold no-underline decoration-blue-600;
 }
 
 .markdown strong a {
