@@ -39,7 +39,7 @@ export default function Layout({ writing }: WritingProps) {
 
   return (
     <div
-      className="fixed h-screen w-screen overflow-y-auto text-[#000] lg:w-[calc(100vw-520px)]"
+      className="fixed h-screen w-full overflow-y-auto text-[#000] lg:w-[calc(100vw-520px)]"
       onScroll={onScroll}
     >
       <Header
@@ -62,7 +62,7 @@ export default function Layout({ writing }: WritingProps) {
             )}
           </div>
         </div>
-        <div className="h-full flex-1 overflow-y-auto">
+        <div className="h-full flex-1">
           <MarkdownPreview content={writing.content} />
         </div>
       </div>

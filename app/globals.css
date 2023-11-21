@@ -109,3 +109,11 @@
 .markdown code ::-webkit-scrollbar {  /* Chrome, Safari 対応 */
   @apply hidden;
 }
+
+.markdown span.katex-display {
+  @apply block overflow-x-scroll overflow-y-hidden;
+}
+
+.markdown span.katex-display::-webkit-scrollbar {
+  @apply hidden;
+}
