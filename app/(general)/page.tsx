@@ -18,13 +18,18 @@ export default function Page() {
   return (
     <div
       className={`
-      ${"bg-haikei h-screen overflow-y-auto pb-[200px] text-[#050505] transition-opacity duration-500 ease-in-out"}
-      ${isOpen ? "pointer-events-none z-20 opacity-5" : ""}
-      `}
+        ${"bg-svg h-screen overflow-y-auto pb-[200px] text-[#050505] transition-opacity duration-500 ease-in-out"}
+        ${isOpen ? "pointer-events-none z-20 opacity-5" : ""}
+        `}
       onScroll={onScroll}
     >
       <Header title={""} hasScrolled={hasScrolled} position={"right"} />
-      <div className="px-[45px] pt-[80px] sm:px-[60px] md:px-[120px] lg:px-[150px]">
+      <div
+        className={`
+          ${"px-[45px] pt-[80px] sm:px-[60px] md:px-[120px] lg:px-[150px]"}
+          ${isOpen ? "opacity-0" : "opacity-100"}
+        `}
+      >
         <p>
           このサイトは、ソフトウェアエンジニア原田零生のポートフォリオです。本サイトでは自身の制作実績や技術ブログを掲載しています。
         </p>
