@@ -3,6 +3,12 @@
 import { prisma } from "@/app/lib/db/prisma";
 import { redirect } from "next/navigation";
 
+async function getWriting(id: string) {
+  return await prisma.writing.findUnique({
+    where: { id: id },
+  });
+}
+
 export async function addWriting(formData: FormData) {
   const title = formData.get("title");
   const link = formData.get("link");
@@ -28,6 +34,7 @@ export async function addWriting(formData: FormData) {
         postId: link.toString(),
         content: markdown.toString(),
         published: isPublished,
+        publishedAt: isPublished ? new Date() : null,
       },
     });
   } catch (error) {
@@ -42,7 +49,12 @@ export async function editWriting(formData: FormData, id: string) {
   const title = formData.get("title");
   const link = formData.get("link");
   const isPublished = !!formData.get("isPublished");
+  console.log("isPublished", isPublished);
   const markdown = formData.get("markdown");
+  const writing = await getWriting(id);
+  const publishedAt = writing?.publishedAt;
+  console.log("isPublished", isPublished);
+  console.log("publishedAt", publishedAt);
   if (!title)
     return {
       error: "タイトルを入力してください",
@@ -65,6 +77,7 @@ export async function editWriting(formData: FormData, id: string) {
         content: markdown.toString(),
         published: isPublished,
         updatedAt: new Date(),
+        publishedAt: isPublished && !publishedAt ? new Date() : null,
       },
     });
   } catch (error) {

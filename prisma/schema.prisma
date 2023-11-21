@@ -8,7 +8,7 @@ datasource db {
 }
 
 model Metadata {
-  id    String @id @map("_id") @default(auto()) @db.ObjectId
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
   key   String @unique
   value String
 
@@ -16,20 +16,40 @@ model Metadata {
 }
 
 model Writing {
-  id        String @id @map("_id") @default(auto()) @db.ObjectId
-  title     String
-  postId    String  @unique
-  content   String
-  published Boolean @default(false)
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @default(now()) @updatedAt @map("updated_at")
-  likes     Int      @default(0) @map("likes")
+  id          String       @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  postId      String       @unique
+  content     String
+  published   Boolean      @default(false)
+  createdAt   DateTime     @default(now()) @map("created_at")
+  publishedAt DateTime?    @map("published_at")
+  updatedAt   DateTime     @default(now()) @updatedAt @map("updated_at")
+  likes       Int          @default(0) @map("likes")
+  writingTags WritingTag[]
 
   @@map("writings")
 }
 
+model Tag {
+  id          String       @id @default(auto()) @map("_id") @db.ObjectId
+  name        String       @unique
+  writingTags WritingTag[]
+
+  @@map("tags")
+}
+
+model WritingTag {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  writingId String  @map("writing_id") @db.ObjectId
+  tagId     String  @map("tag_id") @db.ObjectId
+  writing   Writing @relation(fields: [writingId], references: [id])
+  tag       Tag     @relation(fields: [tagId], references: [id])
+
+  @@map("writing_tags")
+}
+
 model Bookmark {
-  id         String @id @map("_id") @default(auto()) @db.ObjectId
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
   title      String
   url        String   @unique
   bookmarkId String   @unique
