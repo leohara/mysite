@@ -38,10 +38,7 @@ export default function Layout({ writing }: WritingProps) {
   };
 
   return (
-    <div
-      className="fixed h-screen w-full overflow-y-auto text-[#000] lg:w-[calc(100vw-520px)]"
-      onScroll={onScroll}
-    >
+    <div className="h-screen overflow-y-auto text-[#000]" onScroll={onScroll}>
       <Header
         title={writing.title}
         hasScrolled={hasScrolled}
@@ -49,7 +46,7 @@ export default function Layout({ writing }: WritingProps) {
       />
       <div className="px-[32px] pt-[50px] lg:px-[48px]">
         <div className="py-[36px] text-center">
-          <h1 className="break-words px-[16px] text-[24px] font-bold lg:w-full">
+          <h1 className="break-words px-[16px] text-[24px] font-bold">
             {writing.title}
           </h1>
           <div className="pt-[12px] text-[16px] text-[#9f9f9f]">

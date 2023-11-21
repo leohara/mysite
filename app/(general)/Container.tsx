@@ -13,7 +13,7 @@ export default function Container({ children }: { children: React.ReactNode }) {
       ${"grid transition-all duration-500 ease-in-out"}
       ${
         isOpen
-          ? "grid-cols-[320px_1fr]"
+          ? "grid-cols-[300px_1fr]"
           : "grid-cols-[0px_1fr] lg:grid-cols-[200px_1fr]"
       }
     `}
