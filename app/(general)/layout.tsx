@@ -1,6 +1,7 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from '@vercel/analytics/react';
 import { SidebarProvider } from "@/app/provider/SidebarProvider";
 import Container from "./Container";
 import "@/app/globals.css";
@@ -24,6 +25,7 @@ export default function RootLayout({
           className={`${inter.className} m-0 box-border h-screen w-full overflow-hidden p-0`}
         >
           <Container>{children}</Container>
+          <Analytics />
         </body>
       </SidebarProvider>
     </html>
