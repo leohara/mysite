@@ -53,8 +53,9 @@ export default function Layout({ writing }: WritingProps) {
             {writing.title}
           </h1>
           <div className="pt-[12px] text-[16px] text-[#9f9f9f]">
-            <p>{formatDate(writing.createdAt)}に公開</p>
-            {formatDate(writing.createdAt) == formatDate(writing.updatedAt) ? (
+            <p>{formatDate(writing.publishedAt)}に公開</p>
+            {formatDate(writing.publishedAt) ==
+            formatDate(writing.updatedAt) ? (
               <></>
             ) : (
               <p>{formatDate(writing.updatedAt)}に更新</p>
