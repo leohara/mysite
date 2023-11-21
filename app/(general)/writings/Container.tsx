@@ -37,7 +37,7 @@ export default function Container({ writings }: WritingProps) {
     >
       <div
         className={`
-          ${"fixed h-screen w-full overflow-y-auto pb-[150px] text-[#404040] lg:w-[320px] lg:border-r-[0.5px] lg:border-r-[#eeeff2]"}
+          ${"h-screen w-full overflow-y-auto pb-[150px] text-[#404040] lg:w-[320px] lg:border-r-[0.5px] lg:border-r-[#eeeff2]"}
         `}
         onScroll={onScroll}
       >

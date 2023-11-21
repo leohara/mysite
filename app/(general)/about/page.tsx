@@ -17,18 +17,16 @@ export default function Page() {
   }, [setIsOpen]);
 
   return (
-    <div className="flex-1">
-      <div
-        className={`
-        ${"fixed h-screen overflow-y-auto pb-[150px] text-[#050505] transition-opacity duration-500 ease-in-out"}
+    <div
+      className={`
+        ${"h-screen overflow-y-auto pb-[150px] text-[#050505] transition-opacity duration-500 ease-in-out"}
         ${isOpen ? "pointer-events-none z-20 opacity-5" : ""}
         `}
-        onScroll={onScroll}
-      >
-        <Header title={""} hasScrolled={hasScrolled} position={"right"} />
-        <div className="px-[15px] pt-[80px] sm:px-[60px] md:px-[120px] lg:px-[150px]">
-          <Container />
-        </div>
+      onScroll={onScroll}
+    >
+      <Header title={""} hasScrolled={hasScrolled} position={"right"} />
+      <div className="px-[15px] pt-[80px] sm:px-[60px] md:px-[120px] lg:px-[150px]">
+        <Container />
       </div>
     </div>
   );
