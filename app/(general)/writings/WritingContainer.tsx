@@ -55,7 +55,7 @@ export default function Container({ writings }: WritingProps) {
                     <Link href={`/writings/${writing.postId}`} key={writing.id}>
                       <div
                         className={`
-                      ${"my-[4px] h-auto flex-col border-b-[1px] border-b-[#eeeff2] p-[6px] px-[10px] sm:w-[600px] md:w-[760px] lg:w-[260px] lg:rounded-lg lg:hover:bg-[#C7FBEC]"}
+                      ${"my-[4px] flex-col border-b-[1px] border-b-[#eeeff2] px-[10px] py-[6px] sm:w-[600px] md:w-[760px] lg:w-[260px] lg:rounded-lg lg:hover:bg-[#C7FBEC]"}
                       ${detailName == writing.postId ? "!bg-[aquamarine]" : ""}
                       `}
                       >

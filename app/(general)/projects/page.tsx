@@ -26,7 +26,7 @@ export default function Page() {
       >
         <Header title={""} hasScrolled={hasScrolled} position={"right"} />
         <div className="px-[45px] pt-[80px] sm:px-[60px] md:px-[120px] lg:px-[150px]">
-          <p>作成中...</p>
+          <div>作成中</div>
         </div>
       </div>
     </div>
