@@ -17,12 +17,12 @@ export default function Header({ title, hasScrolled, position }: Props) {
         ${"z-20 h-[48px] overflow-hidden"}
         ${
           position == "left"
-            ? "grid w-[320px] grid-cols-[0fr] bg-[#f6f6f6] lg:w-[200px] lg:grid-cols-[1fr]"
+            ? "grid w-[300px] grid-cols-[0fr] bg-[#f6f6f6] lg:w-[200px] lg:grid-cols-[1fr]"
             : ""
         }
         ${
           position == "middle"
-            ? "fixed w-screen border-r-[0.5px] border-r-[#eeeff2] bg-[#fff] lg:w-[320px]"
+            ? "fixed w-screen border-r-[0.5px] border-r-[#eeeff2] bg-[#fff] lg:w-[300px]"
             : ""
         }
         ${
@@ -32,7 +32,7 @@ export default function Header({ title, hasScrolled, position }: Props) {
         }
         ${
           position == "right-detail"
-            ? "fixed w-screen border-r-[0.5px]  border-r-[#eeeff2] bg-[#fff] lg:w-[calc(100vw-520px)]"
+            ? "fixed w-screen border-r-[0.5px]  border-r-[#eeeff2] bg-[#fff] lg:w-[calc(100vw-500px)]"
             : ""
         }
         ${isOpen && position !== "left" ? "bg-[#ccc]" : ""}

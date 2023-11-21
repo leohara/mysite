@@ -12,10 +12,5 @@ export default async function WritingLayout({
     orderBy: { updatedAt: "desc" },
   });
 
-  return (
-    <div className="flex">
-      <Container writings={writings} />
-      <div className="flex-1">{children}</div>
-    </div>
-  );
+  return <Container writings={writings}>{children}</Container>;
 }

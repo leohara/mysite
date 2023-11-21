@@ -60,13 +60,7 @@ export default function Sidebar() {
       >
         <AiOutlineArrowLeft size={24} />
       </Link>
-      <div
-        className={`
-          ${"z-30 grid grid-cols-[0fr] overflow-hidden transition-all duration-500 ease-in-out lg:w-[200px] lg:grid-cols-[1fr]"}
-          ${isOpen ? "grid-cols-[1fr]" : "grid-cols-[0fr]"}
-        `}
-        ref={sidebarRef}
-      >
+      <div className="z-30" ref={sidebarRef}>
         <div
           className={`
           ${"h-screen overflow-y-auto border-r-[0.5px] border-r-[#eeeff2] bg-[#f6f6f6] text-[#404040]"}
