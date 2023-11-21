@@ -18,7 +18,7 @@ export default function Page() {
   return (
     <div
       className={`
-        ${"bg-haikei h-screen overflow-y-auto pb-[200px] text-[#050505] transition-opacity duration-500 ease-in-out"}
+        ${"bg-svg h-screen overflow-y-auto pb-[200px] text-[#050505] transition-opacity duration-500 ease-in-out"}
         ${isOpen ? "pointer-events-none z-20 opacity-5" : ""}
         `}
       onScroll={onScroll}
