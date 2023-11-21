@@ -112,7 +112,7 @@ export async function editWriting(formData: FormData, id: string) {
         content: markdown.toString(),
         published: isPublished,
         updatedAt: new Date(),
-        publishedAt: isPublished && !publishedAt ? new Date() : null,
+        publishedAt: isPublished && !publishedAt ? new Date() : publishedAt,
       },
     });
   } catch (error) {

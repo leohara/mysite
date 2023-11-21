@@ -35,7 +35,7 @@ export default function Container({ writings }: WritingProps) {
             <div className="w-[200px] pl-[4px]">URL</div>
             <div className="w-[75px] pl-[4px]">Status</div>
             <div className="w-[90px] pl-[4px]">Updated</div>
-            <div className="w-[90px] pl-[4px]">Created</div>
+            <div className="w-[90px] pl-[4px]">Published</div>
             <div className="w-[80px] text-center">Edit</div>
             <div className="w-[80px] text-center">delete</div>
           </div>
@@ -58,7 +58,7 @@ export default function Container({ writings }: WritingProps) {
                   />
                   <Status isPublished={writing.published} />
                   <DateAt date={formatDate(writing.updatedAt)} />
-                  <DateAt date={formatDate(writing.createdAt)} />
+                  <DateAt date={formatDate(writing.publishedAt)} />
                   <Link
                     href={`/control-panel/edit/${writing.postId}`}
                     className="w-[80px]"
