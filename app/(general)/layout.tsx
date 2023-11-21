@@ -1,7 +1,7 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 import { SidebarProvider } from "@/app/provider/SidebarProvider";
 import Container from "./Container";
 import "@/app/globals.css";
