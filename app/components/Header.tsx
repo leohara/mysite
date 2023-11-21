@@ -17,12 +17,12 @@ export default function Header({ title, hasScrolled, position }: Props) {
         ${"z-20 h-[48px] overflow-hidden"}
         ${
           position == "left"
-            ? "grid w-[300px] grid-cols-[0fr] bg-[#f6f6f6] lg:w-[200px] lg:grid-cols-[1fr]"
+            ? "grid grid-cols-[0fr] bg-[#f6f6f6] lg:w-[200px] lg:grid-cols-[1fr]"
             : ""
         }
         ${
           position == "middle"
-            ? "fixed w-screen border-r-[0.5px] border-r-[#eeeff2] bg-[#fff] lg:w-[300px]"
+            ? "fixed w-screen border-r-[0.5px] border-r-[#eeeff2] bg-[#fff] lg:w-[320px]"
             : ""
         }
         ${
