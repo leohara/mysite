@@ -63,7 +63,7 @@
 }
 
 .markdown div pre code {
-  @apply block w-full bg-transparent p-4 overflow-x-scroll rounded-tr-[8px] rounded-tl-[0px] rounded-b-[8px] bg-[#111827] ;
+  @apply block w-full bg-transparent p-4 overflow-x-scroll rounded-tr-[8px] rounded-tl-[0px] rounded-b-[8px] bg-[#111827];
 }
 
 .markdown div div.remark-code-title {
@@ -106,7 +106,8 @@
   @apply hidden;
 }
 
-.markdown code ::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+.markdown code ::-webkit-scrollbar {
+  /* Chrome, Safari 対応 */
   @apply hidden;
 }
 
