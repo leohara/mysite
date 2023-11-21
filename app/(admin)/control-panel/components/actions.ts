@@ -9,6 +9,34 @@ async function getWriting(id: string) {
   });
 }
 
+async function checkWithId(id: string, postId: string) {
+  const writings = await prisma.writing.findMany({
+    select: {
+      id: true,
+      postId: true,
+    },
+  });
+  const prevPostId = writings.find((writing) => writing.id === id)?.postId;
+  if (prevPostId === postId) {
+    return true;
+  }
+  const isPostIdUnique =
+    writings.filter((writing) => writing.postId === postId).length === 0;
+  return isPostIdUnique;
+}
+
+async function checkId(postId: string) {
+  const writings = await prisma.writing.findMany({
+    select: {
+      id: true,
+      postId: true,
+    },
+  });
+  const isPostIdUnique =
+    writings.filter((writing) => writing.postId === postId).length === 0;
+  return isPostIdUnique;
+}
+
 export async function addWriting(formData: FormData) {
   const title = formData.get("title");
   const link = formData.get("link");
@@ -26,6 +54,11 @@ export async function addWriting(formData: FormData) {
     return {
       error: "最低でも1文字以上の本文を入力してください",
     };
+  if (!(await checkId(link.toString()))) {
+    return {
+      error: "同じリンクが存在します",
+    };
+  }
 
   try {
     await prisma.writing.create({
@@ -49,12 +82,9 @@ export async function editWriting(formData: FormData, id: string) {
   const title = formData.get("title");
   const link = formData.get("link");
   const isPublished = !!formData.get("isPublished");
-  console.log("isPublished", isPublished);
   const markdown = formData.get("markdown");
   const writing = await getWriting(id);
   const publishedAt = writing?.publishedAt;
-  console.log("isPublished", isPublished);
-  console.log("publishedAt", publishedAt);
   if (!title)
     return {
       error: "タイトルを入力してください",
@@ -67,6 +97,11 @@ export async function editWriting(formData: FormData, id: string) {
     return {
       error: "最低でも1文字以上の本文を入力してください",
     };
+  if (!(await checkWithId(id, link.toString()))) {
+    return {
+      error: "同じリンクが存在します",
+    };
+  }
 
   try {
     await prisma.writing.update({
@@ -77,7 +112,7 @@ export async function editWriting(formData: FormData, id: string) {
         content: markdown.toString(),
         published: isPublished,
         updatedAt: new Date(),
-        publishedAt: isPublished && !publishedAt ? new Date() : null,
+        publishedAt: isPublished && !publishedAt ? new Date() : publishedAt,
       },
     });
   } catch (error) {
