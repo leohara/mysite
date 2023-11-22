@@ -2,9 +2,9 @@
 
 import { useContext } from "react";
 
-import { SidebarContext } from "../provider/SidebarProvider";
-
 import Sidebar from "./Sidebar";
+
+import { SidebarContext } from "@/app/provider/SidebarProvider";
 
 export default function Container({ children }: { children: React.ReactNode }) {
   const { isOpen } = useContext(SidebarContext);

@@ -1,3 +1,5 @@
+import Rating from "./Rating";
+
 import {
   AWS,
   CPlus,
@@ -19,9 +21,7 @@ import {
   Tailwind,
   TensorFlow,
   Vercel,
-} from "../../components/icons";
-
-import Rating from "./Rating";
+} from "@/app/components/icons";
 
 export default function Stack() {
   return (
