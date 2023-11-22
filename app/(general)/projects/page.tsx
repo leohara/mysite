@@ -3,11 +3,15 @@
 import { useContext, useEffect, useState } from "react";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Header from "@/app/components/Header";
 import { SidebarContext } from "@/app/provider/SidebarProvider";
 =======
 import { SidebarContext } from "../../provider/SidebarProvider";
 >>>>>>> 1f9c790 (importの順番に関するrulesの追加)
+=======
+import { SidebarContext } from "@/app/provider/SidebarProvider";
+>>>>>>> 2cdf5c0 (appルートに変更)
 
 import Header from "@/app/components/Header";
 

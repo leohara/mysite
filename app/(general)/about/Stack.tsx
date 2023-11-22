@@ -22,9 +22,13 @@ import {
   TensorFlow,
   Vercel,
 <<<<<<< HEAD
+<<<<<<< HEAD
 } from "@/app/components/icons";
 =======
 } from "../../components/icons";
+=======
+} from "@/app/components/icons";
+>>>>>>> 2cdf5c0 (appルートに変更)
 
 import Rating from "./Rating";
 >>>>>>> 1f9c790 (importの順番に関するrulesの追加)
