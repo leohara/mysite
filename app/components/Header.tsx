@@ -1,5 +1,7 @@
 import { useContext } from "react";
+
 import { AiOutlineClose } from "react-icons/ai";
+
 import { SidebarContext } from "../provider/SidebarProvider";
 
 type Props = {

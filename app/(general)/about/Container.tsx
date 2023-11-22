@@ -1,9 +1,9 @@
-import ExperienceContainer from "./ExperienceContainer";
+import Album from "./Album";
 import Experience from "./Experience";
+import ExperienceContainer from "./ExperienceContainer";
+import Favorite from "./Favorite";
 import Highlight from "./Highlight";
 import Stack from "./Stack";
-import Favorite from "./Favorite";
-import Album from "./Album";
 
 function List({ experience }: { experience: boolean }) {
   return (

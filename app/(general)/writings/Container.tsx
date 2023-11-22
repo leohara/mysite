@@ -1,6 +1,7 @@
 "use client";
 
 import { Writing } from "@prisma/client";
+
 import WritingContainer from "./WritingContainer";
 
 type Props = {

@@ -1,7 +1,8 @@
 "use server";
 
-import { prisma } from "@/app/lib/db/prisma";
 import { redirect } from "next/navigation";
+
+import { prisma } from "@/app/lib/db/prisma";
 
 async function getWriting(id: string) {
   return await prisma.writing.findUnique({

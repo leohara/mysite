@@ -1,8 +1,9 @@
 "use client";
 
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import {
   AiFillGithub,
   AiFillProject,
@@ -13,8 +14,10 @@ import { FaHome } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoIosBeer } from "react-icons/io";
 import { MdArticle } from "react-icons/md";
-import { SidebarContext } from "../provider/SidebarProvider";
+
 import Header from "../components/Header";
+import { SidebarContext } from "../provider/SidebarProvider";
+
 import LinkButton from "./LinkButton";
 
 export default function Sidebar() {

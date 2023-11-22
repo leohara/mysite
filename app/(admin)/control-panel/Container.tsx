@@ -1,16 +1,18 @@
 "use client";
 
+import { Writing } from "@prisma/client";
 import Link from "next/link";
 import { SessionProvider } from "next-auth/react";
 import { toast } from "react-hot-toast";
-import { Writing } from "@prisma/client";
 import { MdOutlineEdit } from "react-icons/md";
-import { formatDate } from "@/app/lib/formatDate";
+
 import { deleteWriting } from "./components/actions";
-import PostId from "@/app/components/pageList/PostId";
-import Status from "@/app/components/pageList/Status";
+
 import DateAt from "@/app/components/pageList/DateAt";
 import Delete from "@/app/components/pageList/Delete";
+import PostId from "@/app/components/pageList/PostId";
+import Status from "@/app/components/pageList/Status";
+import { formatDate } from "@/app/lib/formatDate";
 
 type WritingProps = {
   writings: Writing[];

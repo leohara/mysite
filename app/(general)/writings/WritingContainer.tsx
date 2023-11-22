@@ -1,10 +1,13 @@
 "use client";
 
 import { useContext, useEffect, useState } from "react";
+
+import { Writing } from "@prisma/client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Writing } from "@prisma/client";
+
 import { SidebarContext } from "../../provider/SidebarProvider";
+
 import Header from "@/app/components/Header";
 import { formatDate } from "@/app/lib/formatDate";
 
