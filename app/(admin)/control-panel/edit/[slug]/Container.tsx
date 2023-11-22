@@ -1,13 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { toast } from "react-hot-toast";
+
 import { Writing } from "@prisma/client";
-import { EditContext } from "@/app/context/EditContext";
-import { TextContext } from "@/app/context/TextContext";
+import { toast } from "react-hot-toast";
+
+import Navbar from "../../components/Navbar";
+
 import { editWriting } from "@/app/(admin)/control-panel/components/actions";
 import MarkdownPreview from "@/app/components/Text/MarkdownPreview";
-import Navbar from "../../components/Navbar";
+import { EditContext } from "@/app/context/EditContext";
+import { TextContext } from "@/app/context/TextContext";
 
 type WritingProps = {
   writing: Writing;

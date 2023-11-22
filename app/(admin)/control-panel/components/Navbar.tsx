@@ -1,10 +1,12 @@
 "use client";
 
 import { useContext } from "react";
+
 import Link from "next/link";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import { EditContextType, EditContext } from "@/app/context/EditContext";
+
 import PublishSlider from "@/app/components/publishSlider/PublishSlider";
+import { EditContextType, EditContext } from "@/app/context/EditContext";
 
 // todo: 一覧に戻るときに、編集中の内容を保存するかどうかの確認をする
 

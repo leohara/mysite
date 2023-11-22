@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+
 import { toast } from "react-hot-toast";
-import { EditContext } from "@/app/context/EditContext";
-import { TextContext } from "@/app/context/TextContext";
-import MarkdownPreview from "@/app/components/Text/MarkdownPreview";
+
 import Navbar from "@/app/(admin)/control-panel/components/Navbar";
 import { addWriting } from "@/app/(admin)/control-panel/components/actions";
+import MarkdownPreview from "@/app/components/Text/MarkdownPreview";
+import { EditContext } from "@/app/context/EditContext";
+import { TextContext } from "@/app/context/TextContext";
 
 export default function Container() {
   const [title, setTitle] = useState<string>("");

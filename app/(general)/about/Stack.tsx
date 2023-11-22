@@ -20,6 +20,7 @@ import {
   TensorFlow,
   Vercel,
 } from "../../components/icons";
+
 import Rating from "./Rating";
 
 export default function Stack() {

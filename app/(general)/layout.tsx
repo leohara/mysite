@@ -1,9 +1,13 @@
 /* eslint-disable tailwindcss/no-custom-classname */
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
-import { SidebarProvider } from "@/app/provider/SidebarProvider";
+import { Inter } from "next/font/google";
+
 import Container from "./Container";
+
+import type { Metadata } from "next";
+
+import { SidebarProvider } from "@/app/provider/SidebarProvider";
+
 import "@/app/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });

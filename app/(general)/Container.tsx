@@ -1,7 +1,9 @@
 "use client";
 
 import { useContext } from "react";
+
 import { SidebarContext } from "../provider/SidebarProvider";
+
 import Sidebar from "./Sidebar";
 
 export default function Container({ children }: { children: React.ReactNode }) {

@@ -1,5 +1,6 @@
-import type { Node } from "unist";
 import { visit } from "unist-util-visit";
+
+import type { Node } from "unist";
 
 export const Check = () => {
   return (tree: Node) => {
