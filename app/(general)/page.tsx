@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Header from "@/app/components/Header";
 import { SidebarContext } from "@/app/provider/SidebarProvider";
 =======
@@ -13,7 +14,10 @@ import { SidebarContext } from "../provider/SidebarProvider";
 import { SidebarContext } from "@/app/provider/SidebarProvider";
 >>>>>>> 2cdf5c0 (appルートに変更)
 
+=======
+>>>>>>> 2aa99c1 (lint)
 import Header from "@/app/components/Header";
+import { SidebarContext } from "@/app/provider/SidebarProvider";
 
 export default function Page() {
   const [hasScrolled, setHasScrolled] = useState(false);

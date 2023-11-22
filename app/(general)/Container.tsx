@@ -4,6 +4,7 @@ import { useContext } from "react";
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import { SidebarContext } from "../provider/SidebarProvider";
 =======
@@ -11,6 +12,8 @@ import { SidebarContext } from "@/app/provider/SidebarProvider";
 >>>>>>> 2cdf5c0 (appルートに変更)
 
 >>>>>>> 1f9c790 (importの順番に関するrulesの追加)
+=======
+>>>>>>> 2aa99c1 (lint)
 import Sidebar from "./Sidebar";
 
 import { SidebarContext } from "@/app/provider/SidebarProvider";

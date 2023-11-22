@@ -30,9 +30,12 @@ import {
 } from "@/app/components/icons";
 >>>>>>> 2cdf5c0 (appルートに変更)
 
+<<<<<<< HEAD
 import Rating from "./Rating";
 >>>>>>> 1f9c790 (importの順番に関するrulesの追加)
 
+=======
+>>>>>>> 2aa99c1 (lint)
 export default function Stack() {
   return (
     <>
