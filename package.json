@@ -19,9 +19,12 @@
     "@vercel/analytics": "^1.1.1",
     "autoprefixer": "^10.4.16",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "clsx": "^2.0.0",
 >>>>>>> 2c6e370 (pnpmの更新)
+=======
+>>>>>>> 1da4b15 (clsx削除)
     "next": "^14.0.2",
     "next-auth": "^4.24.5",
     "react": "^18.2.0",
