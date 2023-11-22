@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Writing } from "@prisma/client";
 import { toast } from "react-hot-toast";
 
-import Navbar from "../../components/Navbar";
+import Navbar from "@/app/(admin)/control-panel/components/Navbar";
 
 import { editWriting } from "@/app/(admin)/control-panel/components/actions";
 import MarkdownPreview from "@/app/components/Text/MarkdownPreview";

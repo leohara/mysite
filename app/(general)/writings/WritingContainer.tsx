@@ -6,7 +6,7 @@ import { Writing } from "@prisma/client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { SidebarContext } from "../../provider/SidebarProvider";
+import { SidebarContext } from "@/app/provider/SidebarProvider";
 
 import Header from "@/app/components/Header";
 import { formatDate } from "@/app/lib/formatDate";
