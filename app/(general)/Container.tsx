@@ -2,7 +2,7 @@
 
 import { useContext } from "react";
 
-import { SidebarContext } from "../provider/SidebarProvider";
+import { SidebarContext } from "@/app/provider/SidebarProvider";
 
 import Sidebar from "./Sidebar";
 

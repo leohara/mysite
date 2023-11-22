@@ -1,4 +1,3 @@
-/* eslint-disable tailwindcss/no-custom-classname */
 import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 

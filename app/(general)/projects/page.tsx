@@ -2,7 +2,7 @@
 
 import { useContext, useEffect, useState } from "react";
 
-import { SidebarContext } from "../../provider/SidebarProvider";
+import { SidebarContext } from "@/app/provider/SidebarProvider";
 
 import Header from "@/app/components/Header";
 

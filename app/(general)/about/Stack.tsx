@@ -19,7 +19,7 @@ import {
   Tailwind,
   TensorFlow,
   Vercel,
-} from "../../components/icons";
+} from "@/app/components/icons";
 
 import Rating from "./Rating";
 
