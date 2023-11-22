@@ -37,7 +37,10 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@types/node": "20.9.4",
+=======
+>>>>>>> bdd2b96 (不要なパッケージの削除)
     "@types/react": "^18",
     "@typescript-eslint/eslint-plugin": "^6.9.1",
     "@typescript-eslint/parser": "^6.9.1",
@@ -45,10 +48,13 @@
     "eslint-config-next": "^14.0.2",
     "eslint-config-prettier": "^9.0.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-next": "^0.0.0",
 >>>>>>> 1f9c790 (importの順番に関するrulesの追加)
+=======
+>>>>>>> bdd2b96 (不要なパッケージの削除)
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-tailwindcss": "^3.13.0",
