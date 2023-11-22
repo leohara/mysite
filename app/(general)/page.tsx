@@ -1,11 +1,14 @@
 "use client";
 
-import Header from "@/app/components/Header";
 import { useContext, useEffect, useState } from "react";
+
 import { SidebarContext } from "../provider/SidebarProvider";
+
+import Header from "@/app/components/Header";
 
 export default function Page() {
   const [hasScrolled, setHasScrolled] = useState(false);
+
   const onScroll = (e: React.UIEvent<HTMLDivElement>) => {
     setHasScrolled(e.currentTarget.scrollTop > 0);
   };

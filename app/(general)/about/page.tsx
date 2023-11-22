@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useEffect, useContext } from "react";
-import { SidebarContext } from "@/app/provider/SidebarProvider";
+
 import Container from "./Container";
+
 import Header from "@/app/components/Header";
+import { SidebarContext } from "@/app/provider/SidebarProvider";
 
 export default function Page() {
   const [hasScrolled, setHasScrolled] = useState(false);

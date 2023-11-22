@@ -1,13 +1,16 @@
 "use client";
 
 import { useState, useEffect, useContext, useTransition } from "react";
+
 import { Writing } from "@prisma/client";
-import { SidebarContext } from "@/app/provider/SidebarProvider";
-import { formatDate } from "@/app/lib/formatDate";
+
+import GoodButton from "./GoodButton";
+import { addCount } from "./actions";
+
 import Header from "@/app/components/Header";
 import MarkdownPreview from "@/app/components/Text/MarkdownPreview";
-import { addCount } from "./actions";
-import GoodButton from "./GoodButton";
+import { formatDate } from "@/app/lib/formatDate";
+import { SidebarContext } from "@/app/provider/SidebarProvider";
 
 type WritingProps = {
   writing: Writing;
