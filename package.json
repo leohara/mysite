@@ -44,6 +44,11 @@
     "eslint": "^8.52.0",
     "eslint-config-next": "^14.0.2",
     "eslint-config-prettier": "^9.0.0",
+<<<<<<< HEAD
+=======
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-next": "^0.0.0",
+>>>>>>> 1f9c790 (importの順番に関するrulesの追加)
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-tailwindcss": "^3.13.0",

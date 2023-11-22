@@ -2,6 +2,11 @@
 
 import { useContext } from "react";
 
+<<<<<<< HEAD
+=======
+import { SidebarContext } from "../provider/SidebarProvider";
+
+>>>>>>> 1f9c790 (importの順番に関するrulesの追加)
 import Sidebar from "./Sidebar";
 
 import { SidebarContext } from "@/app/provider/SidebarProvider";

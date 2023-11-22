@@ -97,6 +97,15 @@ devDependencies:
   eslint-config-prettier:
     specifier: ^9.0.0
     version: 9.0.0(eslint@8.53.0)
+<<<<<<< HEAD
+=======
+  eslint-plugin-import:
+    specifier: ^2.29.0
+    version: 2.29.0(@typescript-eslint/parser@6.11.0)(eslint-import-resolver-typescript@3.6.1)(eslint@8.53.0)
+  eslint-plugin-next:
+    specifier: ^0.0.0
+    version: 0.0.0
+>>>>>>> 1f9c790 (importの順番に関するrulesの追加)
   eslint-plugin-prettier:
     specifier: ^5.0.1
     version: 5.0.1(eslint-config-prettier@9.0.0)(eslint@8.53.0)(prettier@3.1.0)

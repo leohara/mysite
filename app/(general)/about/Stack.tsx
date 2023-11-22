@@ -21,7 +21,13 @@ import {
   Tailwind,
   TensorFlow,
   Vercel,
+<<<<<<< HEAD
 } from "@/app/components/icons";
+=======
+} from "../../components/icons";
+
+import Rating from "./Rating";
+>>>>>>> 1f9c790 (importの順番に関するrulesの追加)
 
 export default function Stack() {
   return (

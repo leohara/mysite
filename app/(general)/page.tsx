@@ -2,8 +2,14 @@
 
 import { useContext, useEffect, useState } from "react";
 
+<<<<<<< HEAD
 import Header from "@/app/components/Header";
 import { SidebarContext } from "@/app/provider/SidebarProvider";
+=======
+import { SidebarContext } from "../provider/SidebarProvider";
+>>>>>>> 1f9c790 (importの順番に関するrulesの追加)
+
+import Header from "@/app/components/Header";
 
 export default function Page() {
   const [hasScrolled, setHasScrolled] = useState(false);

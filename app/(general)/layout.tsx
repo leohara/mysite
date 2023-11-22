@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+/* eslint-disable tailwindcss/no-custom-classname */
+>>>>>>> 1f9c790 (importの順番に関するrulesの追加)
 import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 

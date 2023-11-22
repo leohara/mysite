@@ -5,8 +5,13 @@ import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+<<<<<<< HEAD
 import Header from "@/app/components/Header";
 import { SidebarContext } from "@/app/provider/SidebarProvider";
+=======
+import Header from "../../components/Header";
+import { SidebarContext } from "../../provider/SidebarProvider";
+>>>>>>> 1f9c790 (importの順番に関するrulesの追加)
 
 type Bookmark = {
   id: string;
