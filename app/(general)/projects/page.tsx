@@ -2,9 +2,8 @@
 
 import { useContext, useEffect, useState } from "react";
 
-import { SidebarContext } from "@/app/provider/SidebarProvider";
-
 import Header from "@/app/components/Header";
+import { SidebarContext } from "@/app/provider/SidebarProvider";
 
 export default function Page() {
   const [hasScrolled, setHasScrolled] = useState(false);
