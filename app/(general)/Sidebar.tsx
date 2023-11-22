@@ -16,9 +16,10 @@ import { IoIosBeer } from "react-icons/io";
 import { MdArticle } from "react-icons/md";
 
 import Header from "../components/Header";
-import { SidebarContext } from "@/app/provider/SidebarProvider";
 
 import LinkButton from "./LinkButton";
+
+import { SidebarContext } from "@/app/provider/SidebarProvider";
 
 export default function Sidebar() {
   const [hasScrolled, setHasScrolled] = useState(false);
