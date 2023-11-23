@@ -1,6 +1,9 @@
 "use client";
 
-import { useContext } from "react";
+import { useEffect, useContext } from "react";
+import { useRouter, usePathname } from "next/navigation";
+
+import { useBeforeunload } from 'react-beforeunload';
 
 import Link from "next/link";
 import { AiOutlineArrowLeft } from "react-icons/ai";
@@ -13,6 +16,27 @@ import { EditContextType, EditContext } from "@/app/context/EditContext";
 export default function Navbar() {
   const { title, setTitle, link, setLink, isPublished, setIsPublished } =
     useContext<EditContextType>(EditContext);
+
+
+    // todo: 戻るボタンを押したときにも確認する
+    useBeforeunload(() => 'You will lose your data!');
+    const {replace} = useRouter();
+    const pathname = usePathname();
+
+    useEffect(() => {
+      const backHandler = () => {
+        if (confirm('You pressed a Back button! Are you sure?!')) {
+          return;
+        }
+        replace(pathname);
+      };
+  
+      window.addEventListener('popstate', backHandler, false);
+  
+      return () => {
+        window.removeEventListener('popstate', backHandler);
+      };
+    }, []);
 
   return (
     <div className="fixed h-[110px] w-full bg-[#f3f4f5]">
