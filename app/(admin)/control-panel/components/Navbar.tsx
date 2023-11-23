@@ -20,12 +20,12 @@ export default function Navbar() {
         <div className="flex">
           <Link
             href="/control-panel"
-            className="mt-[-2px] h-[28px] w-[30px] cursor-pointer"
+            className="mt-[4px] h-[28px] w-[30px] cursor-pointer"
           >
             <AiOutlineArrowLeft size={22} color={"#808080"} />
           </Link>
           <input
-            className="h-[24px] flex-1 rounded-[10px] border-none pl-[8px] text-[24px] placeholder:text-[20px] focus:border-[2px] focus:border-solid focus:border-[#fff] focus:outline-none"
+            className="h-[32px] flex-1 rounded-[6px] border-none pl-[8px] text-[20px] focus:border-[2px] focus:border-solid focus:border-[#fff] focus:outline-none"
             type="text"
             name="title"
             placeholder="Title"
@@ -34,21 +34,23 @@ export default function Navbar() {
           />
           <button
             type="submit"
-            className="ml-[15px] mt-[-2px] h-[28px] w-[56px] cursor-pointer rounded-[10px] bg-[#3ea8ff] text-center text-[16px] leading-[28px]"
+            className="ml-[15px] mt-[2px] h-[28px] w-[56px] cursor-pointer rounded-[10px] bg-[#3ea8ff] text-center text-[16px] leading-[28px]"
           >
             保存
           </button>
         </div>
         <div className="flex pl-[30px]">
           <input
-            className="h-[24px] flex-1 rounded-[6px] border-none pl-[8px] text-[24px] focus:border-[2px] focus:border-solid focus:border-[#fff] focus:outline-none"
+            className="h-[32px] flex-1 rounded-[6px] border-none pl-[8px] text-[20px] focus:border-[2px] focus:border-solid focus:border-[#fff] focus:outline-none"
             type="text"
             name="link"
             placeholder="Permanent Link"
             value={link}
             onChange={(e) => setLink(e.target.value)}
           />
-          <PublishSlider isDraft={isPublished} setIsDraft={setIsPublished} />
+          <div className="mt-[3px]">
+            <PublishSlider isDraft={isPublished} setIsDraft={setIsPublished} />
+          </div>
         </div>
       </div>
     </div>
