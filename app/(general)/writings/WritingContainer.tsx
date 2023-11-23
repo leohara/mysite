@@ -6,18 +6,6 @@ import { Writing } from "@prisma/client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-import { SidebarContext } from "../../provider/SidebarProvider";
-=======
-import { SidebarContext } from "@/app/provider/SidebarProvider";
->>>>>>> 2cdf5c0 (appルートに変更)
-
->>>>>>> 1f9c790 (importの順番に関するrulesの追加)
-=======
->>>>>>> 2aa99c1 (lint)
 import Header from "@/app/components/Header";
 import { formatDate } from "@/app/lib/formatDate";
 import { SidebarContext } from "@/app/provider/SidebarProvider";
