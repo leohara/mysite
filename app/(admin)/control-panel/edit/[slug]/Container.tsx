@@ -5,19 +5,7 @@ import { useState } from "react";
 import { Writing } from "@prisma/client";
 import { toast } from "react-hot-toast";
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 import Navbar from "@/app/(admin)/control-panel/components/Navbar";
-<<<<<<< HEAD
-=======
-import Navbar from "../../components/Navbar";
-=======
-import Navbar from "@/app/(admin)/control-panel/components/Navbar";
->>>>>>> 2cdf5c0 (appルートに変更)
-
->>>>>>> 1f9c790 (importの順番に関するrulesの追加)
-=======
->>>>>>> 2aa99c1 (lint)
 import { editWriting } from "@/app/(admin)/control-panel/components/actions";
 import MarkdownPreview from "@/app/components/Text/MarkdownPreview";
 import { EditContext } from "@/app/context/EditContext";
