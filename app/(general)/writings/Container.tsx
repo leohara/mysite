@@ -1,19 +1,49 @@
 "use client";
 
-import { Writing } from "@prisma/client";
+import { useContext, useEffect, useState } from "react";
 
-import WritingContainer from "./WritingContainer";
+import { usePathname } from "next/navigation";
 
-type Props = {
-  children: React.ReactNode;
-  writings: Writing[];
-};
+import Header from "@/app/components/Header";
+import { SidebarContext } from "@/app/provider/SidebarProvider";
 
-export default function Container({ children, writings }: Props) {
+export default function Container({ children }: { children: React.ReactNode }) {
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const { isOpen, setIsOpen } = useContext(SidebarContext);
+  useEffect(() => {
+    setIsOpen(false);
+  }, [setIsOpen]);
+
+  const pathName = usePathname().split("/");
+  const isDetail = typeof pathName[2] !== "undefined";
+
+  const onScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    setHasScrolled(e.currentTarget.scrollTop > 0);
+  };
+
   return (
-    <div className="grid grid-cols-[1fr_0px] lg:grid-cols-[320px_1fr]">
-      <WritingContainer writings={writings} />
-      {children}
+    <div
+      className={`
+    ${"h-screen transition-opacity duration-500 ease-in-out lg:w-[320px]"}
+    ${isDetail ? "hidden lg:block" : ""}
+    ${isOpen ? "pointer-events-none z-20 opacity-5" : ""}
+  `}
+    >
+      <div
+        className={`
+        ${"h-screen overflow-y-auto pb-[150px] text-[#404040] lg:w-[320px] lg:border-r-[0.5px] lg:border-r-[#eeeff2]"}
+        `}
+        onScroll={onScroll}
+      >
+        <div className="flex-col">
+          <Header
+            title={"Writings"}
+            hasScrolled={hasScrolled}
+            position={"middle"}
+          />
+          {children}
+        </div>
+      </div>
     </div>
   );
 }

@@ -9,7 +9,6 @@ import {
   AiFillProject,
   AiOutlineArrowLeft,
 } from "react-icons/ai";
-import { BsFillBookmarksFill } from "react-icons/bs";
 import { FaHome } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoIosBeer } from "react-icons/io";
@@ -89,9 +88,6 @@ export default function Sidebar() {
               </LinkButton>
               <LinkButton name={"Writings"} url={"/writings"}>
                 <MdArticle size={14} />
-              </LinkButton>
-              <LinkButton name={"Bookmarks"} url={"/bookmarks"}>
-                <BsFillBookmarksFill size={14} />
               </LinkButton>
               <LinkButton name={"Projects"} url={"/projects"}>
                 <AiFillProject />
