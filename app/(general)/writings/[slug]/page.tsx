@@ -1,12 +1,12 @@
 import { Suspense } from "react";
 
 import Container from "./Container";
-import Post from "./Post";
+import Post from "./_presenter/Post";
 
 export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <Container>
-      <Suspense fallback={<p>Loading</p>}>
+      <Suspense fallback={<p>Loading 1</p>}>
         <Post postId={params.slug} />
       </Suspense>
     </Container>

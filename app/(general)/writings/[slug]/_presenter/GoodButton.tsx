@@ -5,7 +5,7 @@ import { useState, useTransition } from "react";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 
-import { addCount } from "./actions";
+import { addCount } from "../actions";
 
 export default function GoodButton({
   likes,
