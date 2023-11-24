@@ -1,5 +1,5 @@
 import Container from "./Container";
-import WritingList from "./WritingList";
+import WritingList from "./_presenter/WritingList";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

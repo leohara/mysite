@@ -8,9 +8,5 @@ export default async function Page({ params }: { params: { slug: string } }) {
   });
   if (!writing || !writing.published) return <div>not found</div>;
 
-  return (
-    <>
-      <Container writing={writing} />
-    </>
-  );
+  return <Container writing={writing} />;
 }
