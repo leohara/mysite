@@ -16,7 +16,7 @@ export default function Header({ title, hasScrolled, position }: Props) {
   return (
     <div
       className={`
-        ${"z-20 h-[48px] overflow-hidden"}
+        ${"z-20 h-[48px] overflow-hidden transition-shadow duration-300"}
         ${
           position == "left"
             ? "grid grid-cols-[0fr] bg-[#f6f6f6] lg:w-[200px] lg:grid-cols-[1fr]"
@@ -39,7 +39,6 @@ export default function Header({ title, hasScrolled, position }: Props) {
         }
         ${isOpen && position !== "left" ? "bg-[#ccc]" : ""}
         ${hasScrolled ? "border-b opacity-95 shadow-bottom" : "shadow-none"}
-        transition-shadow duration-300
         `}
     >
       <div className="flex w-full px-[25px] pb-[14px] pt-[16px]">
