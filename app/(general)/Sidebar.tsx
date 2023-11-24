@@ -14,7 +14,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { IoIosBeer } from "react-icons/io";
 import { MdArticle } from "react-icons/md";
 
-import Header from "../components/Header";
+import Header from "@/app/components/Header";
 
 import LinkButton from "./LinkButton";
 
@@ -22,7 +22,7 @@ import { SidebarContext } from "@/app/provider/SidebarProvider";
 
 export default function Sidebar() {
   const [hasScrolled, setHasScrolled] = useState(false);
-  const { isOpen, setIsOpen } = useContext(SidebarContext);
+  const { setIsOpen } = useContext(SidebarContext);
 
   const pathName = usePathname().split("/");
   const isDetail = typeof pathName[2] !== "undefined";
@@ -105,13 +105,6 @@ export default function Sidebar() {
           </div>
         </div>
       </div>
-      <div
-        className={`
-        ${"fixed z-20 ml-[24px] mt-[17px] lg:hidden"}
-        ${isOpen ? "" : "pr-[5px] lg:block"}
-        ${isDetail ? "hidden" : ""}
-        `}
-      ></div>
     </>
   );
 }
