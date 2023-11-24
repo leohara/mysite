@@ -6,7 +6,7 @@ import Post from "./_presenter/Post";
 export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <Container>
-      <Suspense fallback={<p>Loading 1</p>}>
+      <Suspense fallback={<p className="text-center">Loading...</p>}>
         <Post postId={params.slug} />
       </Suspense>
     </Container>
