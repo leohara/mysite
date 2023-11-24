@@ -9,21 +9,19 @@ import {
   AiFillProject,
   AiOutlineArrowLeft,
 } from "react-icons/ai";
-import { BsFillBookmarksFill } from "react-icons/bs";
 import { FaHome } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoIosBeer } from "react-icons/io";
 import { MdArticle } from "react-icons/md";
 
-import Header from "../components/Header";
-
 import LinkButton from "./LinkButton";
 
+import Header from "@/app/components/Header";
 import { SidebarContext } from "@/app/provider/SidebarProvider";
 
 export default function Sidebar() {
   const [hasScrolled, setHasScrolled] = useState(false);
-  const { isOpen, setIsOpen } = useContext(SidebarContext);
+  const { setIsOpen } = useContext(SidebarContext);
 
   const pathName = usePathname().split("/");
   const isDetail = typeof pathName[2] !== "undefined";
@@ -90,9 +88,6 @@ export default function Sidebar() {
               <LinkButton name={"Writings"} url={"/writings"}>
                 <MdArticle size={14} />
               </LinkButton>
-              <LinkButton name={"Bookmarks"} url={"/bookmarks"}>
-                <BsFillBookmarksFill size={14} />
-              </LinkButton>
               <LinkButton name={"Projects"} url={"/projects"}>
                 <AiFillProject />
               </LinkButton>
@@ -109,13 +104,6 @@ export default function Sidebar() {
           </div>
         </div>
       </div>
-      <div
-        className={`
-        ${"fixed z-20 ml-[24px] mt-[17px] lg:hidden"}
-        ${isOpen ? "" : "pr-[5px] lg:block"}
-        ${isDetail ? "hidden" : ""}
-        `}
-      ></div>
     </>
   );
 }
