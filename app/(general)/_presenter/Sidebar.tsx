@@ -74,7 +74,7 @@ export default function Sidebar() {
             hasScrolled={hasScrolled}
             position={"left"}
           />
-          <div className="min-h-[calc(100vh-172px)] lg:min-h-[calc(100vh-96px)] pt-[16px]">
+          <div className="h-[calc(100vh-144px)] lg:min-h-[calc(100vh-96px)] pt-[16px]">
             <div className="flex-col px-[24px]">
               <LinkButton name={"Home"} url={"/"}>
                 <FaHome size={14} />
