@@ -6,9 +6,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   AiFillGithub,
-  AiFillProject,
   AiOutlineArrowLeft,
 } from "react-icons/ai";
+// import { AiFillProject } from "react-icons/ai";
 import { FaHome } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoIosBeer } from "react-icons/io";
@@ -87,9 +87,6 @@ export default function Sidebar() {
               </LinkButton>
               <LinkButton name={"Writings"} url={"/writings"}>
                 <MdArticle size={14} />
-              </LinkButton>
-              <LinkButton name={"Projects"} url={"/projects"}>
-                <AiFillProject />
               </LinkButton>
             </div>
             <div className="flex-col px-[24px]">
