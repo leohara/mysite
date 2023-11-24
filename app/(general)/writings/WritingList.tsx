@@ -1,6 +1,10 @@
+export const dynamic = "force-dynamic";
+
 import WritingCard from "./WritingCard";
 
 import { prisma } from "@/app/lib/db/prisma";
+import { Suspense } from "react";
+import Loading from "./Loading";
 
 export default async function WritingList() {
   const writings = await prisma.writing.findMany({
@@ -11,7 +15,9 @@ export default async function WritingList() {
     <div className=" pt-[64px]">
       <div className="flex-col px-[24px]">
         {writings.map((writing) => (
-          <WritingCard writing={writing} key={writing.id} />
+          <Suspense fallback={<Loading />} key={writing.id} >
+             <WritingCard writing={writing} key={writing.id} />
+          </Suspense>
         ))}
       </div>
     </div>
