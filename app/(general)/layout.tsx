@@ -29,7 +29,7 @@ export default function RootLayout({
           className={`${inter.className} m-0 box-border h-screen w-full overflow-hidden p-0`}
         >
           <Container>{children}</Container>
-          <Analytics />
+          {process.env.NODE_ENV == "production" && <Analytics />}
         </body>
       </SidebarProvider>
     </html>
