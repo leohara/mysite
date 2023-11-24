@@ -1,4 +1,4 @@
-import Rating from "./Rating";
+import Rating from "../_components/Rating";
 
 import {
   AWS,

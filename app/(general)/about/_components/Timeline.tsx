@@ -1,4 +1,4 @@
-export default function Experience({
+export default function Timeline({
   children,
   title,
   subtitle,

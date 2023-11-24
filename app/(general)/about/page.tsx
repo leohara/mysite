@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, Suspense } from "react";
 
 import Container from "./Container";
 
@@ -33,7 +33,9 @@ export default function Page() {
         ${isOpen ? "opacity-0" : "opacity-100"}
       `}
       >
-        <Container />
+        <Suspense fallback={<p>Loading</p>}>
+          <Container />
+        </Suspense>
       </div>
     </div>
   );
