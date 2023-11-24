@@ -4,10 +4,7 @@ import { useCallback, useContext, useEffect, useRef, useState } from "react";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  AiFillGithub,
-  AiOutlineArrowLeft,
-} from "react-icons/ai";
+import { AiFillGithub, AiOutlineArrowLeft } from "react-icons/ai";
 // import { AiFillProject } from "react-icons/ai";
 import { FaHome } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -74,7 +71,7 @@ export default function Sidebar() {
             hasScrolled={hasScrolled}
             position={"left"}
           />
-          <div className="h-[calc(100vh-250px)] lg:min-h-[calc(100vh-96px)] pt-[16px]">
+          <div className="h-[calc(100vh-250px)] pt-[16px] lg:min-h-[calc(100vh-96px)]">
             <div className="flex-col px-[24px]">
               <LinkButton name={"Home"} url={"/"}>
                 <FaHome size={14} />
