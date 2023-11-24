@@ -1,12 +1,12 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
-import { SITE_NAME, SITE_URL } from "@/app/constants/site";
 
 import Container from "./Container";
 
 import type { Metadata } from "next";
 
+import { SITE_NAME, SITE_URL } from "@/app/constants/site";
 import { SidebarProvider } from "@/app/provider/SidebarProvider";
 
 import "@/app/globals.css";
