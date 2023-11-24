@@ -1,17 +1,31 @@
+"use client";
+
+import { useState, useTransition } from "react";
+
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 
+import { addCount } from "../actions";
+
 export default function GoodButton({
-  count,
-  isClicked,
   likes,
-  clickHandler,
+  id,
 }: {
-  count: number;
-  isClicked: boolean;
   likes: number;
-  clickHandler: () => void;
+  id: string;
 }) {
+  const [count, setCount] = useState(0);
+  const [likesCount, setLikesCount] = useState(likes);
+  const [isClicked, setIsClicked] = useState(false);
+  const [, startTransition] = useTransition();
+
+  const clickHandler = () => {
+    setIsClicked(true);
+    setLikesCount(likesCount + 1);
+    setCount(count + 1);
+    startTransition(() => addCount(id, likesCount));
+  };
+
   return (
     <>
       <div className="flex justify-center">
@@ -25,7 +39,7 @@ export default function GoodButton({
           {isClicked ? (
             <>
               <FaHeart size={60} color="#e91e62" />
-              <p>{likes}</p>
+              <p>{likesCount}</p>
             </>
           ) : (
             <>
