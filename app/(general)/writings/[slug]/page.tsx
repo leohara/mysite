@@ -1,12 +1,11 @@
 import { Suspense } from "react";
 
-import { env } from "process";
-
 import { Metadata } from "next";
 
 import Container from "./Container";
 import Post from "./_presenter/Post";
 
+import { SITE_URL } from "@/app/constants/site";
 import { prisma } from "@/app/lib/db/prisma";
 
 type Props = {
@@ -21,6 +20,7 @@ export async function generateMetadata({
   const writing = await prisma.writing.findUnique({
     where: { postId: slug },
   });
+  console.log(writing);
 
   return {
     title: writing?.title,
@@ -29,7 +29,7 @@ export async function generateMetadata({
       title: writing?.title,
       description: writing?.content,
       images: {
-        url: env.NODE_ENV !== "production" ? "https://beatleos.com/api/og" : "",
+        url: new URL(`${SITE_URL}api/og`),
         width: 1200,
         height: 630,
       },
