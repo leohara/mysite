@@ -31,8 +31,8 @@ export async function generateMetadata({
       images: {
         url:
           env.NODE_ENV !== "production"
-            ? "http://localhost:3000/api/og"
-            : "https://beatleos.com/api/og",
+            ? "https://beatleos.com/api/og"
+            : "http://localhost:3000/api/og",
         width: 1200,
         height: 630,
       },
