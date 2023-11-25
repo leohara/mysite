@@ -6,13 +6,13 @@ export const runtime = "edge";
 
 export async function GET(request: Request) {
   const parts = request.url.split("/");
-  console.log("parts", parts);
+  // console.log("parts", parts);
   const slug = parts[parts.length - 1];
-  console.log("slug", slug);
-  const postId = slug.split("?slug=")[0];
-  console.log("postId", postId);
+  // console.log("slug", slug);
+  // const postId = slug.split("?slug=")[0];
+  // console.log("postId", postId);
   const writing = await prisma.writing.findUnique({
-    where: { postId: postId },
+    where: { postId: slug },
   });
   console.log("writing", writing?.title);
   return new ImageResponse(
