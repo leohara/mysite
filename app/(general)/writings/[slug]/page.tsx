@@ -1,7 +1,8 @@
 import { Suspense } from "react";
 
-import { Metadata } from "next";
 import { env } from "process";
+
+import { Metadata } from "next";
 
 import Container from "./Container";
 import Post from "./_presenter/Post";
@@ -28,7 +29,10 @@ export async function generateMetadata({
       title: writing?.title,
       description: writing?.content,
       images: {
-        url: (env.NODE_ENV !== "production" ?  "http://localhost:3000/api/og" : "https://beatleos.com/api/og"),
+        url:
+          env.NODE_ENV !== "production"
+            ? "http://localhost:3000/api/og"
+            : "https://beatleos.com/api/og",
         width: 1200,
         height: 630,
       },
