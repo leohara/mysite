@@ -20,7 +20,10 @@ export async function GET(request: Request) {
       <div tw="flex h-full w-full flex-col bg-[#333] py-[30px] px-[200px] py-[80px]">
         <div tw="flex flex-col bg-[#f6f6f6] px-[80px] py-[30px] rounded-[16px]">
           <div tw="flex flex-col h-[350px]">
-            <p tw="text-[48px] font-bold text-[#404040]">{writing?.title}</p>
+            <p tw="text-[48px] font-bold text-[#404040]">
+              {writing?.title || "test"}
+            </p>
+            <p tw="text-[48px] font-bold text-[#404040]">test</p>
           </div>
           <div tw="flex justify-center">
             <img
