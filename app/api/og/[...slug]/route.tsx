@@ -6,7 +6,8 @@ export const runtime = "edge";
 
 export async function GET(request: Request) {
   const parts = request.url.split("/");
-  const postId = parts[parts.length - 1];
+  const slug = parts[parts.length - 1];
+  const postId = slug.split("?slug=")[0];
   const writing = await prisma.writing.findUnique({
     where: { postId: postId },
   });
