@@ -29,7 +29,7 @@ export async function generateMetadata({
       title: writing?.title,
       description: writing?.content,
       images: {
-        url: new URL(`${SITE_URL} + api/og`),
+        url: new URL(`${SITE_URL}api/og`),
         width: 1200,
         height: 630,
       },
