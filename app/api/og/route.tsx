@@ -10,6 +10,7 @@ export async function GET(request: Request) {
   const writing = await prisma.writing.findUnique({
     where: { postId: postId },
   });
+  console.error(writing);
 
   return new ImageResponse(
     (
