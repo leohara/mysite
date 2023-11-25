@@ -29,10 +29,7 @@ export async function generateMetadata({
       title: writing?.title,
       description: writing?.content,
       images: {
-        url:
-          env.NODE_ENV !== "production"
-            ? "http://localhost:3000/api/og"
-            : "https://beatleos.com/api/og",
+        url: env.NODE_ENV !== "production" ? "https://beatleos.com/api/og" : "",
         width: 1200,
         height: 630,
       },
