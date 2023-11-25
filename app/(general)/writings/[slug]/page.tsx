@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import { ImageResponse } from 'next/og'
 
 import { Metadata } from "next";
 
