@@ -1,5 +1,7 @@
 import { Suspense } from "react";
 
+import { env } from "process";
+
 import { Metadata } from "next";
 
 import Container from "./Container";
@@ -7,17 +9,17 @@ import Post from "./_presenter/Post";
 
 import { prisma } from "@/app/lib/db/prisma";
 
-type ListingPageProps = {
+type Props = {
   params: {
-    id: string;
+    slug: string;
   };
 };
 
 export async function generateMetadata({
-  params: { id },
-}: ListingPageProps): Promise<Metadata> {
+  params: { slug },
+}: Props): Promise<Metadata> {
   const writing = await prisma.writing.findUnique({
-    where: { postId: id },
+    where: { postId: slug },
   });
 
   return {
@@ -27,7 +29,10 @@ export async function generateMetadata({
       title: writing?.title,
       description: writing?.content,
       images: {
-        url: "",
+        url:
+          env.NODE_ENV !== "production"
+            ? "http://localhost:3000/api/og"
+            : "https://beatleos.com/api/og",
         width: 1200,
         height: 630,
       },
@@ -35,11 +40,11 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({ params: { id } }: ListingPageProps) {
+export default async function Page({ params: { slug } }: Props) {
   return (
     <Container>
       <Suspense fallback={<p className="text-center">Loading...</p>}>
-        <Post postId={id} />
+        <Post postId={slug} />
       </Suspense>
     </Container>
   );
