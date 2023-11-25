@@ -20,16 +20,15 @@ export async function generateMetadata({
   const writing = await prisma.writing.findUnique({
     where: { postId: slug },
   });
-  console.log(writing);
-
   return {
+    metadataBase: new URL(`${SITE_URL}writings/${slug}`),
     title: writing?.title,
     description: writing?.content,
     openGraph: {
       title: writing?.title,
       description: writing?.content,
       images: {
-        url: new URL(`${SITE_URL}api/og`),
+        url: new URL(`${SITE_URL}api/og/${slug}`),
         width: 1200,
         height: 630,
       },

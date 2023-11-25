@@ -8,11 +8,12 @@
     "start": "next start",
     "lint": "eslint --fix 'app/**/*.{ts,tsx}'",
     "lint-fix": "eslint --fix './app/**/*.{ts,tsx,css}' && prettier --write './app/**/*.{ts,tsx,css}'",
-    "vercel-build": "prisma generate && next build",
+    "vercel-build": "prisma generate --no-engine && next build",
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
     "@prisma/client": "^5.6.0",
+    "@prisma/extension-accelerate": "^0.6.2",
     "@svgr/webpack": "^8.1.0",
     "@types/react-dom": "^18.2.17",
     "@types/unist": "^3.0.2",
