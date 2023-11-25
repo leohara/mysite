@@ -27,6 +27,8 @@ export const metadata: Metadata = {
     description: "leohara personal website.",
   },
   twitter: {
+    title: SITE_NAME,
+    description: "leohara personal website.",
     card: "summary_large_image",
   },
 };
