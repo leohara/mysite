@@ -32,7 +32,7 @@ export async function generateMetadata({
         url:
           env.NODE_ENV !== "production"
             ? "https://beatleos.com/api/og"
-            : "http://localhost:3000/api/og",
+            : "",
         width: 1200,
         height: 630,
       },
