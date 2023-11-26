@@ -15,7 +15,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "leohara",
+  title: {
+    default: SITE_NAME,
+    template: `%s - ${SITE_NAME}`,
+  },
   description: "leohara personal website.",
   keywords: ["leohara", "原田零生"],
   openGraph: {
