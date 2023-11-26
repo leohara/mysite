@@ -19,7 +19,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   }, [setIsOpen]);
 
   return (
-    <div className="h-screen overflow-y-auto text-[#000]" onScroll={onScroll}>
+    <div
+      className="min-h-screen overflow-y-auto text-[#000]"
+      onScroll={onScroll}
+    >
       <Header title={""} hasScrolled={hasScrolled} position={"right-detail"} />
       {children}
     </div>
