@@ -10,7 +10,6 @@ import { FaHome } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoIosBeer } from "react-icons/io";
 import { MdArticle } from "react-icons/md";
-// import { MdCopyright } from "react-icons/md";
 
 import LinkButton from "./LinkButton";
 
@@ -102,19 +101,3 @@ export default function Sidebar() {
     </>
   );
 }
-
-/* <div
-className={`
-  ${"h-[48px] w-[200px] px-[20px] text-[10px]"}
-
-`}
->
-<div className="relative flex">
-  <div className="absolute top-[2.5px]">
-    <MdCopyright size={10} />
-  </div>
-  <p className="pl-[14px]">
-    Copyright {new Date().getFullYear()} Leo Harada.
-  </p>
-</div>
-</div> */
