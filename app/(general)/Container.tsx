@@ -12,7 +12,7 @@ export default function Container({ children }: { children: React.ReactNode }) {
   return (
     <div
       className={`
-      ${"grid transition-all duration-500 ease-in-out"}
+      ${"grid h-dvh transition-all duration-500 ease-in-out"}
       ${
         isOpen
           ? "grid-cols-[300px_1fr]"

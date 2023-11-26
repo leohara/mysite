@@ -45,7 +45,7 @@ export default function RootLayout({
     <html lang="en">
       <SidebarProvider>
         <body
-          className={`${inter.className} m-0 box-border h-screen w-full overflow-hidden p-0`}
+          className={`${inter.className} m-0 box-border overflow-hidden p-0`}
         >
           <Container>{children}</Container>
           {process.env.NODE_ENV == "production" && <Analytics />}

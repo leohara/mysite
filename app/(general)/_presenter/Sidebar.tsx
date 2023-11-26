@@ -62,7 +62,7 @@ export default function Sidebar() {
       <div className="z-30" ref={sidebarRef}>
         <div
           className={`
-          ${"h-screen overflow-y-auto border-r-[0.5px] border-r-[#eeeff2] bg-[#f6f6f6] text-[#404040]"}
+          ${"h-dvh overflow-y-auto border-r-[0.5px] border-r-[#eeeff2] bg-[#f6f6f6] text-[#404040]"}
           `}
           onScroll={onScroll}
         >
@@ -71,7 +71,7 @@ export default function Sidebar() {
             hasScrolled={hasScrolled}
             position={"left"}
           />
-          <div className="h-[calc(100vh-250px)] pt-[16px] lg:min-h-[calc(100vh-96px)]">
+          <div className="min-h-[calc(100dvh-96px)] pt-[16px]">
             <div className="flex-col px-[24px]">
               <LinkButton name={"Home"} url={"/"}>
                 <FaHome size={14} />
