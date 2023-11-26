@@ -29,7 +29,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} m-0 box-border min-h-screen w-full overflow-x-hidden p-0`}
+        className={`${inter.className} m-0 box-border h-dvh w-full overflow-x-hidden p-0`}
       >
         {session?.user?.email !== EMAIL ? (
           <>

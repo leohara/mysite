@@ -62,7 +62,7 @@ export default function Sidebar() {
       <div className="z-30" ref={sidebarRef}>
         <div
           className={`
-          ${"h-screen overflow-y-auto border-r-[0.5px] border-r-[#eeeff2] bg-[#f6f6f6] text-[#404040]"}
+          ${"h-dvh overflow-y-auto border-r-[0.5px] border-r-[#eeeff2] bg-[#f6f6f6] text-[#404040]"}
           `}
           onScroll={onScroll}
         >
