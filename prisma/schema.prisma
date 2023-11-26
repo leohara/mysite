@@ -7,6 +7,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// pushするときに使う url = env("DIRECT_URL")
+
 model Metadata {
   id    String @id @default(auto()) @map("_id") @db.ObjectId
   key   String @unique
@@ -20,6 +22,7 @@ model Writing {
   title       String
   postId      String       @unique
   content     String
+  description String?
   published   Boolean      @default(false)
   createdAt   DateTime     @default(now()) @map("created_at")
   publishedAt DateTime?    @map("published_at")
