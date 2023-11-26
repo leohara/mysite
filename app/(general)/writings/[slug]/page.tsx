@@ -32,6 +32,11 @@ export async function generateMetadata({
       title: writing?.title,
       description: writing?.content.slice(0, 100),
     },
+    twitter: {
+      title: writing?.title,
+      description: writing?.content.slice(0, 100),
+      card: "summary_large_image",
+    },
   };
 }
 
