@@ -27,11 +27,11 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: SITE_NAME,
     title: SITE_NAME,
-    description: "Hello World",
+    description: "leohara personal website.",
   },
   twitter: {
     title: SITE_NAME,
-    description: "Hello twitter",
+    description: "leohara personal website.",
     card: "summary_large_image",
   },
 };

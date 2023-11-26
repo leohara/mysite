@@ -13,7 +13,6 @@ export const size = {
   width: 1200,
   height: 630,
 };
-export const description = "detail page of leohara in twitter";
 
 export const contentType = "image/png";
 
