@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import Container from "./Container";
 import Post from "./_presenter/Post";
 
+import { SITE_NAME, SITE_URL } from "@/app/constants/site";
 import { prisma } from "@/app/lib/db/prisma";
 
 type Props = {
@@ -22,6 +23,14 @@ export async function generateMetadata({
   return {
     title: writing?.title,
     description: writing?.content,
+    openGraph: {
+      type: "website",
+      locale: "ja_JP",
+      url: `${SITE_URL}witings/${slug}`,
+      siteName: SITE_NAME,
+      title: writing?.title,
+      description: writing?.content.slice(0, 100),
+    },
   };
 }
 
