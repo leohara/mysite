@@ -31,7 +31,7 @@ export default function Container({ children }: { children: React.ReactNode }) {
     >
       <div
         className={`
-        ${"min-h-screen overflow-y-auto pb-[150px] text-[#404040] lg:w-[320px] lg:border-r-[0.5px] lg:border-r-[#eeeff2]"}
+        ${"h-screen overflow-y-auto pb-[150px] text-[#404040] lg:w-[320px] lg:border-r-[0.5px] lg:border-r-[#eeeff2]"}
         `}
         onScroll={onScroll}
       >
