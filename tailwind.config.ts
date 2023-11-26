@@ -10,7 +10,13 @@ const config: Config = {
     extend: {
       boxShadow: {
         'bottom': '0 2px 2px -1px rgba(0, 0, 0, 0.1)', 
-      }
+      },
+      height: {
+        dvh: '100dvh',
+      },
+      minHeight: {
+        dvh: '100dvh',
+      },
     }
   },
   plugins: [],
