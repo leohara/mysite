@@ -13,6 +13,7 @@ export const size = {
   width: 1200,
   height: 630,
 };
+export const description = "detail page of leohara";
 
 export const contentType = "image/png";
 
