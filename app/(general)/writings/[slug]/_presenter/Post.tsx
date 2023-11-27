@@ -1,3 +1,5 @@
+import Copyright from "../../../../components/Copyright";
+
 import GoodButton from "./GoodButton";
 
 import MarkdownPreview from "@/app/components/Text/MarkdownPreview";
@@ -30,8 +32,11 @@ export default async function Post({ postId }: { postId: string }) {
           <MarkdownPreview content={writing?.content || ""} />
         </div>
       </div>
-      <div className="pt-[50px]">
+      <div className="py-[30px]">
         <GoodButton likes={writing?.likes || 0} id={writing?.id || ""} />
+      </div>
+      <div className="flex justify-center">
+        <Copyright />
       </div>
     </>
   );
