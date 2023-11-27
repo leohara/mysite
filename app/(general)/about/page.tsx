@@ -24,7 +24,7 @@ export default function Page() {
   return (
     <div
       className={`
-        ${"h-dvh overflow-y-auto pb-[150px] text-[#050505] transition-opacity duration-500 ease-in-out"}
+        ${"h-dvh overflow-y-auto text-[#050505] transition-opacity duration-500 ease-in-out"}
         ${isOpen ? "pointer-events-none z-20 opacity-5" : ""}
         `}
       onScroll={onScroll}
