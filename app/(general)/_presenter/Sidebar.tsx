@@ -76,15 +76,16 @@ export default function Sidebar() {
               <LinkButton name={"Home"} url={"/"}>
                 <FaHome size={14} />
               </LinkButton>
+              <LinkButton name={"Writings"} url={"/writings"}>
+                <MdArticle size={14} />
+              </LinkButton>
             </div>
             <div className="flex-col px-[24px]">
               <p className="text-[12px] text-[#9f9f9f]">Me</p>
               <LinkButton name={"About"} url={"/about"}>
                 <IoIosBeer />
               </LinkButton>
-              <LinkButton name={"Writings"} url={"/writings"}>
-                <MdArticle size={14} />
-              </LinkButton>
+              {/* TODO projects入れる */}
             </div>
             <div className="flex-col px-[24px]">
               <p className="text-[12px] text-[#9f9f9f]">Online</p>
