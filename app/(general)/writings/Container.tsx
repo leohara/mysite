@@ -1,15 +1,16 @@
 "use client";
 
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
+import { useAtom } from "jotai";
 import { usePathname } from "next/navigation";
 
+import { sidebarOpenAtom } from "@/app/(general)/state";
 import Header from "@/app/components/Header";
-import { SidebarContext } from "@/app/provider/SidebarProvider";
 
 export default function Container({ children }: { children: React.ReactNode }) {
   const [hasScrolled, setHasScrolled] = useState(false);
-  const { isOpen, setIsOpen } = useContext(SidebarContext);
+  const [isOpen, setIsOpen] = useAtom(sidebarOpenAtom);
   useEffect(() => {
     setIsOpen(false);
   }, [setIsOpen]);

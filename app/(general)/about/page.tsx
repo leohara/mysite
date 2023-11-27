@@ -1,12 +1,14 @@
 "use client";
 
-import { useState, useEffect, useContext, Suspense } from "react";
+import { useState, useEffect, Suspense } from "react";
+
+import { useAtom } from "jotai";
 
 import Container from "./Container";
 
+import { sidebarOpenAtom } from "@/app/(general)/state";
 import Copyright from "@/app/components/Copyright";
 import Header from "@/app/components/Header";
-import { SidebarContext } from "@/app/provider/SidebarProvider";
 
 export default function Page() {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -14,7 +16,7 @@ export default function Page() {
     setHasScrolled(e.currentTarget.scrollTop > 0);
   };
 
-  const { isOpen, setIsOpen } = useContext(SidebarContext);
+  const [isOpen, setIsOpen] = useAtom(sidebarOpenAtom);
   useEffect(() => {
     setIsOpen(false);
   }, [setIsOpen]);
