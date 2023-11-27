@@ -1,13 +1,11 @@
 "use client";
 
-import { useContext } from "react";
-
 import Sidebar from "./_presenter/Sidebar";
-
-import { SidebarContext } from "@/app/provider/SidebarProvider";
+import { useAtom } from "jotai";
+import { sidebarOpenAtom } from "./state";
 
 export default function Container({ children }: { children: React.ReactNode }) {
-  const { isOpen } = useContext(SidebarContext);
+  const [isOpen, ] = useAtom(sidebarOpenAtom)
 
   return (
     <div

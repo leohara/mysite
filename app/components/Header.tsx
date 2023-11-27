@@ -1,8 +1,7 @@
-import { useContext } from "react";
-
 import { AiOutlineClose } from "react-icons/ai";
 
-import { SidebarContext } from "../provider/SidebarProvider";
+import { useAtom } from "jotai";
+import { sidebarOpenAtom } from "@/app/(general)/state";
 
 type Props = {
   title: string;
@@ -11,7 +10,7 @@ type Props = {
 };
 
 export default function Header({ title, hasScrolled, position }: Props) {
-  const { isOpen, setIsOpen } = useContext(SidebarContext);
+  const [ isOpen, setIsOpen ] = useAtom(sidebarOpenAtom);
 
   return (
     <div

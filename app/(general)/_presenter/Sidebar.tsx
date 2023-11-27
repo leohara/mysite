@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useContext, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -14,11 +14,13 @@ import { MdArticle, MdCopyright } from "react-icons/md";
 import LinkButton from "./LinkButton";
 
 import Header from "@/app/components/Header";
-import { SidebarContext } from "@/app/provider/SidebarProvider";
+
+import { useAtom } from "jotai";
+import { sidebarOpenAtom } from "@/app/(general)/state";
 
 export default function Sidebar() {
   const [hasScrolled, setHasScrolled] = useState(false);
-  const { setIsOpen } = useContext(SidebarContext);
+  const [ , setIsOpen ] = useAtom(sidebarOpenAtom);
 
   const pathName = usePathname().split("/");
   const isDetail = typeof pathName[2] !== "undefined";
