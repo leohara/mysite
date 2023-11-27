@@ -1,6 +1,6 @@
+import { useAtom } from "jotai";
 import { AiOutlineClose } from "react-icons/ai";
 
-import { useAtom } from "jotai";
 import { sidebarOpenAtom } from "@/app/(general)/state";
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function Header({ title, hasScrolled, position }: Props) {
-  const [ isOpen, setIsOpen ] = useAtom(sidebarOpenAtom);
+  const [isOpen, setIsOpen] = useAtom(sidebarOpenAtom);
 
   return (
     <div

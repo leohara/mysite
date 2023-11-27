@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
+import { useAtom } from "jotai";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AiFillGithub, AiOutlineArrowLeft } from "react-icons/ai";
@@ -13,14 +14,12 @@ import { MdArticle, MdCopyright } from "react-icons/md";
 
 import LinkButton from "./LinkButton";
 
-import Header from "@/app/components/Header";
-
-import { useAtom } from "jotai";
 import { sidebarOpenAtom } from "@/app/(general)/state";
+import Header from "@/app/components/Header";
 
 export default function Sidebar() {
   const [hasScrolled, setHasScrolled] = useState(false);
-  const [ , setIsOpen ] = useAtom(sidebarOpenAtom);
+  const [, setIsOpen] = useAtom(sidebarOpenAtom);
 
   const pathName = usePathname().split("/");
   const isDetail = typeof pathName[2] !== "undefined";

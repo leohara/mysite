@@ -1,11 +1,12 @@
 "use client";
 
-import Sidebar from "./_presenter/Sidebar";
 import { useAtom } from "jotai";
+
+import Sidebar from "./_presenter/Sidebar";
 import { sidebarOpenAtom } from "./state";
 
 export default function Container({ children }: { children: React.ReactNode }) {
-  const [isOpen, ] = useAtom(sidebarOpenAtom)
+  const [isOpen] = useAtom(sidebarOpenAtom);
 
   return (
     <div

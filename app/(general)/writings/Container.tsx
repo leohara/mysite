@@ -2,16 +2,15 @@
 
 import { useEffect, useState } from "react";
 
+import { useAtom } from "jotai";
 import { usePathname } from "next/navigation";
 
-import Header from "@/app/components/Header";
-
-import { useAtom } from "jotai";
 import { sidebarOpenAtom } from "@/app/(general)/state";
+import Header from "@/app/components/Header";
 
 export default function Container({ children }: { children: React.ReactNode }) {
   const [hasScrolled, setHasScrolled] = useState(false);
-  const [ isOpen, setIsOpen ] = useAtom(sidebarOpenAtom);
+  const [isOpen, setIsOpen] = useAtom(sidebarOpenAtom);
   useEffect(() => {
     setIsOpen(false);
   }, [setIsOpen]);

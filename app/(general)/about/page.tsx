@@ -2,12 +2,12 @@
 
 import { useState, useEffect, Suspense } from "react";
 
+import { useAtom } from "jotai";
+
 import Container from "./Container";
 
-import Header from "@/app/components/Header";
-
-import { useAtom } from "jotai";
 import { sidebarOpenAtom } from "@/app/(general)/state";
+import Header from "@/app/components/Header";
 
 export default function Page() {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -15,7 +15,7 @@ export default function Page() {
     setHasScrolled(e.currentTarget.scrollTop > 0);
   };
 
-  const [ isOpen, setIsOpen ] = useAtom(sidebarOpenAtom);
+  const [isOpen, setIsOpen] = useAtom(sidebarOpenAtom);
   useEffect(() => {
     setIsOpen(false);
   }, [setIsOpen]);

@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from "react";
 
-import Header from "@/app/components/Header";
-
 import { useAtom } from "jotai";
+
 import { sidebarOpenAtom } from "@/app/(general)/state";
+import Header from "@/app/components/Header";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -14,7 +14,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     setHasScrolled(e.currentTarget.scrollTop > 0);
   };
 
-  const [ , setIsOpen ] = useAtom(sidebarOpenAtom);
+  const [, setIsOpen] = useAtom(sidebarOpenAtom);
 
   useEffect(() => {
     setIsOpen(false);

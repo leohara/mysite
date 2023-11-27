@@ -42,9 +42,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.className} m-0 box-border overflow-hidden p-0`}
-      >
+      <body className={`${inter.className} m-0 box-border overflow-hidden p-0`}>
         <Container>{children}</Container>
         {process.env.NODE_ENV == "production" && <Analytics />}
       </body>
