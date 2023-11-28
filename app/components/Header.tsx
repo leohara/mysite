@@ -18,7 +18,7 @@ export default function Header({ title, hasScrolled, position }: Props) {
         ${"z-20 h-[48px] overflow-hidden transition-shadow duration-300"}
         ${
           position == "left"
-            ? "grid grid-cols-[0fr] bg-[#f6f6f6] lg:w-[200px] lg:grid-cols-[1fr]"
+            ? "grid grid-cols-[0fr] bg-[#f6f6f6] lg:grid-cols-[1fr]"
             : ""
         }
         ${
