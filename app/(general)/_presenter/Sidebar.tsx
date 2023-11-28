@@ -61,11 +61,7 @@ export default function Sidebar() {
         <AiOutlineArrowLeft size={24} />
       </Link>
       <div className="z-30" ref={sidebarRef}>
-        <Header
-            title={"leohara"}
-            hasScrolled={hasScrolled}
-            position={"left"}
-          />
+        <Header title={"leohara"} hasScrolled={hasScrolled} position={"left"} />
         <div
           className={`
           ${"h-dvh overflow-y-auto border-r-[0.5px] border-r-[#eeeff2] bg-[#f6f6f6] text-[#404040]"}
