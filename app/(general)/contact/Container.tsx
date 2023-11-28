@@ -1,4 +1,4 @@
-export default function Container () {
+export default function Container() {
   return (
     <div className="flex-col">
       <p>Name</p>
@@ -6,5 +6,5 @@ export default function Container () {
       <p>Message</p>
       <button>Submit</button>
     </div>
-  )
+  );
 }
