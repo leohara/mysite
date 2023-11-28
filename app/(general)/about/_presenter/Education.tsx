@@ -25,6 +25,7 @@ export default function Education() {
         <Timeline
           title="東北大学 工学部"
           subtitle="- 機械知能・航空工学科"
+          // Mechanical and Aerospace Engineering
           term="04/2020 - 現在"
           last={true}
           experience={false}
@@ -32,8 +33,9 @@ export default function Education() {
           <Highlight experience={false}>
             <li className="flex">
               <List experience={false} />
-              Studied four mechanics (materials, thermal, fluids, mechanical),
-              control engineering, aerospace engineering, and programming.
+              Studied four mechanics courses (materials, thermal, fluids,
+              mechanical), control engineering, aerospace engineering, and
+              programming.
             </li>
             <li className="flex">
               <List experience={false} />
