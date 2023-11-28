@@ -10,7 +10,7 @@ import { AiFillGithub, AiOutlineArrowLeft } from "react-icons/ai";
 import { FaHome } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoIosBeer } from "react-icons/io";
-import { MdArticle } from "react-icons/md";
+import { MdArticle, MdPermContactCalendar } from "react-icons/md";
 
 import LinkButton from "./LinkButton";
 
@@ -82,6 +82,9 @@ export default function Sidebar() {
               <LinkButton name={"About"} url={"/about"}>
                 <IoIosBeer />
               </LinkButton>
+              <LinkButton name={"Contact"} url={"/contact"}>
+                <MdPermContactCalendar />
+              </LinkButton>
               {/* TODO projects入れる */}
             </div>
             <div className="flex-col px-[24px]">
@@ -89,7 +92,7 @@ export default function Sidebar() {
               <LinkButton name={"Github"} url={"https://github.com/leohara"}>
                 <AiFillGithub size={14} />
               </LinkButton>
-              <LinkButton name={"X"} url={"/"}>
+              <LinkButton name={"X"} url={"https://twitter.com/leohara_dev"}>
                 <FaXTwitter size={14} />
               </LinkButton>
             </div>
