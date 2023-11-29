@@ -5,6 +5,7 @@ import { prisma } from "@/app/lib/db/prisma";
 export const getWritings = cache(async () => {
   return await prisma.writing.findMany({
     where: { published: true },
+    cacheStrategy: { ttl: 60 * 5 },
     orderBy: { updatedAt: "desc" },
     select: {
       id: true,
@@ -19,5 +20,6 @@ export const getWritings = cache(async () => {
 export const getWriting = cache(async (postId: string) => {
   return await prisma.writing.findUnique({
     where: { postId: postId },
+    cacheStrategy: { ttl: 60 * 5 },
   });
 });
