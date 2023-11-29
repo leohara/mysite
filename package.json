@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint --fix 'app/**/*.{ts,tsx}'",
-    "lint-fix": "eslint --fix './app/**/*.{ts,tsx,css}' && prettier --write './app/**/*.{ts,tsx,css}'",
+    "lint-fix": "eslint --fix './**/*.{ts,tsx,css}' && prettier --write './**/*.{ts,tsx,css}'",
     "vercel-build": "prisma generate --no-engine && next build",
     "preinstall": "npx only-allow pnpm"
   },
