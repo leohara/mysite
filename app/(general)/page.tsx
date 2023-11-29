@@ -36,7 +36,8 @@ export default function Page() {
         `}
       >
         <p>
-          このサイトはソフトウェアエンジニア原田零生のポートフォリオです。自身の制作実績や技術ブログを掲載しています。
+          This site is the portfolio of software engineer Leo Harada. It
+          showcases my own production achievements and technical blog.
         </p>
       </div>
     </div>

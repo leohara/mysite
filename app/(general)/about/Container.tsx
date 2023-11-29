@@ -1,3 +1,4 @@
+import Contact from "./_presenter/Contact";
 import Education from "./_presenter/Education";
 import Experience from "./_presenter/Experience";
 import Favorite from "./_presenter/Favorite";
@@ -8,10 +9,11 @@ export default function Container() {
   return (
     <>
       <Profile />
-      <Favorite />
+      <Contact />
       <Experience />
       <hr />
       <Education />
+      <Favorite />
       <Stack />
     </>
   );

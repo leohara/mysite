@@ -5,7 +5,7 @@ import Timeline from "../_components/Timeline";
 
 export default function Experience() {
   return (
-    <div className="pb-[16px]">
+    <>
       <p className="py-[16px] text-[20px] font-semibold">Experience</p>
       <ExperienceContainer>
         <Timeline
@@ -44,6 +44,6 @@ export default function Experience() {
           </Highlight>
         </Timeline>
       </ExperienceContainer>
-    </div>
+    </>
   );
 }
