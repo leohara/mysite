@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useContext } from "react";
+import { useContext, useEffect } from "react";
 
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Beforeunload } from "react-beforeunload";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
-import PublishSlider from "@/app/components/publishSlider/PublishSlider";
-import { EditContextType, EditContext } from "@/app/context/EditContext";
+import { EditContext, EditContextType } from "@/app/context/EditContext";
+import PublishSlider from "@/components/publishSlider/PublishSlider";
 
 export default function Navbar() {
   const { title, setTitle, link, setLink, isPublished, setIsPublished } =

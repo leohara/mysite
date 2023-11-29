@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState, Suspense } from "react";
 
 import { useAtom } from "jotai";
 
 import { sidebarOpenAtom } from "@/app/(general)/state";
-import Header from "@/app/components/Header";
+import Header from "@/components/Header";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -23,7 +23,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="h-dvh overflow-y-auto text-[#000]" onScroll={onScroll}>
       <Header title={""} hasScrolled={hasScrolled} position={"right-detail"} />
-      {children}
+      <Suspense fallback={<p className="text-center">Loading</p>}>
+        {children}
+      </Suspense>
     </div>
   );
 }
