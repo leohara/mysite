@@ -21,7 +21,7 @@ import {
   Tailwind,
   TensorFlow,
   Vercel,
-} from "@/app/components/icons";
+} from "@/components/icons";
 
 export default function Stack() {
   return (

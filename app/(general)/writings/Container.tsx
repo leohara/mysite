@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 
 import { useAtom } from "jotai";
 import { usePathname } from "next/navigation";
 
 import { sidebarOpenAtom } from "@/app/(general)/state";
-import Header from "@/app/components/Header";
+import Header from "@/components/Header";
 
 export default function Container({ children }: { children: React.ReactNode }) {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -42,7 +42,9 @@ export default function Container({ children }: { children: React.ReactNode }) {
             hasScrolled={hasScrolled}
             position={"middle"}
           />
-          {children}
+          <Suspense fallback={<></>} >
+            {children}
+          </Suspense>
         </div>
       </div>
     </div>

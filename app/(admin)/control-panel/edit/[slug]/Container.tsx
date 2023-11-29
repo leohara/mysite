@@ -7,9 +7,9 @@ import { toast } from "react-hot-toast";
 
 import Navbar from "@/app/(admin)/control-panel/components/Navbar";
 import { editWriting } from "@/app/(admin)/control-panel/components/actions";
-import MarkdownPreview from "@/app/components/Text/MarkdownPreview";
 import { EditContext } from "@/app/context/EditContext";
 import { TextContext } from "@/app/context/TextContext";
+import MarkdownPreview from "@/components/Text/MarkdownPreview";
 
 type WritingProps = {
   writing: Writing;

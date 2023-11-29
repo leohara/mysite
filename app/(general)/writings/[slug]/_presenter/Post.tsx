@@ -1,15 +1,14 @@
-import Copyright from "../../../../components/Copyright";
+import Copyright from "../../../../../components/Copyright";
 
 import GoodButton from "./GoodButton";
 
-import MarkdownPreview from "@/app/components/Text/MarkdownPreview";
-import { prisma } from "@/app/lib/db/prisma";
 import { formatDate } from "@/app/lib/formatDate";
+import MarkdownPreview from "@/components/Text/MarkdownPreview";
+
+import { getWriting } from "@/components/writing";
 
 export default async function Post({ postId }: { postId: string }) {
-  const writing = await prisma.writing.findUnique({
-    where: { postId: postId },
-  });
+  const writing = await getWriting(postId);
 
   return (
     <>

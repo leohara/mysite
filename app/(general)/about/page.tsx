@@ -1,14 +1,14 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 import { useAtom } from "jotai";
 
 import Container from "./Container";
 
 import { sidebarOpenAtom } from "@/app/(general)/state";
-import Copyright from "@/app/components/Copyright";
-import Header from "@/app/components/Header";
+import Copyright from "@/components/Copyright";
+import Header from "@/components/Header";
 
 export default function Page() {
   const [hasScrolled, setHasScrolled] = useState(false);

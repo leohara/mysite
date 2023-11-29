@@ -15,7 +15,7 @@ import { MdArticle, MdPermContactCalendar } from "react-icons/md";
 import LinkButton from "./LinkButton";
 
 import { sidebarOpenAtom } from "@/app/(general)/state";
-import Header from "@/app/components/Header";
+import Header from "@/components/Header";
 
 export default function Sidebar() {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -35,7 +35,7 @@ export default function Sidebar() {
         setIsOpen(false);
       }
     },
-    [setIsOpen],
+    [setIsOpen]
   );
 
   useEffect(() => {
