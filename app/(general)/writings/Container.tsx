@@ -42,9 +42,7 @@ export default function Container({ children }: { children: React.ReactNode }) {
             hasScrolled={hasScrolled}
             position={"middle"}
           />
-          <Suspense fallback={<></>} >
-            {children}
-          </Suspense>
+          <Suspense fallback={<></>}>{children}</Suspense>
         </div>
       </div>
     </div>

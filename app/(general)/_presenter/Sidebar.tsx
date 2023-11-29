@@ -35,7 +35,7 @@ export default function Sidebar() {
         setIsOpen(false);
       }
     },
-    [setIsOpen]
+    [setIsOpen],
   );
 
   useEffect(() => {

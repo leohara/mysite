@@ -4,7 +4,6 @@ import GoodButton from "./GoodButton";
 
 import { formatDate } from "@/app/lib/formatDate";
 import MarkdownPreview from "@/components/Text/MarkdownPreview";
-
 import { getWriting } from "@/components/writing";
 
 export default async function Post({ postId }: { postId: string }) {

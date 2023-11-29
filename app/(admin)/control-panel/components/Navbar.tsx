@@ -20,7 +20,7 @@ export default function Navbar() {
     const backHandler = () => {
       if (
         confirm(
-          "行った変更が保存されているかを確認してから操作を行ってください。\n本当にこのページから離れてもよろしいですか？"
+          "行った変更が保存されているかを確認してから操作を行ってください。\n本当にこのページから離れてもよろしいですか？",
         )
       ) {
         return;
@@ -46,7 +46,7 @@ export default function Navbar() {
                 e.preventDefault();
                 if (
                   confirm(
-                    "行った変更が保存されているかを確認してから操作を行ってください。\n本当にこのページから離れてもよろしいですか？"
+                    "行った変更が保存されているかを確認してから操作を行ってください。\n本当にこのページから離れてもよろしいですか？",
                   )
                 ) {
                   router.replace("/control-panel/");

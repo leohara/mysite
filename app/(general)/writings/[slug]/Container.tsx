@@ -23,7 +23,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="h-dvh overflow-y-auto text-[#000]" onScroll={onScroll}>
       <Header title={""} hasScrolled={hasScrolled} position={"right-detail"} />
-      <Suspense fallback={<p className="text-center">Loading</p>} >
+      <Suspense fallback={<p className="text-center">Loading</p>}>
         {children}
       </Suspense>
     </div>

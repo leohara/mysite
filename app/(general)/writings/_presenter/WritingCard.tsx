@@ -12,7 +12,7 @@ type Props = {
     postId: string;
     published: boolean;
     updatedAt: Date;
-};
+  };
 };
 
 export default function WritingCard({ writing }: Props) {

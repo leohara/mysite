@@ -1,8 +1,8 @@
 "use client";
 
 import { Writing } from "@prisma/client";
-import { SessionProvider } from "next-auth/react";
 import Link from "next/link";
+import { SessionProvider } from "next-auth/react";
 import { toast } from "react-hot-toast";
 import { MdOutlineEdit } from "react-icons/md";
 
