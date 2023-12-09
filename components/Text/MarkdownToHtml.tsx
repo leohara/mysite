@@ -14,8 +14,6 @@ import { remarkAlert } from "./remarkAlert";
 import { remarkCheck } from "./remarkCheck";
 import { remarkInfo } from "./remarkInfo";
 
-// ブログカードの実装
-
 export function markdownToHtml(markdown: string) {
   const convertResult = (
     <ReactMarkdown
