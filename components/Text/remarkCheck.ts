@@ -1,4 +1,4 @@
-import h from "hastscript";
+import { h } from "hastscript";
 import { visit } from "unist-util-visit";
 
 // This plugin is modified to create a specific HTML structure when `::info` is used.
