@@ -1,9 +1,11 @@
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
+import rehypeKatex from "rehype-katex";
 import rehypeRaw from "rehype-raw";
 import remarkBreaks from "remark-breaks";
 import remarkDirective from "remark-directive";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
 
 import "highlight.js/styles/atom-one-dark-reasonable.css";
 import { CodeBlock } from "./CodeBlock";
@@ -14,7 +16,6 @@ import { remarkCheck } from "./remarkCheck";
 import { remarkInfo } from "./remarkInfo";
 
 // ブログカードの実装
-// 従来のuseをみる
 
 export function markdownToHtml(markdown: string) {
   const convertResult = (
@@ -27,8 +28,13 @@ export function markdownToHtml(markdown: string) {
         remarkInfo,
         remarkCheck,
         remarkAlert,
+        remarkMath,
       ]}
-      rehypePlugins={[[rehypeHighlight, { ignoreMissing: true }], rehypeRaw]}
+      rehypePlugins={[
+        [rehypeHighlight, { ignoreMissing: true }],
+        rehypeRaw,
+        rehypeKatex,
+      ]}
       components={{
         h1: "h2",
         h2: "h3",

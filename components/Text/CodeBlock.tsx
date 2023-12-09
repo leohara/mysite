@@ -22,6 +22,15 @@ export const CodeBlock = (
       return <TweetEmbed tweetId={id} />;
     }
 
+    if (params.length > 0 && params[0] === "link") {
+      return (
+        <iframe
+          className="mx-auto w-full max-w-7xl dark:opacity-80"
+          src={`https://hatenablog-parts.com/embed?url=${children}`}
+        />
+      );
+    }
+
     if (params.length > 0 && params[0] === "youtube") {
       const id = children.replace(/\r?\n/g, "");
       return (
