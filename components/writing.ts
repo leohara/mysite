@@ -18,8 +18,23 @@ export const getWritings = cache(async () => {
 });
 
 export const getWriting = cache(async (postId: string) => {
-  return await prisma.writing.findUnique({
+  const result = await prisma.writing.findUnique({
     where: { postId: postId },
     cacheStrategy: { ttl: 60 * 5 },
   });
+  if (!result) {
+    return {
+      id: "",
+      title: "",
+      postId: "",
+      content: "",
+      description: "",
+      published: false,
+      createdAt: new Date(),
+      publishedAt: new Date(),
+      updatedAt: new Date(),
+      likes: 0,
+    };
+  }
+  return result;
 });

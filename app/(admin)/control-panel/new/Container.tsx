@@ -8,7 +8,7 @@ import Navbar from "@/app/(admin)/control-panel/components/Navbar";
 import { addWriting } from "@/app/(admin)/control-panel/components/actions";
 import { EditContext } from "@/app/context/EditContext";
 import { TextContext } from "@/app/context/TextContext";
-import MarkdownPreview from "@/components/Text/MarkdownPreview";
+import { MarkdownPreview } from "@/components/Text/MarkdownPreview";
 
 export default function Container() {
   const [title, setTitle] = useState<string>("");
