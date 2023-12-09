@@ -7,7 +7,6 @@ import remarkDirective from "remark-directive";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 
-import "highlight.js/styles/atom-one-dark-reasonable.css";
 import { CodeBlock } from "./CodeBlock";
 import { CustomImage } from "./CustomImage";
 import { CustomLink } from "./CustomLink";
