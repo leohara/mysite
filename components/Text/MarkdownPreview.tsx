@@ -1,11 +1,6 @@
 import "highlight.js/styles/atom-one-dark-reasonable.css";
-import { markdownToHtml } from "./markdownToHtml";
+import { markdownToHtml } from "./MarkdownToHtmlTest";
 
 export default function MarkdownPreview({ content }: { content: string }) {
-  return (
-    <div
-      className="markdown"
-      dangerouslySetInnerHTML={{ __html: markdownToHtml(content) }}
-    />
-  );
+  return <>{markdownToHtml(content)}</>;
 }
