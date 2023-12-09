@@ -6,7 +6,6 @@ type Props = {
   className?: string;
 };
 
-/** 内部/外部リンクの種類に応じてコンポーネントを読み替え */
 export function CustomLink({
   href = "/",
   children = "",

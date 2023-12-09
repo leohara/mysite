@@ -1,7 +1,6 @@
 import { h } from "hastscript";
 import { visit } from "unist-util-visit";
 
-// This plugin is modified to create a specific HTML structure when `::info` is used.
 export function remarkAlert() {
   return (tree: any) => {
     visit(tree, (node) => {
@@ -14,7 +13,6 @@ export function remarkAlert() {
 
         const data = node.data || (node.data = {});
 
-        // Define custom properties for the outer div
         const outerDivProperties = {
           className: [
             "bg-[#fdb]",
@@ -25,7 +23,6 @@ export function remarkAlert() {
           ],
         };
 
-        // Define custom properties for the inner span
         const spanProperties = {
           className: [
             "rounded-[50%]",
@@ -39,7 +36,6 @@ export function remarkAlert() {
           ],
         };
 
-        // Apply properties based on the directive type
         if (
           node.type === "containerDirective" ||
           node.type === "leafDirective"
@@ -47,7 +43,6 @@ export function remarkAlert() {
           data.hName = "div";
           data.hProperties = h("div", outerDivProperties).properties;
 
-          // Insert custom span and an inner div for content
           node.children = [
             {
               type: "html",
@@ -69,13 +64,12 @@ export function remarkAlert() {
                     hName: "div",
                     hProperties: { className: ["flex-col"] },
                   },
-                  children: node.children, // Insert original content here
+                  children: node.children,
                 },
               ],
             },
           ];
         } else if (node.type === "textDirective") {
-          // For text directives, only the span is used
           data.hName = "span";
           data.hProperties = h("span", spanProperties).properties;
         }
