@@ -62,9 +62,6 @@ dependencies:
   react-markdown:
     specifier: ^9.0.1
     version: 9.0.1(@types/react@18.2.37)(react@18.2.0)
-  react-medium-image-zoom:
-    specifier: ^5.1.8
-    version: 5.1.8(react-dom@18.2.0)(react@18.2.0)
   react-tweet-embed:
     specifier: ^2.0.0
     version: 2.0.0(react@18.2.0)
@@ -86,21 +83,12 @@ dependencies:
   rehype-stringify:
     specifier: ^10.0.0
     version: 10.0.0
-  remark:
-    specifier: ^15.0.1
-    version: 15.0.1
   remark-breaks:
     specifier: ^4.0.0
     version: 4.0.0
-  remark-code-titles:
-    specifier: ^0.1.2
-    version: 0.1.2
   remark-directive:
     specifier: ^3.0.0
     version: 3.0.0
-  remark-flexible-code-titles:
-    specifier: ^1.1.3
-    version: 1.1.3
   remark-gfm:
     specifier: ^4.0.0
     version: 4.0.0
@@ -5327,16 +5315,6 @@ packages:
       - supports-color
     dev: false
 
-  /react-medium-image-zoom@5.1.8(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-2X4oLlEopIWg7qalR1Qpy4gPrU9CTF0DvJ7HNu5u/NwdyQWupEsje2vuMbjBz7+np8MmQ4DKJ6zGr1ofCuzB3g==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    dev: false
-
   /react-tweet-embed@2.0.0(react@18.2.0):
     resolution: {integrity: sha512-g2kfPjSRTOKeJtaQF5EMuSTmp/q8I0qdDs/pZ2qLXZjCWExDT/JgjxSlyM65NyNzsz8072PDpvlO/sIXwwVpdQ==}
     peerDependencies:
@@ -5493,12 +5471,6 @@ packages:
       unified: 11.0.4
     dev: false
 
-  /remark-code-titles@0.1.2:
-    resolution: {integrity: sha512-KsHQbaI4FX8Ozxqk7YErxwmBiveUqloKuVqyPG2YPLHojpgomodWgRfG4B+bOtmn/5bfJ8khw4rR0lvgVFl2Uw==}
-    dependencies:
-      unist-util-visit: 1.4.1
-    dev: false
-
   /remark-directive@3.0.0:
     resolution: {integrity: sha512-l1UyWJ6Eg1VPU7Hm/9tt0zKtReJQNOA4+iDMAxTyZNWnJnFlbS/7zhiel/rogTLQ2vMYwDzSJa4BiVNqGlqIMA==}
     dependencies:
@@ -5508,13 +5480,6 @@ packages:
       unified: 11.0.4
     transitivePeerDependencies:
       - supports-color
-    dev: false
-
-  /remark-flexible-code-titles@1.1.3:
-    resolution: {integrity: sha512-S/2ThjghwdGJshfgBUOBsbTU6fqYdJTANwCrCUCvKYHQ3L/3II1swP7+vPSO/01wJi0ifGUgwOCDw8l0aqUnbQ==}
-    dependencies:
-      '@types/mdast': 3.0.15
-      unist-util-visit: 4.1.2
     dev: false
 
   /remark-gfm@4.0.0:
@@ -5568,17 +5533,6 @@ packages:
       '@types/mdast': 4.0.3
       mdast-util-to-markdown: 2.1.0
       unified: 11.0.4
-    dev: false
-
-  /remark@15.0.1:
-    resolution: {integrity: sha512-Eht5w30ruCXgFmxVUSlNWQ9iiimq07URKeFS3hNc8cUWy1llX4KDWfyEDZRycMc+znsN9Ux5/tJ/BFdgdOwA3A==}
-    dependencies:
-      '@types/mdast': 4.0.3
-      remark-parse: 11.0.0
-      remark-stringify: 11.0.0
-      unified: 11.0.4
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /resolve-from@4.0.0:
@@ -6139,10 +6093,6 @@ packages:
       unist-util-is: 6.0.0
     dev: false
 
-  /unist-util-is@3.0.0:
-    resolution: {integrity: sha512-sVZZX3+kspVNmLWBPAB6r+7D9ZgAFPNWm66f7YNb420RlQSbn+n8rG8dGZSkrER7ZIXGQYNm5pqC3v3HopH24A==}
-    dev: false
-
   /unist-util-is@5.2.1:
     resolution: {integrity: sha512-u9njyyfEh43npf1M+yGKDGVPbY/JWEemg5nH05ncKPfi+kBbKBJoTdsogMu33uhytuLlv9y0O7GH7fEdwLdLQw==}
     dependencies:
@@ -6180,12 +6130,6 @@ packages:
       '@types/unist': 3.0.2
     dev: false
 
-  /unist-util-visit-parents@2.1.2:
-    resolution: {integrity: sha512-DyN5vD4NE3aSeB+PXYNKxzGsfocxp6asDc2XXE3b0ekO2BaRUpBicbbUygfSvYfUz1IkmjFR1YF7dPklraMZ2g==}
-    dependencies:
-      unist-util-is: 3.0.0
-    dev: false
-
   /unist-util-visit-parents@5.1.3:
     resolution: {integrity: sha512-x6+y8g7wWMyQhL1iZfhIPhDAs7Xwbn9nRosDXl7qoPTSCy0yNxnKc+hWokFifWQIDGi154rdUqKvbCa4+1kLhg==}
     dependencies:
@@ -6198,12 +6142,6 @@ packages:
     dependencies:
       '@types/unist': 3.0.2
       unist-util-is: 6.0.0
-    dev: false
-
-  /unist-util-visit@1.4.1:
-    resolution: {integrity: sha512-AvGNk7Bb//EmJZyhtRUnNMEpId/AZ5Ph/KUpTI09WHQuDZHKovQ1oEv3mfmKpWKtoMzyMC4GLBm1Zy5k12fjIw==}
-    dependencies:
-      unist-util-visit-parents: 2.1.2
     dev: false
 
   /unist-util-visit@4.1.2:
