@@ -37,5 +37,3 @@ export const CodeBlock = (
   }
   return <code className={className}>{children}</code>;
 };
-
-export default CodeBlock;
