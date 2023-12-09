@@ -59,11 +59,11 @@
 }
 
 .markdown code {
-  @apply font-mono text-sm rounded px-4 py-3;
+  @apply font-mono text-sm rounded px-1 py-1 bg-gray-200;
 }
 
-.markdown div pre code {
-  @apply block w-full bg-transparent p-4 overflow-x-scroll rounded-tr-[8px] rounded-tl-[0px] rounded-b-[8px] bg-[#111827];
+.markdown pre code {
+  @apply font-mono text-sm rounded px-4 py-3 bg-[#282C34];
 }
 
 /* .markdown div div.remark-code-title {
