@@ -23,7 +23,7 @@ export default function Post({ writing }: { writing: Writing }) {
             formatDate(writing.updatedAt) ? (
               <></>
             ) : (
-              <p>{formatDate(writing?.updatedAt)}に更新</p>
+              <p>{formatDate(writing.updatedAt)}に更新</p>
             )}
           </div>
         </div>
