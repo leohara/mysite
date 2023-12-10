@@ -1,5 +1,6 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Inter } from "next/font/google";
 
 import Container from "./Container";
@@ -44,7 +45,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} m-0 box-border overflow-hidden p-0`}>
         <Container>{children}</Container>
-        {process.env.NODE_ENV == "production" && <Analytics />}
+        {process.env.NODE_ENV == "production" && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        )}
       </body>
     </html>
   );
