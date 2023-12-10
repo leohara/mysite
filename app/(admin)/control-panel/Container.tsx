@@ -51,7 +51,7 @@ export default function Container({ writings }: WritingProps) {
               >
                 <div className="top-[50%] flex gap-[30px]">
                   {/* タイトル部分 */}
-                  <div className="w-[400px] ">
+                  <div className="w-[400px]">
                     <div className="line-clamp-2">{writing.title}</div>
                   </div>
                   <PostId
