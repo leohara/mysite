@@ -9,7 +9,7 @@ export default function Contact() {
         </p>
         <div className="pt-[16px] text-center">
           <a href="mailto:address" className="text-blue-400">
-            devbeatleos@gmail.com
+            devbeatleos (at) gmail.com
           </a>
         </div>
       </div>
