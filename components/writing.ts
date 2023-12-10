@@ -1,11 +1,9 @@
-import { cache } from "react";
-
 import { prisma } from "@/app/lib/db/prisma";
 
-export const getWritings = cache(async () => {
-  return await prisma.writing.findMany({
+export const getWritings = async () => {
+  const result = await prisma.writing.findMany({
     where: { published: true },
-    cacheStrategy: { ttl: 60 * 5 },
+    cacheStrategy: { ttl: 60 },
     orderBy: { updatedAt: "desc" },
     select: {
       id: true,
@@ -15,12 +13,13 @@ export const getWritings = cache(async () => {
       updatedAt: true,
     },
   });
-});
+  return result;
+};
 
-export const getWriting = cache(async (postId: string) => {
+export const getWriting = async (postId: string) => {
   const result = await prisma.writing.findUnique({
     where: { postId: postId },
-    cacheStrategy: { ttl: 60 * 5 },
+    cacheStrategy: { ttl: 60 },
   });
   if (!result) {
     return {
@@ -37,4 +36,4 @@ export const getWriting = cache(async (postId: string) => {
     };
   }
   return result;
-});
+};
