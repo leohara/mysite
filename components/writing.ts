@@ -4,13 +4,13 @@ export const getWritings = async () => {
   const result = await prisma.writing.findMany({
     where: { published: true },
     cacheStrategy: { ttl: 60 },
-    orderBy: { updatedAt: "desc" },
+    orderBy: { publishedAt: "desc" },
     select: {
       id: true,
       postId: true,
       title: true,
       published: true,
-      updatedAt: true,
+      publishedAt: true,
     },
   });
   return result;

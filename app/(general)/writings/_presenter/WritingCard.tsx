@@ -11,7 +11,7 @@ type Props = {
     title: string;
     postId: string;
     published: boolean;
-    updatedAt: Date;
+    publishedAt: Date | null;
   };
 };
 
@@ -31,7 +31,7 @@ export default function WritingCard({ writing }: Props) {
           <p className="text-[16px] font-bold">{writing.title}</p>
         </div>
         <p className="text-[12px] text-[#9f9f9f]">
-          {formatDate(writing.updatedAt)}
+          {formatDate(writing.publishedAt)}
         </p>
       </div>
     </Link>
