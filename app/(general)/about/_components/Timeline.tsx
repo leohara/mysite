@@ -50,7 +50,7 @@ export default function Timeline({
         <p className="text-[16px] text-[#333]">{subtitle}</p>
         <p
           className={`
-          ${"mb-[16px] text-justify decoration-0"}
+          ${"pointer-events-none mb-[16px] text-justify decoration-0"}
           ${experience ? "text-[#6081a2]" : "text-[#5a9a92]"}
         `}
         >
