@@ -1,5 +1,4 @@
-import React from "react";
-import { DetailedHTMLProps, HTMLAttributes } from "react";
+import React, { DetailedHTMLProps, HTMLAttributes } from "react";
 
 import TweetEmbed from "react-tweet-embed";
 import YouTubeEmbed from "react-youtube";
