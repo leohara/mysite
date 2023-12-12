@@ -18,7 +18,7 @@ import { remarkTextColor } from "./remarkTextColor";
 export function markdownToHtml(markdown: string) {
   const convertResult = (
     <ReactMarkdown
-      className="markdown mx-auto max-w-2xl text-lg leading-loose"
+      className="markdown mx-auto max-w-3xl text-lg leading-loose"
       remarkPlugins={[
         remarkGfm,
         remarkBreaks,

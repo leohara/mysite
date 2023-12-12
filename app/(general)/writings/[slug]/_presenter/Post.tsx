@@ -14,7 +14,7 @@ export default function Post({ writing }: { writing: Writing }) {
     <>
       <div className="px-[32px] pt-[50px] lg:px-[48px]">
         <div className="py-[36px] text-center">
-          <h1 className="break-words px-[16px] text-[24px] font-bold">
+          <h1 className="break-words text-[24px] font-bold lg:px-[64px]">
             {writing.title}
           </h1>
           <div className="pt-[12px] text-[16px] text-[#9f9f9f]">
