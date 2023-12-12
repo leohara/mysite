@@ -13,6 +13,7 @@ import { CustomLink } from "./CustomLink";
 import { remarkAlert } from "./remarkAlert";
 import { remarkCheck } from "./remarkCheck";
 import { remarkInfo } from "./remarkInfo";
+import { remarkTextColor } from "./remarkTextColor";
 
 export function markdownToHtml(markdown: string) {
   const convertResult = (
@@ -26,6 +27,7 @@ export function markdownToHtml(markdown: string) {
         remarkCheck,
         remarkAlert,
         remarkMath,
+        remarkTextColor,
       ]}
       rehypePlugins={[
         [rehypeHighlight, { ignoreMissing: true }],
