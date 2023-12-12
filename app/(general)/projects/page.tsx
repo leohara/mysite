@@ -1,5 +1,3 @@
 export default function Page() {
-  return (
-    <div>coming soon</div>
-  )
+  return <div>coming soon</div>;
 }
