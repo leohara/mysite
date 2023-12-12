@@ -1,20 +1,10 @@
-export const dynamic = "force-dynamic";
-
 import WritingCard from "./WritingCard";
 
-type Props = {
-  id: string;
-  title: string;
-  published: boolean;
-  publishedAt: Date | null;
-  postId: string;
-};
+import { getWritings } from "@/components/writing";
 
-export default async function WritingList({
-  publishedWritings,
-}: {
-  publishedWritings: Props[];
-}) {
+export default async function WritingList() {
+  const publishedWritings = await getWritings();
+
   return (
     <div className=" pt-[64px]">
       <div className="flex-col px-[24px]">
