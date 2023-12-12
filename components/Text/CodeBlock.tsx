@@ -1,7 +1,8 @@
 import React, { DetailedHTMLProps, HTMLAttributes } from "react";
 
-import TweetEmbed from "react-tweet-embed";
-import YouTubeEmbed from "react-youtube";
+import LiteYouTubeEmbed from "react-lite-youtube-embed";
+import { Tweet } from "react-tweet";
+import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
 export const CodeBlock = (
   props: DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>,
@@ -20,7 +21,7 @@ export const CodeBlock = (
       const id = children.replace(/\r?\n/g, "");
       return (
         <div className="flex items-center justify-center">
-          <TweetEmbed tweetId={id} />
+          <Tweet id={id} />
         </div>
       );
     }
@@ -37,13 +38,14 @@ export const CodeBlock = (
     if (params.length > 0 && params[0] === "youtube") {
       const id = children.replace(/\r?\n/g, "");
       return (
-        <div className="relative w-full pt-[56.25%]">
-          <YouTubeEmbed
-            videoId={id}
-            iframeClassName="absolute top-0 right-0 w-full h-full"
-            className=""
-          />
-        </div>
+        <LiteYouTubeEmbed
+          id={id}
+          aspectHeight={9}
+          aspectWidth={16}
+          playlistCoverId={id}
+          poster="maxresdefault"
+          title="YouTube Embed"
+        />
       );
     }
   }
