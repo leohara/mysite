@@ -18,7 +18,11 @@ export const CodeBlock = (
 
     if (params.length > 0 && params[0] === "twitter") {
       const id = children.replace(/\r?\n/g, "");
-      return <TweetEmbed tweetId={id} />;
+      return (
+        <div className="flex items-center justify-center">
+          <TweetEmbed tweetId={id} />
+        </div>
+      );
     }
 
     if (params.length > 0 && params[0] === "link") {
