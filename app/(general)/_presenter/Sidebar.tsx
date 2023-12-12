@@ -6,7 +6,7 @@ import { useAtom } from "jotai";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AiFillGithub, AiOutlineArrowLeft } from "react-icons/ai";
-// import { AiFillProject } from "react-icons/ai";
+import { AiFillProject } from "react-icons/ai";
 import { FaHome } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoIosBeer } from "react-icons/io";
@@ -82,7 +82,9 @@ export default function Sidebar() {
               <LinkButton name={"About"} url={"/about"}>
                 <IoIosBeer />
               </LinkButton>
-              {/* TODO projects入れる */}
+              <LinkButton name={"Projects"} url={"/projects"}>
+                <AiFillProject size={14} />
+              </LinkButton>
             </div>
             <div className="flex-col px-[24px]">
               <p className="text-[12px] text-[#9f9f9f]">Online</p>
