@@ -1,5 +1,3 @@
-export const dynamic = "force-dynamic";
-
 import WritingCard from "./WritingCard";
 
 import { getWritings } from "@/components/writing";
