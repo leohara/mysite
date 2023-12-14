@@ -43,6 +43,7 @@ export async function addWriting(formData: FormData) {
   const link = formData.get("link");
   const isPublished = !!formData.get("isPublished");
   const markdown = formData.get("markdown");
+  const description = formData.get("description");
   if (!title)
     return {
       error: "タイトルを入力してください",
@@ -54,6 +55,10 @@ export async function addWriting(formData: FormData) {
   if (!markdown)
     return {
       error: "最低でも1文字以上の本文を入力してください",
+    };
+  if (!description)
+    return {
+      error: "最低でも1文字以上の概要を入力してください",
     };
   if (!(await checkId(link.toString()))) {
     return {
@@ -69,6 +74,7 @@ export async function addWriting(formData: FormData) {
         content: markdown.toString(),
         published: isPublished,
         publishedAt: isPublished ? new Date() : null,
+        description: description.toString(),
       },
     });
   } catch (error) {
@@ -86,6 +92,7 @@ export async function editWriting(formData: FormData, id: string) {
   const markdown = formData.get("markdown");
   const writing = await getWriting(id);
   const publishedAt = writing?.publishedAt;
+  const description = formData.get("description");
   if (!title)
     return {
       error: "タイトルを入力してください",
@@ -97,6 +104,10 @@ export async function editWriting(formData: FormData, id: string) {
   if (!markdown)
     return {
       error: "最低でも1文字以上の本文を入力してください",
+    };
+  if (!description)
+    return {
+      error: "最低でも1文字以上の概要を入力してください",
     };
   if (!(await checkWithId(id, link.toString()))) {
     return {
@@ -114,6 +125,7 @@ export async function editWriting(formData: FormData, id: string) {
         published: isPublished,
         updatedAt: new Date(),
         publishedAt: isPublished && !publishedAt ? new Date() : publishedAt,
+        description: description.toString(),
       },
     });
   } catch (error) {
