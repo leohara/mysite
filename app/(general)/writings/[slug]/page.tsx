@@ -25,6 +25,7 @@ export async function generateMetadata({
     metadataBase: new URL(SITE_URL),
     title: writing?.title,
     description: writing?.description?.slice(0, 100),
+    keywords: ["leohara", writing?.title ?? ""], // TODO: タグ、キーワードなどを追加
     openGraph: {
       type: "website",
       locale: "ja_JP",
