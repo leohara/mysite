@@ -1,4 +1,4 @@
-export default function Loading() {
+export default function Spinner() {
   return (
     <div
       className="z-30 flex justify-center pt-[200px]"
