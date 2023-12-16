@@ -1,13 +1,10 @@
-import { Suspense } from "react";
-
 import { Metadata } from "next";
 
 import Container from "./Container";
-import Post from "./_presenter/Post";
+import Detail from "./Detail";
 
 import { SITE_NAME, SITE_URL } from "@/app/constants/site";
 import { prisma } from "@/app/lib/db/prisma";
-import { getWriting } from "@/components/writing";
 
 type Props = {
   params: {
@@ -43,13 +40,9 @@ export async function generateMetadata({
 }
 
 export default async function Page({ params: { slug } }: Props) {
-  const writing = await getWriting(slug);
-
   return (
     <Container>
-      <Suspense fallback={<p className="text-center">Loading...</p>}>
-        <Post writing={writing} />
-      </Suspense>
+      <Detail postId={slug} />
     </Container>
   );
 }
