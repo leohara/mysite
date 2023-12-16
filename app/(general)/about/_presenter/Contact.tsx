@@ -8,9 +8,7 @@ export default function Contact() {
           at the following email address.
         </p>
         <div className="pt-[16px] text-center">
-          <a href="mailto:address" className="text-blue-400">
-            devbeatleos [at] gmail.com
-          </a>
+          <p className="text-blue-400">devbeatleos [at] gmail.com</p>
         </div>
       </div>
     </div>
