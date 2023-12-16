@@ -9,7 +9,7 @@ import GoodButton from "./GoodButton";
 import { formatDate } from "@/app/lib/formatDate";
 import { MarkdownPreview } from "@/components/Text/MarkdownPreview";
 
-export default function Post({ writing }: { writing: Writing }) {
+export default function PostBody({ writing }: { writing: Writing }) {
   return (
     <>
       <div className="px-[32px] pt-[50px] lg:px-[48px]">

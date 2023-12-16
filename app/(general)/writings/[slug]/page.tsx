@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 import Container from "./Container";
-import Detail from "./Detail";
+import Post from "./Post";
 
 import { SITE_NAME, SITE_URL } from "@/app/constants/site";
 import { prisma } from "@/app/lib/db/prisma";
@@ -42,7 +42,7 @@ export async function generateMetadata({
 export default async function Page({ params: { slug } }: Props) {
   return (
     <Container>
-      <Detail postId={slug} />
+      <Post postId={slug} />
     </Container>
   );
 }
