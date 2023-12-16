@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 
 import { sidebarOpenAtom } from "@/app/(general)/state";
 import Header from "@/components/Header";
+import Loading from "@/components/Loading";
 
 export default function Container({ children }: { children: React.ReactNode }) {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -42,7 +43,7 @@ export default function Container({ children }: { children: React.ReactNode }) {
             hasScrolled={hasScrolled}
             position={"middle"}
           />
-          <Suspense fallback={"loading"}>{children}</Suspense>
+          <Suspense fallback={<Loading />}>{children}</Suspense>
         </div>
       </div>
     </div>

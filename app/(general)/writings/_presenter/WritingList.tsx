@@ -1,6 +1,6 @@
 import WritingCard from "./WritingCard";
 
-import { getWritings } from "@/components/writing";
+import { getWritings } from "@/app/lib/writing";
 
 export default async function WritingList() {
   const publishedWritings = await getWritings();
