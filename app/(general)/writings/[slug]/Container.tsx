@@ -8,7 +8,7 @@ import { sidebarOpenAtom } from "@/app/(general)/state";
 import Header from "@/components/Header";
 import Spinner from "@/components/Spinner";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Container({ children }: { children: React.ReactNode }) {
   const [hasScrolled, setHasScrolled] = useState(false);
 
   const onScroll = (e: React.UIEvent<HTMLDivElement>) => {

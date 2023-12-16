@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useAtom } from "jotai";
 
@@ -29,16 +29,14 @@ export default function Page() {
         `}
       onScroll={onScroll}
     >
-      <Header title={""} hasScrolled={hasScrolled} position={"right"} />
+      <Header title={"About Me"} hasScrolled={hasScrolled} position={"right"} />
       <div
         className={`
         ${"px-[15px] pt-[80px] sm:px-[60px] md:px-[120px] lg:px-[150px]"}
         ${isOpen ? "opacity-0" : "opacity-100"}
       `}
       >
-        <Suspense fallback={<p>Loading</p>}>
-          <Container />
-        </Suspense>
+        <Container />
       </div>
       <div className="flex justify-center pt-[80px]">
         <Copyright />
