@@ -2,10 +2,15 @@
 
 import { useAtom } from "jotai";
 
-import Sidebar from "./_presenter/Sidebar";
-import { sidebarOpenAtom } from "./state";
+import { sidebarOpenAtom } from "../app/(general)/state";
 
-export default function Container({ children }: { children: React.ReactNode }) {
+import Sidebar from "./Sidebar";
+
+export default function SidebarContainer({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const [isOpen] = useAtom(sidebarOpenAtom);
 
   return (

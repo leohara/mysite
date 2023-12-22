@@ -1,6 +1,6 @@
 export const dynamic = "force-dynamic";
 
-import Container from "./Container";
+import ListContainer from "./ListContainer";
 import WritingList from "./_presenter/WritingList";
 
 export default async function Layout({
@@ -10,9 +10,9 @@ export default async function Layout({
 }) {
   return (
     <div className="grid grid-cols-[1fr_0px] lg:grid-cols-[320px_1fr]">
-      <Container>
+      <ListContainer>
         <WritingList />
-      </Container>
+      </ListContainer>
       {children}
     </div>
   );

@@ -72,7 +72,7 @@ export default function Header({ title, hasScrolled, position }: Props) {
         </button>
         <p
           className={`
-            ${"font-[#363636] font-bold transition-opacity duration-300"}
+            ${"font-[#363636] font-bold capitalize transition-opacity duration-300"}
             ${position == "left" ? "" : "pl-[24px] lg:pl-[0px]"}
             ${isOpen ? "pl-[24px]" : ""}
             ${position == "right-detail" ? "ml-[12px] truncate opacity-0" : ""}
