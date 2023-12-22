@@ -3,7 +3,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Inter } from "next/font/google";
 
-import Container from "./Container";
+import SidebarContainer from "../../components/SidebarContainer";
 
 import type { Metadata } from "next";
 
@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} m-0 box-border overflow-hidden p-0`}>
-        <Container>{children}</Container>
+        <SidebarContainer>{children}</SidebarContainer>
         {process.env.NODE_ENV == "production" && (
           <>
             <Analytics />
