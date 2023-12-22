@@ -14,42 +14,51 @@ export default function GoodButton({
   likes: number;
   id: string;
 }) {
-  const [count, setCount] = useState(0);
-  const [likesCount, setLikesCount] = useState(likes);
   const [isClicked, setIsClicked] = useState(false);
   const [, startTransition] = useTransition();
 
   const clickHandler = () => {
     setIsClicked(true);
-    setLikesCount(likesCount + 1);
-    setCount(count + 1);
-    startTransition(() => addCount(id, likesCount));
+    startTransition(() => addCount(id, likes + 1));
   };
 
   return (
     <>
-      <div className="flex justify-center">
-        <button
-          className={`
-                ${isClicked ? "pt-[10px]" : ""}
-                ${count < 19 ? "cursor-pointer" : "pointer-events-none"}
-              `}
-          onClick={clickHandler}
-        >
-          {isClicked ? (
-            <>
-              <FaHeart size={60} color="#e91e62" />
-              <p>{likesCount}</p>
-            </>
-          ) : (
-            <>
-              <CiHeart size={80} />
-            </>
-          )}
-        </button>
-      </div>
-      <div className="pb-[150px] text-center">
-        {count < 19 ? <></> : <p className="font-semibold">Thank You!</p>}
+      <div className="flex-col justify-center pb-[30px]">
+        <div className="text-center">
+          <p
+            className={`
+            ${isClicked ? "block" : "opacity-0"}
+            font-semibold
+          `}
+          >
+            Thank You!
+          </p>
+          <button
+            className={`
+              ${isClicked ? "pt-[10px]" : ""}
+              ${isClicked ? "pointer-events-none" : "cursor-pointer"}
+            `}
+            onClick={clickHandler}
+          >
+            {isClicked ? (
+              <>
+                <FaHeart size={60} color="#e91e62" />
+              </>
+            ) : (
+              <>
+                <CiHeart size={80} />
+              </>
+            )}
+            <p
+              className={`
+            ${isClicked ? "block" : "opacity-0"}
+          `}
+            >
+              {likes + 1}
+            </p>
+          </button>
+        </div>
       </div>
     </>
   );
