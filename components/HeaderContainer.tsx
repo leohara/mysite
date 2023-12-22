@@ -37,6 +37,7 @@ export default function HeaderContainer({
 
   const pathName = usePathname().split("/");
   const categoryName = pathName[1];
+  const isDetail = typeof pathName[2] !== "undefined";
 
   return (
     <div
@@ -44,7 +45,6 @@ export default function HeaderContainer({
       ${"h-dvh overflow-y-auto pb-[200px] text-[#050505] transition-opacity duration-500 ease-in-out"}
       ${isOpen ? "pointer-events-none z-20 opacity-5" : ""}
       ${!Boolean(categoryName)! && position == "right" ? "bg-svg" : ""}
-      ${position == "middle" ? "lg:border-r-[0.5px] lg:border-r-[#eeeff2]" : ""}
       `}
       onScroll={onScroll}
     >
