@@ -37,7 +37,6 @@ export default function HeaderContainer({
 
   const pathName = usePathname().split("/");
   const categoryName = pathName[1];
-  const isDetail = typeof pathName[2] !== "undefined";
 
   return (
     <div

@@ -9,7 +9,11 @@ import { sidebarOpenAtom } from "@/app/(general)/state";
 import Header from "@/components/Header";
 import Spinner from "@/components/Spinner";
 
-export default function ListContainer({ children }: { children: React.ReactNode }) {
+export default function ListContainer({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isOpen, setIsOpen] = useAtom(sidebarOpenAtom);
   useEffect(() => {
