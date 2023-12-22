@@ -26,30 +26,38 @@ export default function GoodButton({
     <>
       <div className="flex-col justify-center pb-[30px]">
         <div className="text-center">
-          <p className={`
+          <p
+            className={`
             ${isClicked ? "block" : "opacity-0"}
             font-semibold
-          `}>Thank You!</p>
-                  <button
-          className={`
+          `}
+          >
+            Thank You!
+          </p>
+          <button
+            className={`
               ${isClicked ? "pt-[10px]" : ""}
               ${isClicked ? "pointer-events-none" : "cursor-pointer"}
             `}
-          onClick={clickHandler}
-        >
-          {isClicked ? (
-            <>
-              <FaHeart size={60} color="#e91e62" />
-            </>
-          ) : (
-            <>
-              <CiHeart size={80} />
-            </>
-          )}
-          <p className={`
+            onClick={clickHandler}
+          >
+            {isClicked ? (
+              <>
+                <FaHeart size={60} color="#e91e62" />
+              </>
+            ) : (
+              <>
+                <CiHeart size={80} />
+              </>
+            )}
+            <p
+              className={`
             ${isClicked ? "block" : "opacity-0"}
-          `} >{likes + 1}</p>
-        </button>
+          `}
+            >
+              {likes + 1}
+            </p>
+          </button>
         </div>
       </div>
     </>
