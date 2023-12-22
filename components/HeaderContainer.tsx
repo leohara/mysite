@@ -8,10 +8,12 @@ import { usePathname } from "next/navigation";
 import { sidebarOpenAtom } from "@/app/(general)/state";
 import Header from "@/components/Header";
 
-function headerName(pageName: string) {
-  if (pageName == "writings" || pageName == "projects") {
-    return pageName;
-  } else if (pageName == "about") {
+function headerName(categoryName: string, position: string) {
+  if (position == "right-detail") {
+    return "";
+  } else if (categoryName == "writings" || categoryName == "projects") {
+    return categoryName;
+  } else if (categoryName == "about") {
     return "About Me";
   }
 }
@@ -34,20 +36,20 @@ export default function HeaderContainer({
   }, [setIsOpen]);
 
   const pathName = usePathname().split("/");
-  const returnURL = pathName[1];
+  const categoryName = pathName[1];
 
   return (
     <div
       className={`
       ${"h-dvh overflow-y-auto pb-[200px] text-[#050505] transition-opacity duration-500 ease-in-out"}
       ${isOpen ? "pointer-events-none z-20 opacity-5" : ""}
-      ${!Boolean(returnURL)! && position == "right" ? "bg-svg" : ""}
+      ${!Boolean(categoryName)! && position == "right" ? "bg-svg" : ""}
       ${position == "middle" ? "lg:border-r-[0.5px] lg:border-r-[#eeeff2]" : ""}
       `}
       onScroll={onScroll}
     >
       <Header
-        title={headerName(returnURL) ?? ""}
+        title={headerName(categoryName, position) ?? ""}
         hasScrolled={hasScrolled}
         position={position}
       />

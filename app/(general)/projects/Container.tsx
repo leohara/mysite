@@ -4,6 +4,7 @@
 export default function Container() {
   return (
     <div className="grid gap-[30px]">
+      <p>Coming Soon!</p>
       {/* <div className="scale-100 transition-all duration-500 hover:scale-105">
         <Link href="https://github.com/leohara/mysite">
           <div className="relative flex h-[150px] w-full rounded-[30px] border border-[#d3d3d3] bg-[#f6f6f6]">
