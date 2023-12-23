@@ -67,7 +67,6 @@ export default function Container({ writings }: WritingProps) {
                           published={writing.published}
                         />
                       </div>
-                      {/* <Status isPublished={writing.published} /> */}
                       <div className="w-[15%] px-[2px] text-center">
                         <DateAt date={formatDate(writing.updatedAt)} />
                       </div>
@@ -127,7 +126,6 @@ export default function Container({ writings }: WritingProps) {
                           published={writing.published}
                         />
                       </div>
-                      {/* <Status isPublished={writing.published} /> */}
                       <div className="w-[15%] px-[2px] text-center">
                         <DateAt date={formatDate(writing.updatedAt)} />
                       </div>
