@@ -13,13 +13,13 @@ export default function PostId({
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="h-[40px] w-[200px] rounded-[8px] border-[1px]">
-            <div className="line-clamp-2 py-[8px] pl-[8px]">{`/${postId}`}</div>
+          <div className="text-blue-400">
+            <div className="line-clamp-2">{`/${postId}`}</div>
           </div>
         </a>
       ) : (
-        <div className="h-[40px] w-[200px] rounded-[8px] border-[1px]">
-          <div className="line-clamp-2 py-[8px] pl-[8px]">{`/${postId}`}</div>
+        <div className="">
+          <div className="line-clamp-2">{`/${postId}`}</div>
         </div>
       )}
     </>
