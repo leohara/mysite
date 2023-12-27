@@ -75,6 +75,7 @@ export async function addWriting(formData: FormData) {
         published: isPublished,
         publishedAt: isPublished ? new Date() : null,
         description: description.toString(),
+        updatedAt: new Date(),
       },
     });
   } catch (error) {
