@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 
-import { Writing } from "@prisma/client";
 import { toast } from "react-hot-toast";
 
 import Navbar from "@/app/(admin)/control-panel/components/Navbar";
@@ -11,16 +10,12 @@ import { EditContext } from "@/app/context/EditContext";
 import { TextContext } from "@/app/context/TextContext";
 import { MarkdownPreview } from "@/components/Text/MarkdownPreview";
 
-type WritingProps = {
-  writing: Writing;
-};
-
-export default function Container({ writing }: WritingProps) {
-  const [title, setTitle] = useState<string>(writing.title);
-  const [link, setLink] = useState<string>(writing.postId);
-  const [isPublished, setIsPublished] = useState<boolean>(writing.published);
-  const [markdown, setMarkdown] = useState<string>(writing.content);
-  const [description, setDescription] = useState<string>(writing.description);
+export default function Container() {
+  const [title, setTitle] = useState<string>("");
+  const [link, setLink] = useState<string>("");
+  const [isPublished, setIsPublished] = useState<boolean>(false);
+  const [markdown, setMarkdown] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
 
   const action = async (formData: FormData) => {
     const result = await addWriting(formData);
